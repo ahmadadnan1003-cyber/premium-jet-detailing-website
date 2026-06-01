@@ -4,31 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Jet Detailing | Executive Aircraft Interior Care at BER</title>
-  <meta name="description" content="Premium Jet Detailing provides discreet and detail-oriented aircraft interior care for private and business aircraft around Berlin Brandenburg Airport and across Germany on request.">
+  <meta name="description" content="Premium Jet Detailing provides discreet aircraft interior detailing for private and business aircraft around Berlin Brandenburg Airport and across Germany on request.">
   <meta name="keywords" content="aircraft interior care Berlin, private jet detailing Germany, business aviation detailing BER, executive aircraft interior care, private jet cleaning Berlin">
   <meta name="author" content="Premium Jet Detailing">
   <meta property="og:title" content="Premium Jet Detailing | Executive Aircraft Interior Care at BER">
-  <meta property="og:description" content="Discreet, reliable and detail-oriented cabin care for private and business aircraft around Berlin Brandenburg Airport and across Germany on request.">
+  <meta property="og:description" content="Discreet interior detailing for private and business aircraft around BER and across Germany on request.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero-ber.jpg">
-  <link rel="preload" as="image" href="assets/hero-ber.jpg">
   <link rel="preload" as="image" href="assets/premium-jet-logo.png">
+  <link rel="preload" as="image" href="assets/hero-ber.jpg">
   <style>
     :root {
       --black: #050505;
       --ink: #0b0907;
       --panel: #12100d;
-      --panel-soft: #19150f;
-      --gold: #c99b43;
-      --gold-light: #f0d594;
-      --champagne: #f7efe0;
-      --text: #ded5c8;
-      --muted: #a99f90;
-      --line: rgba(201, 155, 67, 0.34);
-      --line-soft: rgba(201, 155, 67, 0.16);
-      --shadow: 0 28px 80px rgba(0, 0, 0, 0.46);
-      --max: 1180px;
-      --radius: 8px;
+      --gold: #c89a3d;
+      --gold-soft: #efd28d;
+      --ivory: #f6efe3;
+      --text: #d9d0c2;
+      --muted: #a99f91;
+      --line: rgba(200, 154, 61, 0.34);
+      --line-soft: rgba(200, 154, 61, 0.16);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      --max: 1160px;
     }
 
     * { box-sizing: border-box; }
@@ -37,12 +35,10 @@
 
     body {
       margin: 0;
-      color: var(--champagne);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 420px),
-        var(--black);
+      color: var(--ivory);
+      background: var(--black);
       font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.55;
+      line-height: 1.5;
       overflow-x: hidden;
     }
 
@@ -61,7 +57,6 @@
 
     button,
     input,
-    select,
     textarea {
       font: inherit;
     }
@@ -73,9 +68,9 @@
 
     .site-header {
       position: fixed;
-      z-index: 40;
+      z-index: 50;
       inset: 0 0 auto;
-      border-bottom: 1px solid rgba(201, 155, 67, 0.2);
+      border-bottom: 1px solid var(--line-soft);
       background: rgba(5, 5, 5, 0.82);
       backdrop-filter: blur(18px);
     }
@@ -84,19 +79,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 82px;
-      gap: 28px;
+      min-height: 78px;
+      gap: 24px;
     }
 
-    .brand {
+    .logo {
       display: inline-flex;
       align-items: center;
-      min-width: 172px;
+      flex: 0 0 auto;
     }
 
-    .brand img {
-      width: 168px;
-      filter: drop-shadow(0 8px 22px rgba(201, 155, 67, 0.12));
+    .logo img {
+      width: 158px;
+      filter: drop-shadow(0 10px 22px rgba(200, 154, 61, 0.15));
     }
 
     .nav-links {
@@ -104,9 +99,9 @@
       align-items: center;
       gap: 24px;
       color: var(--muted);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
@@ -115,16 +110,15 @@
       transition: color 180ms ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--gold-light);
+    .nav-links a:hover {
+      color: var(--gold-soft);
     }
 
-    .nav-button {
-      padding: 11px 16px !important;
+    .nav-cta {
+      padding: 10px 16px !important;
       border: 1px solid var(--line);
-      color: var(--gold-light) !important;
-      background: rgba(201, 155, 67, 0.08);
+      color: var(--gold-soft) !important;
+      background: rgba(200, 154, 61, 0.08);
     }
 
     .menu-toggle {
@@ -132,8 +126,8 @@
       width: 44px;
       height: 44px;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--gold-light);
+      background: transparent;
+      color: var(--gold-soft);
       cursor: pointer;
     }
 
@@ -152,10 +146,10 @@
 
     .hero {
       position: relative;
-      min-height: 100svh;
+      min-height: 88svh;
       display: grid;
       align-items: end;
-      padding: 132px 0 70px;
+      padding: 128px 0 66px;
       overflow: hidden;
       background: var(--ink);
     }
@@ -165,35 +159,30 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.48) 42%, rgba(0, 0, 0, 0.18) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 38%, rgba(0, 0, 0, 0.78)),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.28) 46%, rgba(0, 0, 0, 0.1)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent 48%, rgba(0, 0, 0, 0.62)),
         url("assets/hero-ber.jpg") center / cover no-repeat;
-      transform: scale(1.02);
-      animation: heroIn 900ms ease-out both;
+      animation: softReveal 700ms ease-out both;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.8;
-    }
-
-    .hero-content {
+    .hero-inner {
       position: relative;
       z-index: 1;
-      max-width: 760px;
-      animation: revealUp 700ms ease-out 180ms both;
+      max-width: 720px;
+    }
+
+    .hero-logo {
+      width: min(255px, 64vw);
+      margin-bottom: 28px;
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.48));
     }
 
     .eyebrow {
-      margin: 0 0 15px;
-      color: var(--gold-light);
-      font-size: 0.74rem;
+      margin: 0 0 14px;
+      color: var(--gold-soft);
+      font-size: 0.72rem;
       font-weight: 900;
-      letter-spacing: 0.23em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
     }
 
@@ -207,37 +196,32 @@
     }
 
     h1 {
-      max-width: 800px;
-      font-size: clamp(3.2rem, 8vw, 7.5rem);
-      line-height: 0.94;
+      max-width: 760px;
+      font-size: clamp(3.25rem, 7.8vw, 6.8rem);
+      line-height: 0.95;
     }
 
     h2 {
-      font-size: clamp(2.15rem, 5vw, 4.75rem);
-      line-height: 1.02;
+      font-size: clamp(2rem, 4.7vw, 4.1rem);
+      line-height: 1.04;
     }
 
     h3 {
-      margin: 0 0 9px;
-      color: var(--champagne);
-      font-size: 1.02rem;
-      letter-spacing: 0.02em;
+      margin: 0;
+      color: var(--ivory);
+      font-size: 1rem;
+      letter-spacing: 0.01em;
     }
 
-    p { margin: 0; color: var(--text); }
+    p {
+      margin: 0;
+      color: var(--text);
+    }
 
     .hero p {
-      max-width: 690px;
-      margin-top: 24px;
-      font-size: clamp(1.02rem, 1.7vw, 1.24rem);
-    }
-
-    .hero-actions,
-    .form-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
+      max-width: 600px;
+      margin-top: 22px;
+      font-size: clamp(1rem, 1.6vw, 1.22rem);
     }
 
     .button {
@@ -248,194 +232,166 @@
       padding: 13px 22px;
       border: 1px solid var(--gold);
       background: var(--gold);
-      color: #080705;
-      font-size: 0.75rem;
+      color: #070604;
+      font-size: 0.74rem;
       font-weight: 900;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(201, 155, 67, 0.19);
+      background: var(--gold-soft);
     }
 
-    .button.secondary {
-      background: rgba(5, 5, 5, 0.32);
-      color: var(--gold-light);
+    .button.ghost {
+      background: transparent;
+      color: var(--gold-soft);
+    }
+
+    .hero-actions,
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
     }
 
     .section {
-      padding: clamp(72px, 9vw, 118px) 0;
+      padding: clamp(58px, 8vw, 96px) 0;
       border-bottom: 1px solid var(--line-soft);
-      background:
-        radial-gradient(circle at 12% 0%, rgba(201, 155, 67, 0.08), transparent 30%),
-        var(--black);
+      background: var(--black);
     }
 
     .section.alt {
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
+        radial-gradient(circle at 15% 0%, rgba(200, 154, 61, 0.08), transparent 30%),
         var(--ink);
     }
 
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.74fr);
-      gap: 34px;
-      align-items: end;
-      margin-bottom: 40px;
-    }
-
-    .lead {
-      max-width: 720px;
-      font-size: clamp(1rem, 1.45vw, 1.16rem);
-    }
-
     .statement {
-      position: relative;
       display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
+      grid-template-columns: 1fr 0.95fr;
       gap: 42px;
       align-items: center;
-      padding: clamp(30px, 5vw, 52px);
+    }
+
+    .statement-card {
+      padding: clamp(28px, 5vw, 48px);
       border: 1px solid var(--line);
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01)),
+        linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.012)),
         var(--panel);
       box-shadow: var(--shadow);
     }
 
-    .statement img {
-      width: 220px;
-      opacity: 0.94;
+    .statement-card p {
+      margin-top: 18px;
+      max-width: 620px;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
     }
 
-    .statement p {
-      max-width: 760px;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--champagne);
-      font-size: clamp(1.55rem, 3.2vw, 3.2rem);
-      line-height: 1.13;
+    .statement-image {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
     }
 
-    .grid {
-      display: grid;
-      gap: 18px;
+    .statement-image img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .section-head p {
+      max-width: 420px;
     }
 
     .services {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 14px;
     }
 
-    .card,
-    .step,
-    .trust-item {
+    .service,
+    .why-item {
+      min-height: 145px;
+      padding: 22px;
       border: 1px solid var(--line-soft);
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012)),
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01)),
         var(--panel);
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      transition: transform 180ms ease, border-color 180ms ease;
     }
 
-    .card {
-      min-height: 188px;
-      padding: 24px;
-    }
-
-    .card:hover,
-    .step:hover,
-    .trust-item:hover {
+    .service:hover,
+    .why-item:hover {
       transform: translateY(-3px);
-      border-color: rgba(240, 213, 148, 0.5);
-      background:
-        linear-gradient(180deg, rgba(201, 155, 67, 0.08), rgba(255,255,255,0.012)),
-        var(--panel-soft);
+      border-color: rgba(239, 210, 141, 0.48);
     }
 
-    .icon {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      margin-bottom: 20px;
-      border: 1px solid var(--line);
-      color: var(--gold-light);
-      font-size: 1.12rem;
-      line-height: 1;
+    .service span {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
     }
 
-    .card p,
-    .step p,
-    .trust-item p {
+    .service p,
+    .why-item p {
+      margin-top: 8px;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.9rem;
     }
 
-    .showcase {
-      display: grid;
-      grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.72fr);
-      gap: 28px;
-      align-items: center;
+    .carousel-shell {
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     .carousel {
-      position: relative;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: #050505;
+      background: #040404;
       box-shadow: var(--shadow);
     }
 
     .slides {
       display: flex;
-      transition: transform 460ms ease;
+      transition: transform 420ms ease;
       will-change: transform;
     }
 
     .slide {
       flex: 0 0 100%;
       min-width: 100%;
-      padding: 12px;
+      padding: 10px;
     }
 
-    .slide-frame {
-      position: relative;
-      background: #080706;
-      aspect-ratio: 1672 / 941;
-      overflow: hidden;
-    }
-
-    .slide-frame img {
+    .slide img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      aspect-ratio: 1448 / 1086;
+      object-fit: contain;
+      background: #050505;
     }
-
-    .slide-label {
-      position: absolute;
-      top: 16px;
-      z-index: 2;
-      padding: 8px 14px;
-      border: 1px solid rgba(201, 155, 67, 0.65);
-      background: rgba(0, 0, 0, 0.78);
-      color: var(--champagne);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(0.8rem, 1.8vw, 1.24rem);
-      letter-spacing: 0.14em;
-    }
-
-    .slide-label.before { left: 16px; }
-    .slide-label.after { right: 16px; color: var(--gold-light); }
 
     .carousel-controls {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      padding: 16px 18px 18px;
+      gap: 16px;
+      padding: 15px 16px 17px;
       border-top: 1px solid var(--line-soft);
     }
 
@@ -444,140 +400,50 @@
       height: 42px;
       border: 1px solid var(--line);
       background: transparent;
-      color: var(--gold-light);
+      color: var(--gold-soft);
       cursor: pointer;
-      transition: background 180ms ease, transform 180ms ease;
+      font-size: 1.45rem;
+      line-height: 1;
+      transition: background 180ms ease;
     }
 
     .arrow:hover {
-      transform: translateY(-1px);
-      background: rgba(201, 155, 67, 0.1);
+      background: rgba(200, 154, 61, 0.1);
     }
 
     .dots {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 9px;
       flex: 1;
     }
 
     .dot {
-      width: 9px;
-      height: 9px;
+      width: 8px;
+      height: 8px;
       border: 1px solid var(--gold);
-      border-radius: 999px;
+      border-radius: 99px;
       background: transparent;
       cursor: pointer;
       opacity: 0.65;
     }
 
     .dot.active {
-      width: 28px;
+      width: 24px;
       background: var(--gold);
       opacity: 1;
     }
 
-    .showcase-copy {
-      padding: 28px;
-      border-left: 1px solid var(--line);
-    }
-
-    .showcase-copy ul,
-    .area-list {
+    .why-grid {
       display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
-      margin: 24px 0 0;
-      padding: 0;
-      list-style: none;
     }
 
-    .showcase-copy li,
-    .area-list li {
-      padding-left: 18px;
-      border-left: 2px solid var(--gold);
-      color: var(--text);
-    }
-
-    .split {
+    .contact {
       display: grid;
-      grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1.14fr);
-      gap: clamp(28px, 5vw, 58px);
-      align-items: center;
-    }
-
-    .visual {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .visual img {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-    }
-
-    .visual.tall img { aspect-ratio: 4 / 5; }
-
-    .visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, transparent 58%, rgba(0,0,0,0.42)),
-        linear-gradient(90deg, rgba(201,155,67,0.15), transparent 22%);
-      pointer-events: none;
-    }
-
-    .trust-grid {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-
-    .trust-item {
-      padding: 22px;
-      min-height: 150px;
-    }
-
-    .steps {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      counter-reset: step;
-    }
-
-    .step {
-      counter-increment: step;
-      padding: 24px;
-      min-height: 164px;
-    }
-
-    .step::before {
-      content: "0" counter(step);
-      display: block;
-      margin-bottom: 20px;
-      color: var(--gold);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.55rem;
-    }
-
-    .area {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
       gap: 28px;
-      align-items: stretch;
-    }
-
-    .area-panel {
-      padding: clamp(28px, 5vw, 48px);
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(201,155,67,0.09), rgba(255,255,255,0.014)),
-        var(--panel);
-    }
-
-    .booking {
-      display: grid;
-      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
-      gap: 34px;
       align-items: start;
     }
 
@@ -591,66 +457,43 @@
     }
 
     .contact-card {
-      padding: 30px;
-      position: sticky;
-      top: 108px;
+      padding: 28px;
     }
 
     .contact-card img {
-      width: 190px;
+      width: 180px;
       margin-bottom: 24px;
     }
 
     .contact-lines {
       display: grid;
-      gap: 16px;
-      margin-top: 28px;
-    }
-
-    .contact-lines a,
-    .contact-lines span {
-      display: block;
+      gap: 13px;
+      margin-top: 24px;
       color: var(--text);
-      overflow-wrap: anywhere;
     }
 
     .contact-lines small {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       color: var(--gold);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 900;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    .quick-contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .quick-contact a {
-      flex: 1 1 150px;
-      padding: 12px 14px;
-      border: 1px solid var(--line-soft);
-      color: var(--gold-light);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.11em;
-      text-align: center;
-      text-transform: uppercase;
+    .contact-lines a {
+      overflow-wrap: anywhere;
     }
 
     .form-card {
-      padding: clamp(24px, 4vw, 40px);
+      padding: clamp(22px, 4vw, 34px);
     }
 
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 14px;
     }
 
     .field {
@@ -661,88 +504,66 @@
     .field.full { grid-column: 1 / -1; }
 
     label {
-      color: var(--gold-light);
-      font-size: 0.72rem;
+      color: var(--gold-soft);
+      font-size: 0.7rem;
       font-weight: 900;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     input,
-    select,
     textarea {
       width: 100%;
       min-height: 50px;
       border: 1px solid var(--line-soft);
       border-radius: 0;
-      background: rgba(0, 0, 0, 0.22);
-      color: var(--champagne);
+      background: rgba(0, 0, 0, 0.2);
+      color: var(--ivory);
       padding: 13px 14px;
       outline: none;
-      transition: border-color 180ms ease, background 180ms ease;
     }
 
     textarea {
-      min-height: 132px;
+      min-height: 118px;
       resize: vertical;
     }
 
     input:focus,
-    select:focus,
     textarea:focus {
       border-color: var(--gold);
-      background: rgba(0, 0, 0, 0.34);
-    }
-
-    .form-note {
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 0.88rem;
+      background: rgba(0, 0, 0, 0.32);
     }
 
     .footer {
-      padding: 56px 0 34px;
-      background:
-        linear-gradient(180deg, rgba(201,155,67,0.08), transparent 42%),
-        #030303;
+      padding: 46px 0 34px;
+      background: #030303;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 34px;
+    .footer-inner {
+      display: flex;
       align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line-soft);
     }
 
     .footer img {
-      width: 210px;
-      margin-bottom: 18px;
-    }
-
-    .footer h2 {
-      max-width: 820px;
-      font-size: clamp(2rem, 4.5vw, 4.3rem);
+      width: 190px;
+      margin-bottom: 14px;
     }
 
     .footer-links {
       display: grid;
-      gap: 10px;
+      gap: 8px;
       color: var(--text);
       text-align: right;
     }
 
-    .fineprint {
-      margin-top: 34px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line-soft);
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 620ms ease, transform 620ms ease;
+      transform: translateY(14px);
+      transition: opacity 520ms ease, transform 520ms ease;
     }
 
     .reveal.visible {
@@ -750,48 +571,44 @@
       transform: translateY(0);
     }
 
-    @keyframes heroIn {
-      from { opacity: 0; transform: scale(1.06); }
-      to { opacity: 1; transform: scale(1.02); }
+    @keyframes softReveal {
+      from { opacity: 0; transform: scale(1.025); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    @keyframes revealUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media (max-width: 1080px) {
+      .services {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
-    @media (max-width: 1020px) {
-      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .showcase,
-      .split,
-      .area,
-      .booking,
-      .footer-grid {
+    @media (max-width: 900px) {
+      .statement,
+      .contact {
         grid-template-columns: 1fr;
       }
-      .trust-grid,
-      .steps {
+
+      .section-head {
+        display: grid;
+        align-items: start;
+      }
+
+      .why-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .contact-card {
-        position: static;
-      }
-      .footer-links {
-        text-align: left;
       }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 760px) {
       .container {
         width: min(100% - 28px, var(--max));
       }
 
       .nav {
-        min-height: 76px;
+        min-height: 74px;
       }
 
-      .brand img {
-        width: 145px;
+      .logo img {
+        width: 132px;
       }
 
       .menu-toggle {
@@ -800,12 +617,12 @@
 
       .nav-links {
         position: fixed;
-        inset: 76px 0 auto;
+        inset: 74px 0 auto;
         display: grid;
         gap: 0;
-        padding: 18px 22px 24px;
+        padding: 16px 20px 22px;
         border-bottom: 1px solid var(--line);
-        background: rgba(5, 5, 5, 0.97);
+        background: rgba(5, 5, 5, 0.98);
         transform: translateY(-125%);
         transition: transform 220ms ease;
       }
@@ -815,49 +632,37 @@
       }
 
       .nav-links a {
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       }
 
-      .nav-links .nav-button {
+      .nav-cta {
         margin-top: 12px;
         text-align: center;
       }
 
       .hero {
-        min-height: auto;
-        padding: 132px 0 58px;
+        min-height: 76svh;
+        padding: 116px 0 52px;
       }
 
       .hero::before {
         background:
-          linear-gradient(180deg, rgba(0,0,0,0.68), rgba(0,0,0,0.28) 46%, rgba(0,0,0,0.82)),
-          url("assets/hero-ber.jpg") 62% center / cover no-repeat;
+          linear-gradient(180deg, rgba(0,0,0,0.62), rgba(0,0,0,0.18) 42%, rgba(0,0,0,0.78)),
+          url("assets/hero-ber.jpg") 58% center / cover no-repeat;
+      }
+
+      .hero-logo {
+        width: 190px;
+        margin-bottom: 22px;
       }
 
       h1 {
-        font-size: clamp(3rem, 15vw, 5.2rem);
+        font-size: clamp(3rem, 14vw, 4.8rem);
       }
 
-      .section-head,
-      .statement {
-        grid-template-columns: 1fr;
-      }
-
-      .statement img {
-        width: 185px;
-      }
-
-      .showcase-copy {
-        padding: 8px 0 0;
-        border-left: 0;
-      }
-    }
-
-    @media (max-width: 620px) {
       .services,
-      .trust-grid,
-      .steps,
+      .why-grid,
       .form-grid {
         grid-template-columns: 1fr;
       }
@@ -872,26 +677,15 @@
       }
 
       .slide {
-        padding: 8px;
+        padding: 7px;
       }
 
-      .slide-label {
-        top: 10px;
-        padding: 6px 9px;
-        letter-spacing: 0.09em;
+      .footer-inner {
+        display: grid;
       }
 
-      .slide-label.before { left: 10px; }
-      .slide-label.after { right: 10px; }
-
-      .carousel-controls {
-        padding: 12px;
-      }
-
-      .area-panel,
-      .form-card,
-      .contact-card {
-        padding: 22px;
+      .footer-links {
+        text-align: left;
       }
     }
 
@@ -900,25 +694,24 @@
       *::before,
       *::after {
         animation-duration: 1ms !important;
-        scroll-behavior: auto !important;
         transition-duration: 1ms !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" aria-label="Site header">
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="Premium Jet Detailing home">
+      <a class="logo" href="#home" aria-label="Premium Jet Detailing home">
         <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#before-after">Before & After</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a class="nav-button" href="#contact">Request Service</a>
+        <a class="nav-cta" href="#contact">Request Service</a>
       </nav>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -928,22 +721,26 @@
 
   <main id="home">
     <section class="hero">
-      <div class="container hero-content">
-        <p class="eyebrow">Business Aviation | Berlin Brandenburg Airport</p>
+      <div class="container hero-inner reveal">
+        <img class="hero-logo" src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+        <p class="eyebrow">Business Aviation | BER</p>
         <h1>Executive Aircraft Interior Care</h1>
-        <p>Discreet, reliable and detail-oriented cabin care for private and business aircraft around Berlin Brandenburg Airport (BER) and across Germany on request.</p>
+        <p>Discreet interior detailing for private and business aircraft around BER and across Germany on request.</p>
         <div class="hero-actions">
           <a class="button" href="#contact">Request Service</a>
-          <a class="button secondary" href="#services">View Services</a>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="statement reveal">
-          <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing logo">
-          <p>Refined cabin presentation, careful material care and professional attention to every touchpoint.</p>
+      <div class="container statement">
+        <div class="statement-card reveal">
+          <p class="eyebrow">Premium Jet Detailing</p>
+          <h2>Refined cabin care, without the noise.</h2>
+          <p>Business aviation support with clean presentation, careful material care and reliable on-demand service.</p>
+        </div>
+        <div class="statement-image reveal">
+          <img src="assets/cabin-interior.jpg" alt="Clean private jet cabin interior">
         </div>
       </div>
     </section>
@@ -953,19 +750,17 @@
         <div class="section-head reveal">
           <div>
             <p class="eyebrow">Services</p>
-            <h2>Interior care for executive aircraft.</h2>
+            <h2>Focused interior detailing.</h2>
           </div>
-          <p class="lead">Clean, calm and flight-ready cabin support for private owners, operators and business aviation teams.</p>
+          <p>Short, precise support for executive aircraft cabins.</p>
         </div>
-        <div class="grid services">
-          <article class="card reveal"><span class="icon">01</span><h3>Cabin Presentation</h3><p>Seat, table and cabin styling prepared for passenger arrival.</p></article>
-          <article class="card reveal"><span class="icon">02</span><h3>Leather Care</h3><p>Gentle cleaning and conditioning for premium aviation leather.</p></article>
-          <article class="card reveal"><span class="icon">03</span><h3>Wood & Surface Care</h3><p>Refined treatment for veneer, gloss panels and cabin surfaces.</p></article>
-          <article class="card reveal"><span class="icon">04</span><h3>Lavatory Detailing</h3><p>Polished fixtures, clean surfaces and a discreet finishing standard.</p></article>
-          <article class="card reveal"><span class="icon">05</span><h3>Carpet & Upholstery</h3><p>Focused care for soft materials, entry areas and visible wear points.</p></article>
-          <article class="card reveal"><span class="icon">06</span><h3>High-Touch Areas</h3><p>Attention to switches, handles, tables, armrests and passenger zones.</p></article>
-          <article class="card reveal"><span class="icon">07</span><h3>Turnaround Refresh</h3><p>Efficient interior refresh support between arrival and next departure.</p></article>
-          <article class="card reveal"><span class="icon">08</span><h3>Custom Interior Care</h3><p>Tailored support for aircraft type, material condition and schedule.</p></article>
+        <div class="services">
+          <article class="service reveal"><span>01</span><h3>Cabin Presentation</h3><p>Ready, calm and passenger-facing.</p></article>
+          <article class="service reveal"><span>02</span><h3>Leather Care</h3><p>Gentle care for premium seating.</p></article>
+          <article class="service reveal"><span>03</span><h3>Surface Care</h3><p>Polished tables, trim and touchpoints.</p></article>
+          <article class="service reveal"><span>04</span><h3>Lavatory Detailing</h3><p>Fresh, precise and discreet.</p></article>
+          <article class="service reveal"><span>05</span><h3>Carpet & Upholstery</h3><p>Focused soft-material refresh.</p></article>
+          <article class="service reveal"><span>06</span><h3>High-Touch Areas</h3><p>Clean switches, handles and controls.</p></article>
         </div>
       </div>
     </section>
@@ -975,41 +770,18 @@
         <div class="section-head reveal">
           <div>
             <p class="eyebrow">Before & After</p>
-            <h2>Visible cabin transformation.</h2>
+            <h2>Clean transformations.</h2>
           </div>
-          <p class="lead">A premium cabin should feel prepared before the passenger notices why. The slideshow is simple, stable and responsive.</p>
+          <p>Real cabin details, shown simply.</p>
         </div>
-        <div class="showcase">
-          <div class="carousel reveal" aria-label="Before and after slideshow">
+        <div class="carousel-shell reveal">
+          <div class="carousel" aria-label="Before and after image carousel">
             <div class="slides">
-              <article class="slide">
-                <div class="slide-frame">
-                  <span class="slide-label before">Before</span>
-                  <span class="slide-label after">After</span>
-                  <img src="assets/before-after-leather.jpg" alt="Before and after leather seat detailing">
-                </div>
-              </article>
-              <article class="slide">
-                <div class="slide-frame">
-                  <span class="slide-label before">Before</span>
-                  <span class="slide-label after">After</span>
-                  <img src="assets/before-after-lavatory.jpg" alt="Before and after lavatory surface detailing">
-                </div>
-              </article>
-              <article class="slide">
-                <div class="slide-frame">
-                  <span class="slide-label before">Before</span>
-                  <span class="slide-label after">After</span>
-                  <img src="assets/before-after-faucet.jpg" alt="Before and after chrome faucet detailing">
-                </div>
-              </article>
-              <article class="slide">
-                <div class="slide-frame">
-                  <span class="slide-label before">Before</span>
-                  <span class="slide-label after">After</span>
-                  <img src="assets/before-after-entry.jpg" alt="Before and after aircraft entry detailing">
-                </div>
-              </article>
+              <article class="slide"><img src="assets/before-after-leather.jpg" alt="Before and after leather seat detailing"></article>
+              <article class="slide"><img src="assets/before-after-surface.jpg" alt="Before and after cabin table detailing"></article>
+              <article class="slide"><img src="assets/before-after-entry.jpg" alt="Before and after aircraft entry carpet detailing"></article>
+              <article class="slide"><img src="assets/before-after-side-panel.jpg" alt="Before and after side panel detailing"></article>
+              <article class="slide"><img src="assets/before-after-wood.jpg" alt="Before and after wood veneer detailing"></article>
             </div>
             <div class="carousel-controls">
               <button class="arrow prev" type="button" aria-label="Previous slide">‹</button>
@@ -1017,16 +789,6 @@
               <button class="arrow next" type="button" aria-label="Next slide">›</button>
             </div>
           </div>
-          <div class="showcase-copy reveal">
-            <p class="eyebrow">Detailing Standard</p>
-            <h2>More than cleaning.</h2>
-            <ul>
-              <li>Protects leather, wood, carpets and high-value cabin materials.</li>
-              <li>Improves passenger experience from the first step onboard.</li>
-              <li>Reflects operator standards through discretion and precision.</li>
-              <li>Supports a reliable, business aviation-ready presentation.</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -1035,84 +797,29 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Trust</p>
-            <h2>Quiet standards. Visible results.</h2>
+            <p class="eyebrow">Why Premium Jet Detailing</p>
+            <h2>Quiet, reliable, precise.</h2>
           </div>
-          <p class="lead">Premium Jet Detailing is built around the expectations of private aviation: discretion, flexibility and precise cabin care.</p>
         </div>
-        <div class="grid trust-grid">
-          <article class="trust-item reveal"><h3>Discretion</h3><p>Respectful work around aircraft, passengers, crew and operators.</p></article>
-          <article class="trust-item reveal"><h3>Reliability</h3><p>Clear communication and dependable support around your schedule.</p></article>
-          <article class="trust-item reveal"><h3>Premium Standards</h3><p>A refined approach aligned with executive aircraft presentation.</p></article>
-          <article class="trust-item reveal"><h3>Detail Focus</h3><p>Attention to touchpoints, materials and passenger-facing areas.</p></article>
-          <article class="trust-item reveal"><h3>Aviation Mindset</h3><p>Business aviation service, not a generic cleaning company approach.</p></article>
+        <div class="why-grid">
+          <article class="why-item reveal"><h3>Discreet Service</h3><p>Professional presence around aircraft and crew.</p></article>
+          <article class="why-item reveal"><h3>Premium Standards</h3><p>Cabin care aligned with business aviation.</p></article>
+          <article class="why-item reveal"><h3>Detail-Oriented Work</h3><p>Every passenger touchpoint matters.</p></article>
+          <article class="why-item reveal"><h3>Flexible Availability</h3><p>Local BER support and Germany on request.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container split">
-        <div class="reveal">
-          <p class="eyebrow">Founder</p>
-          <h2>Adnan Ahmad</h2>
-          <p class="lead">Founder of Premium Jet Detailing.</p>
-          <p style="margin-top: 20px;">Premium Jet Detailing is based around Berlin Brandenburg Airport (BER) and focuses on executive aircraft interior care for Business Aviation.</p>
-          <div class="hero-actions">
-            <a class="button" href="#contact">Book an Inquiry</a>
-          </div>
-        </div>
-        <div class="visual reveal">
-          <img src="assets/cabin-interior.jpg" alt="Refined private jet cabin interior">
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
+    <section class="section" id="contact">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Process</p>
-            <h2>How it works.</h2>
+            <p class="eyebrow">Contact</p>
+            <h2>Send an inquiry.</h2>
           </div>
-          <p class="lead">A calm, direct workflow designed for aircraft schedules and professional handover.</p>
+          <p>Simple mail fallback, ready to connect to a backend later.</p>
         </div>
-        <div class="grid steps">
-          <article class="step reveal"><h3>Inquiry</h3><p>Send aircraft details, location and preferred timing.</p></article>
-          <article class="step reveal"><h3>Assessment</h3><p>Scope is reviewed by material, cabin condition and turnaround needs.</p></article>
-          <article class="step reveal"><h3>Scheduling</h3><p>Availability is coordinated around BER or German locations on request.</p></article>
-          <article class="step reveal"><h3>Interior Care</h3><p>Focused detailing is carried out with discreet working standards.</p></article>
-          <article class="step reveal"><h3>Final Presentation</h3><p>The cabin is finished for owner, passenger or crew inspection.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container area">
-        <div class="area-panel reveal">
-          <p class="eyebrow">Service Area</p>
-          <h2>Berlin, BER and Germany on request.</h2>
-          <ul class="area-list">
-            <li>Berlin Brandenburg Airport (BER)</li>
-            <li>Berlin / Germany</li>
-            <li>Available across Germany on request</li>
-          </ul>
-        </div>
-        <div class="visual reveal">
-          <img src="assets/service-area.jpg" alt="Premium aircraft service area around Berlin">
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow">Booking</p>
-            <h2>Request aircraft interior care.</h2>
-          </div>
-          <p class="lead">Use the form for a structured inquiry. Until a backend is connected, it opens a prepared email to Premium Jet Detailing.</p>
-        </div>
-        <div class="booking">
+        <div class="contact">
           <aside class="contact-card reveal">
             <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
             <h3>Adnan Ahmad</h3>
@@ -1122,40 +829,20 @@
               <span><small>Email</small><a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a></span>
               <span><small>Location</small>Berlin Brandenburg Airport (BER)</span>
             </div>
-            <div class="quick-contact">
-              <a href="mailto:info@premiumjetdetailing.de">Email</a>
-              <a href="https://wa.me/491792020680">WhatsApp</a>
-            </div>
           </aside>
-
           <form class="form-card reveal" id="bookingForm">
             <div class="form-grid">
               <div class="field"><label for="name">Name</label><input id="name" name="Name" autocomplete="name" required></div>
               <div class="field"><label for="company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
               <div class="field"><label for="email">Email</label><input id="email" type="email" name="Email" autocomplete="email" required></div>
               <div class="field"><label for="phone">Phone</label><input id="phone" name="Phone" autocomplete="tel"></div>
-              <div class="field"><label for="aircraft">Aircraft type</label><input id="aircraft" name="Aircraft type" placeholder="e.g. Global 6000"></div>
-              <div class="field"><label for="location">Location / Airport</label><input id="location" name="Location / Airport" placeholder="BER, FBO or hangar"></div>
-              <div class="field"><label for="date">Preferred date</label><input id="date" type="date" name="Preferred date"></div>
-              <div class="field">
-                <label for="service">Service needed</label>
-                <select id="service" name="Service needed">
-                  <option>Cabin presentation</option>
-                  <option>Leather care</option>
-                  <option>Wood & surface care</option>
-                  <option>Lavatory detailing</option>
-                  <option>Carpet & upholstery cleaning</option>
-                  <option>Turnaround interior refresh</option>
-                  <option>Custom aircraft interior care</option>
-                </select>
-              </div>
-              <div class="field full"><label for="message">Message</label><textarea id="message" name="Message" placeholder="Aircraft, timing, access details or special requirements"></textarea></div>
+              <div class="field full"><label for="aircraft">Aircraft / Location</label><input id="aircraft" name="Aircraft / Location" placeholder="Aircraft type, BER, FBO or hangar"></div>
+              <div class="field full"><label for="message">Message</label><textarea id="message" name="Message" placeholder="Preferred timing and service details"></textarea></div>
             </div>
             <div class="form-actions">
-              <button class="button" type="submit">Request Service</button>
-              <a class="button secondary" href="mailto:info@premiumjetdetailing.de">Book an Inquiry</a>
+              <button class="button" type="submit">Send Inquiry</button>
+              <a class="button ghost" href="mailto:info@premiumjetdetailing.de">Email Directly</a>
             </div>
-            <p class="form-note">Backend-ready form structure for Formspree, Resend or a Vercel serverless API route.</p>
           </form>
         </div>
       </div>
@@ -1163,21 +850,15 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing logo">
-          <p class="eyebrow">Executive Aircraft Interior Care | BER</p>
-          <h2>Whenever you land in Berlin, we take care of the details.</h2>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a>
-          <a href="tel:+491792020680">+49 179 2020680</a>
-          <span>BER / Berlin</span>
-          <a href="#" aria-label="LinkedIn placeholder">LinkedIn</a>
-        </div>
+    <div class="container footer-inner">
+      <div>
+        <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+        <p>Whenever you land in Berlin, we take care of the details.</p>
       </div>
-      <p class="fineprint">Premium Jet Detailing. Discreet aircraft interior care for private and business aviation.</p>
+      <div class="footer-links">
+        <a href="tel:+491792020680">+49 179 2020680</a>
+        <a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a>
+      </div>
     </div>
   </footer>
 
@@ -1187,8 +868,8 @@
     const navLinks = document.querySelectorAll(".nav-links a");
 
     menuToggle.addEventListener("click", () => {
-      const isOpen = body.classList.toggle("menu-open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      const open = body.classList.toggle("menu-open");
+      menuToggle.setAttribute("aria-expanded", String(open));
     });
 
     navLinks.forEach((link) => {
@@ -1204,7 +885,7 @@
     const prev = document.querySelector(".prev");
     const next = document.querySelector(".next");
     let currentSlide = 0;
-    let carouselTimer;
+    let timer;
 
     slideItems.forEach((_, index) => {
       const dot = document.createElement("button");
@@ -1221,18 +902,18 @@
       currentSlide = (index + slideItems.length) % slideItems.length;
       slides.style.transform = `translateX(-${currentSlide * 100}%)`;
       dots.forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === currentSlide));
-      if (userAction) restartCarousel();
+      if (userAction) restartTimer();
     }
 
-    function restartCarousel() {
-      clearInterval(carouselTimer);
-      carouselTimer = setInterval(() => showSlide(currentSlide + 1), 6500);
+    function restartTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => showSlide(currentSlide + 1), 6500);
     }
 
     prev.addEventListener("click", () => showSlide(currentSlide - 1, true));
     next.addEventListener("click", () => showSlide(currentSlide + 1, true));
     showSlide(0);
-    restartCarousel();
+    restartTimer();
 
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1251,7 +932,7 @@
       const lines = Array.from(data.entries())
         .map(([key, value]) => `${key}: ${value || "-"}`)
         .join("\n");
-      const subject = encodeURIComponent("Premium Jet Detailing Service Request");
+      const subject = encodeURIComponent("Premium Jet Detailing Inquiry");
       const bodyText = encodeURIComponent(`Hello Premium Jet Detailing,\n\nI would like to request aircraft interior care.\n\n${lines}`);
       window.location.href = `mailto:info@premiumjetdetailing.de?subject=${subject}&body=${bodyText}`;
     });
