@@ -3,42 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Jet Detailing | Aircraft Detailing Berlin & BER</title>
-  <meta name="description" content="Premium Jet Detailing provides discreet executive aircraft interior care, private jet cleaning and business aviation detailing around Berlin Brandenburg Airport (BER) and across Germany on request.">
-  <meta name="keywords" content="aircraft detailing Berlin, private jet cleaning Germany, aircraft interior care BER, business aviation detailing">
+  <title>Premium Jet Detailing | Executive Aircraft Interior Care at BER</title>
+  <meta name="description" content="Premium Jet Detailing provides discreet and detail-oriented aircraft interior care for private and business aircraft around Berlin Brandenburg Airport and across Germany on request.">
+  <meta name="keywords" content="aircraft interior care Berlin, private jet detailing Germany, business aviation detailing BER, executive aircraft interior care, private jet cleaning Berlin">
   <meta name="author" content="Premium Jet Detailing">
-  <meta property="og:title" content="Premium Jet Detailing | Executive Aircraft Interior Care">
-  <meta property="og:description" content="Discreet, reliable and detail-oriented cabin care for private and business aircraft around BER and across Germany on request.">
+  <meta property="og:title" content="Premium Jet Detailing | Executive Aircraft Interior Care at BER">
+  <meta property="og:description" content="Discreet, reliable and detail-oriented cabin care for private and business aircraft around Berlin Brandenburg Airport and across Germany on request.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/private-jet-cabin.png">
-  <link rel="preload" as="image" href="assets/private-jet-cabin.png">
+  <meta property="og:image" content="assets/hero-ber.jpg">
+  <link rel="preload" as="image" href="assets/hero-ber.jpg">
+  <link rel="preload" as="image" href="assets/premium-jet-logo.png">
   <style>
     :root {
       --black: #050505;
-      --charcoal: #101010;
-      --graphite: #191816;
-      --gold: #c7a45a;
-      --gold-soft: #ecd69f;
-      --muted: #b6b0a4;
-      --white: #f7f4ec;
-      --line: rgba(199, 164, 90, 0.26);
-      --shadow: rgba(0, 0, 0, 0.42);
+      --ink: #0b0907;
+      --panel: #12100d;
+      --panel-soft: #19150f;
+      --gold: #c99b43;
+      --gold-light: #f0d594;
+      --champagne: #f7efe0;
+      --text: #ded5c8;
+      --muted: #a99f90;
+      --line: rgba(201, 155, 67, 0.34);
+      --line-soft: rgba(201, 155, 67, 0.16);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.46);
+      --max: 1180px;
+      --radius: 8px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      color: var(--white);
-      background: var(--black);
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
+      color: var(--champagne);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 420px),
+        var(--black);
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
 
     a {
@@ -46,483 +59,1202 @@
       text-decoration: none;
     }
 
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
     .site-header {
       position: fixed;
-      z-index: 10;
-      top: 0;
-      left: 0;
-      width: 100%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(5, 5, 5, 0.78);
-      backdrop-filter: blur(16px);
+      z-index: 40;
+      inset: 0 0 auto;
+      border-bottom: 1px solid rgba(201, 155, 67, 0.2);
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(18px);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: min(1120px, calc(100% - 32px));
-      min-height: 72px;
-      margin: 0 auto;
-      gap: 24px;
+      min-height: 82px;
+      gap: 28px;
     }
 
     .brand {
-      display: grid;
-      gap: 1px;
-      min-width: 170px;
-      font-family: Georgia, "Times New Roman", serif;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      min-width: 172px;
     }
 
-    .brand strong {
-      color: var(--white);
-      font-size: 0.94rem;
-      font-weight: 500;
-    }
-
-    .brand span {
-      color: var(--gold);
-      font-size: 0.68rem;
-      letter-spacing: 0.24em;
+    .brand img {
+      width: 168px;
+      filter: drop-shadow(0 8px 22px rgba(201, 155, 67, 0.12));
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 22px;
+      gap: 24px;
       color: var(--muted);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
     .nav-links a {
+      padding: 10px 0;
       transition: color 180ms ease;
     }
 
-    .nav-links a:hover {
-      color: var(--gold-soft);
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--gold-light);
     }
+
+    .nav-button {
+      padding: 11px 16px !important;
+      border: 1px solid var(--line);
+      color: var(--gold-light) !important;
+      background: rgba(201, 155, 67, 0.08);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--gold-light);
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 1px;
+      margin: 5px auto;
+      background: currentColor;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-open .menu-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+    .menu-open .menu-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     .hero {
       position: relative;
-      display: flex;
       min-height: 100svh;
-      align-items: center;
+      display: grid;
+      align-items: end;
+      padding: 132px 0 70px;
       overflow: hidden;
-      padding: 122px 0 72px;
-      background: #080706;
+      background: var(--ink);
     }
 
     .hero::before {
+      content: "";
       position: absolute;
       inset: 0;
-      content: "";
       background:
-        linear-gradient(90deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0.75) 42%, rgba(5, 5, 5, 0.25) 100%),
-        linear-gradient(180deg, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0.86) 100%),
-        url("assets/private-jet-cabin.png") center right / cover no-repeat;
-      transform: scale(1.01);
+        linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.48) 42%, rgba(0, 0, 0, 0.18) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 38%, rgba(0, 0, 0, 0.78)),
+        url("assets/hero-ber.jpg") center / cover no-repeat;
+      transform: scale(1.02);
+      animation: heroIn 900ms ease-out both;
     }
 
     .hero::after {
+      content: "";
       position: absolute;
       inset: auto 0 0;
       height: 1px;
-      content: "";
-      background: linear-gradient(90deg, transparent, var(--line), transparent);
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.8;
     }
 
-    .hero-content,
-    .section-inner {
+    .hero-content {
       position: relative;
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .hero-copy {
-      max-width: 720px;
+      z-index: 1;
+      max-width: 760px;
+      animation: revealUp 700ms ease-out 180ms both;
     }
 
     .eyebrow {
-      margin: 0 0 18px;
-      color: var(--gold);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.24em;
+      margin: 0 0 15px;
+      color: var(--gold-light);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.23em;
       text-transform: uppercase;
     }
 
     h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-wrap: balance;
     }
 
     h1 {
-      max-width: 760px;
-      margin-bottom: 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3rem, 8vw, 6.7rem);
-      font-weight: 400;
-      line-height: 0.96;
+      max-width: 800px;
+      font-size: clamp(3.2rem, 8vw, 7.5rem);
+      line-height: 0.94;
     }
 
-    .hero-copy p {
-      max-width: 660px;
-      margin-bottom: 34px;
-      color: #ded8cc;
-      font-size: clamp(1.02rem, 2vw, 1.22rem);
+    h2 {
+      font-size: clamp(2.15rem, 5vw, 4.75rem);
+      line-height: 1.02;
+    }
+
+    h3 {
+      margin: 0 0 9px;
+      color: var(--champagne);
+      font-size: 1.02rem;
+      letter-spacing: 0.02em;
+    }
+
+    p { margin: 0; color: var(--text); }
+
+    .hero p {
+      max-width: 690px;
+      margin-top: 24px;
+      font-size: clamp(1.02rem, 1.7vw, 1.24rem);
+    }
+
+    .hero-actions,
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 13px 24px;
+      min-height: 50px;
+      padding: 13px 22px;
       border: 1px solid var(--gold);
       background: var(--gold);
-      color: #080706;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      color: #080705;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease;
     }
 
     .button:hover {
-      background: transparent;
-      color: var(--gold-soft);
       transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(201, 155, 67, 0.19);
     }
 
-    main {
+    .button.secondary {
+      background: rgba(5, 5, 5, 0.32);
+      color: var(--gold-light);
+    }
+
+    .section {
+      padding: clamp(72px, 9vw, 118px) 0;
+      border-bottom: 1px solid var(--line-soft);
       background:
-        linear-gradient(180deg, #080807 0%, #0f0e0c 42%, #050505 100%);
+        radial-gradient(circle at 12% 0%, rgba(201, 155, 67, 0.08), transparent 30%),
+        var(--black);
     }
 
-    section {
-      padding: 92px 0;
-      border-bottom: 1px solid rgba(199, 164, 90, 0.14);
+    .section.alt {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
+        var(--ink);
     }
 
-    .section-heading {
+    .section-head {
       display: grid;
-      grid-template-columns: minmax(160px, 0.8fr) minmax(0, 1.2fr);
-      gap: 42px;
-      align-items: start;
-    }
-
-    h2 {
-      color: var(--gold-soft);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 400;
-      line-height: 1.05;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.74fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 40px;
     }
 
     .lead {
       max-width: 720px;
-      color: #d8d1c4;
-      font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+      font-size: clamp(1rem, 1.45vw, 1.16rem);
+    }
+
+    .statement {
+      position: relative;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 42px;
+      align-items: center;
+      padding: clamp(30px, 5vw, 52px);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01)),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .statement img {
+      width: 220px;
+      opacity: 0.94;
+    }
+
+    .statement p {
+      max-width: 760px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--champagne);
+      font-size: clamp(1.55rem, 3.2vw, 3.2rem);
+      line-height: 1.13;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      margin-top: 42px;
-      background: var(--line);
-      box-shadow: 0 24px 80px var(--shadow);
+      gap: 18px;
     }
 
-    .item {
-      min-height: 138px;
-      padding: 28px;
-      background: linear-gradient(145deg, #151412, #0b0b0a);
+    .services {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .item span {
-      display: block;
-      width: 34px;
-      height: 1px;
+    .card,
+    .step,
+    .trust-item {
+      border: 1px solid var(--line-soft);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012)),
+        var(--panel);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .card {
+      min-height: 188px;
+      padding: 24px;
+    }
+
+    .card:hover,
+    .step:hover,
+    .trust-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(240, 213, 148, 0.5);
+      background:
+        linear-gradient(180deg, rgba(201, 155, 67, 0.08), rgba(255,255,255,0.012)),
+        var(--panel-soft);
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
       margin-bottom: 20px;
-      background: var(--gold);
-    }
-
-    .item h3 {
-      margin-bottom: 0;
-      color: var(--white);
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-
-    .why {
-      background:
-        radial-gradient(circle at 12% 20%, rgba(199, 164, 90, 0.12), transparent 28%),
-        #090908;
-    }
-
-    .why-list {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1px;
-      margin-top: 40px;
-      background: var(--line);
-    }
-
-    .why-list div {
-      min-height: 116px;
-      padding: 24px 18px;
-      background: rgba(9, 9, 8, 0.96);
-      color: #e5dfd2;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.12rem;
-    }
-
-    .contact {
-      border-bottom: 0;
-      background: #050505;
-    }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-      gap: 52px;
-      align-items: center;
-      padding: 54px;
       border: 1px solid var(--line);
-      background:
-        linear-gradient(135deg, rgba(199, 164, 90, 0.13), transparent 32%),
-        var(--charcoal);
-      box-shadow: 0 24px 80px var(--shadow);
+      color: var(--gold-light);
+      font-size: 1.12rem;
+      line-height: 1;
     }
 
-    .contact-details {
+    .card p,
+    .step p,
+    .trust-item p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.72fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #050505;
+      box-shadow: var(--shadow);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 460ms ease;
+      will-change: transform;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      min-width: 100%;
+      padding: 12px;
+    }
+
+    .slide-frame {
+      position: relative;
+      background: #080706;
+      aspect-ratio: 1672 / 941;
+      overflow: hidden;
+    }
+
+    .slide-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide-label {
+      position: absolute;
+      top: 16px;
+      z-index: 2;
+      padding: 8px 14px;
+      border: 1px solid rgba(201, 155, 67, 0.65);
+      background: rgba(0, 0, 0, 0.78);
+      color: var(--champagne);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(0.8rem, 1.8vw, 1.24rem);
+      letter-spacing: 0.14em;
+    }
+
+    .slide-label.before { left: 16px; }
+    .slide-label.after { right: 16px; color: var(--gold-light); }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 18px 18px;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .arrow {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--gold-light);
+      cursor: pointer;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .arrow:hover {
+      transform: translateY(-1px);
+      background: rgba(201, 155, 67, 0.1);
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0.65;
+    }
+
+    .dot.active {
+      width: 28px;
+      background: var(--gold);
+      opacity: 1;
+    }
+
+    .showcase-copy {
+      padding: 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .showcase-copy ul,
+    .area-list {
       display: grid;
       gap: 14px;
-      color: #ded8cc;
-      font-size: 1rem;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .contact-details strong {
+    .showcase-copy li,
+    .area-list li {
+      padding-left: 18px;
+      border-left: 2px solid var(--gold);
+      color: var(--text);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1.14fr);
+      gap: clamp(28px, 5vw, 58px);
+      align-items: center;
+    }
+
+    .visual {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .visual img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .visual.tall img { aspect-ratio: 4 / 5; }
+
+    .visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 58%, rgba(0,0,0,0.42)),
+        linear-gradient(90deg, rgba(201,155,67,0.15), transparent 22%);
+      pointer-events: none;
+    }
+
+    .trust-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .trust-item {
+      padding: 22px;
+      min-height: 150px;
+    }
+
+    .steps {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      counter-reset: step;
+    }
+
+    .step {
+      counter-increment: step;
+      padding: 24px;
+      min-height: 164px;
+    }
+
+    .step::before {
+      content: "0" counter(step);
       display: block;
-      color: var(--white);
-      font-size: 1.18rem;
-      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
     }
 
-    .contact-details a {
-      color: var(--gold-soft);
+    .area {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .area-panel {
+      padding: clamp(28px, 5vw, 48px);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(201,155,67,0.09), rgba(255,255,255,0.014)),
+        var(--panel);
+    }
+
+    .booking {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .contact-card,
+    .form-card {
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012)),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card {
+      padding: 30px;
+      position: sticky;
+      top: 108px;
+    }
+
+    .contact-card img {
+      width: 190px;
+      margin-bottom: 24px;
+    }
+
+    .contact-lines {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .contact-lines a,
+    .contact-lines span {
+      display: block;
+      color: var(--text);
       overflow-wrap: anywhere;
     }
 
-    footer {
-      padding: 28px 16px;
-      color: #918b80;
-      background: #050505;
-      text-align: center;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
+    .contact-lines small {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    @media (max-width: 860px) {
+    .quick-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .quick-contact a {
+      flex: 1 1 150px;
+      padding: 12px 14px;
+      border: 1px solid var(--line-soft);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .form-card {
+      padding: clamp(24px, 4vw, 40px);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid var(--line-soft);
+      border-radius: 0;
+      background: rgba(0, 0, 0, 0.22);
+      color: var(--champagne);
+      padding: 13px 14px;
+      outline: none;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+
+    textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      background: rgba(0, 0, 0, 0.34);
+    }
+
+    .form-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer {
+      padding: 56px 0 34px;
+      background:
+        linear-gradient(180deg, rgba(201,155,67,0.08), transparent 42%),
+        #030303;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .footer img {
+      width: 210px;
+      margin-bottom: 18px;
+    }
+
+    .footer h2 {
+      max-width: 820px;
+      font-size: clamp(2rem, 4.5vw, 4.3rem);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      color: var(--text);
+      text-align: right;
+    }
+
+    .fineprint {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes heroIn {
+      from { opacity: 0; transform: scale(1.06); }
+      to { opacity: 1; transform: scale(1.02); }
+    }
+
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1020px) {
+      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .showcase,
+      .split,
+      .area,
+      .booking,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-grid,
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .contact-card {
+        position: static;
+      }
+      .footer-links {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
       .nav {
-        min-height: 64px;
+        min-height: 76px;
+      }
+
+      .brand img {
+        width: 145px;
+      }
+
+      .menu-toggle {
+        display: block;
       }
 
       .nav-links {
-        display: none;
+        position: fixed;
+        inset: 76px 0 auto;
+        display: grid;
+        gap: 0;
+        padding: 18px 22px 24px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(5, 5, 5, 0.97);
+        transform: translateY(-125%);
+        transition: transform 220ms ease;
+      }
+
+      .menu-open .nav-links {
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .nav-links .nav-button {
+        margin-top: 12px;
+        text-align: center;
       }
 
       .hero {
-        min-height: 92svh;
-        padding-top: 104px;
+        min-height: auto;
+        padding: 132px 0 58px;
       }
 
       .hero::before {
         background:
-          linear-gradient(180deg, rgba(5, 5, 5, 0.72) 0%, rgba(5, 5, 5, 0.96) 74%),
-          url("assets/private-jet-cabin.png") center right / cover no-repeat;
-      }
-
-      .section-heading,
-      .contact-panel {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      section {
-        padding: 68px 0;
-      }
-
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .why-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-panel {
-        padding: 34px 24px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .hero-content,
-      .section-inner,
-      .nav {
-        width: min(100% - 28px, 1120px);
+          linear-gradient(180deg, rgba(0,0,0,0.68), rgba(0,0,0,0.28) 46%, rgba(0,0,0,0.82)),
+          url("assets/hero-ber.jpg") 62% center / cover no-repeat;
       }
 
       h1 {
-        font-size: clamp(2.72rem, 15vw, 4.25rem);
+        font-size: clamp(3rem, 15vw, 5.2rem);
       }
 
-      .hero-copy p {
-        font-size: 1rem;
-      }
-
-      .grid,
-      .why-list {
+      .section-head,
+      .statement {
         grid-template-columns: 1fr;
       }
 
-      .item,
-      .why-list div {
-        min-height: 104px;
+      .statement img {
+        width: 185px;
+      }
+
+      .showcase-copy {
+        padding: 8px 0 0;
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .services,
+      .trust-grid,
+      .steps,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .form-actions {
+        display: grid;
       }
 
       .button {
         width: 100%;
+      }
+
+      .slide {
+        padding: 8px;
+      }
+
+      .slide-label {
+        top: 10px;
+        padding: 6px 9px;
+        letter-spacing: 0.09em;
+      }
+
+      .slide-label.before { left: 10px; }
+      .slide-label.after { right: 10px; }
+
+      .carousel-controls {
+        padding: 12px;
+      }
+
+      .area-panel,
+      .form-card,
+      .contact-card {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 1ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
       }
     }
   </style>
 </head>
 <body>
   <header class="site-header" aria-label="Site header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Premium Jet Detailing home">
-        <strong>Premium Jet</strong>
-        <span>Detailing</span>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Premium Jet Detailing home">
+        <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
       </a>
-      <div class="nav-links">
-        <a href="#about">About</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
+        <a href="#before-after">Before & After</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
-      </div>
-    </nav>
+        <a class="nav-button" href="#contact">Request Service</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <div class="hero-copy">
-          <p class="eyebrow">Premium Jet Detailing</p>
-          <h1 id="hero-title">Executive Aircraft Interior Care</h1>
-          <p>Discreet, reliable and detail-oriented cabin care for private and business aircraft around Berlin Brandenburg Airport (BER) and across Germany on request.</p>
-          <a class="button" href="#contact">Contact</a>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">Business Aviation | Berlin Brandenburg Airport</p>
+        <h1>Executive Aircraft Interior Care</h1>
+        <p>Discreet, reliable and detail-oriented cabin care for private and business aircraft around Berlin Brandenburg Airport (BER) and across Germany on request.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contact">Request Service</a>
+          <a class="button secondary" href="#services">View Services</a>
         </div>
       </div>
     </section>
 
-    <section id="about" aria-labelledby="about-title">
-      <div class="section-inner section-heading">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">Refined cabin presentation.</h2>
+    <section class="section">
+      <div class="container">
+        <div class="statement reveal">
+          <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing logo">
+          <p>Refined cabin presentation, careful material care and professional attention to every touchpoint.</p>
         </div>
-        <p class="lead">Premium Jet Detailing supports private and business aircraft with refined cabin presentation and careful material care.</p>
       </div>
     </section>
 
-    <section id="services" aria-labelledby="services-title">
-      <div class="section-inner">
-        <div class="section-heading">
+    <section class="section alt" id="services">
+      <div class="container">
+        <div class="section-head reveal">
           <div>
             <p class="eyebrow">Services</p>
-            <h2 id="services-title">Cabin care with a quiet eye for detail.</h2>
+            <h2>Interior care for executive aircraft.</h2>
           </div>
-          <p class="lead">Focused interior detailing for executive aircraft, from presentation-ready surfaces to careful high-touch cleaning.</p>
+          <p class="lead">Clean, calm and flight-ready cabin support for private owners, operators and business aviation teams.</p>
         </div>
-        <div class="grid" aria-label="Services list">
-          <article class="item">
-            <span aria-hidden="true"></span>
-            <h3>Cabin presentation</h3>
-          </article>
-          <article class="item">
-            <span aria-hidden="true"></span>
-            <h3>Leather care</h3>
-          </article>
-          <article class="item">
-            <span aria-hidden="true"></span>
-            <h3>Surface care</h3>
-          </article>
-          <article class="item">
-            <span aria-hidden="true"></span>
-            <h3>Lavatory detailing</h3>
-          </article>
-          <article class="item">
-            <span aria-hidden="true"></span>
-            <h3>Carpet &amp; upholstery cleaning</h3>
-          </article>
-          <article class="item">
-            <span aria-hidden="true"></span>
-            <h3>High-touch area cleaning</h3>
-          </article>
+        <div class="grid services">
+          <article class="card reveal"><span class="icon">01</span><h3>Cabin Presentation</h3><p>Seat, table and cabin styling prepared for passenger arrival.</p></article>
+          <article class="card reveal"><span class="icon">02</span><h3>Leather Care</h3><p>Gentle cleaning and conditioning for premium aviation leather.</p></article>
+          <article class="card reveal"><span class="icon">03</span><h3>Wood & Surface Care</h3><p>Refined treatment for veneer, gloss panels and cabin surfaces.</p></article>
+          <article class="card reveal"><span class="icon">04</span><h3>Lavatory Detailing</h3><p>Polished fixtures, clean surfaces and a discreet finishing standard.</p></article>
+          <article class="card reveal"><span class="icon">05</span><h3>Carpet & Upholstery</h3><p>Focused care for soft materials, entry areas and visible wear points.</p></article>
+          <article class="card reveal"><span class="icon">06</span><h3>High-Touch Areas</h3><p>Attention to switches, handles, tables, armrests and passenger zones.</p></article>
+          <article class="card reveal"><span class="icon">07</span><h3>Turnaround Refresh</h3><p>Efficient interior refresh support between arrival and next departure.</p></article>
+          <article class="card reveal"><span class="icon">08</span><h3>Custom Interior Care</h3><p>Tailored support for aircraft type, material condition and schedule.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="why" id="why-us" aria-labelledby="why-title">
-      <div class="section-inner">
-        <div class="section-heading">
+    <section class="section" id="before-after">
+      <div class="container">
+        <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Why Us</p>
-            <h2 id="why-title">Built for business aviation.</h2>
+            <p class="eyebrow">Before & After</p>
+            <h2>Visible cabin transformation.</h2>
           </div>
-          <p class="lead">Discreet support, premium standards and flexible availability around BER.</p>
+          <p class="lead">A premium cabin should feel prepared before the passenger notices why. The slideshow is simple, stable and responsive.</p>
         </div>
-        <div class="why-list" aria-label="Why choose Premium Jet Detailing">
-          <div>Discretion</div>
-          <div>Premium standards</div>
-          <div>Flexible availability</div>
-          <div>Detail-oriented work</div>
-          <div>Local support around BER</div>
+        <div class="showcase">
+          <div class="carousel reveal" aria-label="Before and after slideshow">
+            <div class="slides">
+              <article class="slide">
+                <div class="slide-frame">
+                  <span class="slide-label before">Before</span>
+                  <span class="slide-label after">After</span>
+                  <img src="assets/before-after-leather.jpg" alt="Before and after leather seat detailing">
+                </div>
+              </article>
+              <article class="slide">
+                <div class="slide-frame">
+                  <span class="slide-label before">Before</span>
+                  <span class="slide-label after">After</span>
+                  <img src="assets/before-after-lavatory.jpg" alt="Before and after lavatory surface detailing">
+                </div>
+              </article>
+              <article class="slide">
+                <div class="slide-frame">
+                  <span class="slide-label before">Before</span>
+                  <span class="slide-label after">After</span>
+                  <img src="assets/before-after-faucet.jpg" alt="Before and after chrome faucet detailing">
+                </div>
+              </article>
+              <article class="slide">
+                <div class="slide-frame">
+                  <span class="slide-label before">Before</span>
+                  <span class="slide-label after">After</span>
+                  <img src="assets/before-after-entry.jpg" alt="Before and after aircraft entry detailing">
+                </div>
+              </article>
+            </div>
+            <div class="carousel-controls">
+              <button class="arrow prev" type="button" aria-label="Previous slide">‹</button>
+              <div class="dots" aria-label="Slide indicators"></div>
+              <button class="arrow next" type="button" aria-label="Next slide">›</button>
+            </div>
+          </div>
+          <div class="showcase-copy reveal">
+            <p class="eyebrow">Detailing Standard</p>
+            <h2>More than cleaning.</h2>
+            <ul>
+              <li>Protects leather, wood, carpets and high-value cabin materials.</li>
+              <li>Improves passenger experience from the first step onboard.</li>
+              <li>Reflects operator standards through discretion and precision.</li>
+              <li>Supports a reliable, business aviation-ready presentation.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="section-inner">
-        <div class="contact-panel">
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Request discreet cabin care.</h2>
-            <p class="lead">Available for private and business aircraft in Berlin and across Germany on request.</p>
+            <p class="eyebrow">Trust</p>
+            <h2>Quiet standards. Visible results.</h2>
           </div>
-          <address class="contact-details">
-            <strong>Adnan Ahmad</strong>
-            <span>Founder | Premium Jet Detailing</span>
-            <a href="tel:+491792020680">+49 179 2020680</a>
-            <a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a>
-          </address>
+          <p class="lead">Premium Jet Detailing is built around the expectations of private aviation: discretion, flexibility and precise cabin care.</p>
+        </div>
+        <div class="grid trust-grid">
+          <article class="trust-item reveal"><h3>Discretion</h3><p>Respectful work around aircraft, passengers, crew and operators.</p></article>
+          <article class="trust-item reveal"><h3>Reliability</h3><p>Clear communication and dependable support around your schedule.</p></article>
+          <article class="trust-item reveal"><h3>Premium Standards</h3><p>A refined approach aligned with executive aircraft presentation.</p></article>
+          <article class="trust-item reveal"><h3>Detail Focus</h3><p>Attention to touchpoints, materials and passenger-facing areas.</p></article>
+          <article class="trust-item reveal"><h3>Aviation Mindset</h3><p>Business aviation service, not a generic cleaning company approach.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container split">
+        <div class="reveal">
+          <p class="eyebrow">Founder</p>
+          <h2>Adnan Ahmad</h2>
+          <p class="lead">Founder of Premium Jet Detailing.</p>
+          <p style="margin-top: 20px;">Premium Jet Detailing is based around Berlin Brandenburg Airport (BER) and focuses on executive aircraft interior care for Business Aviation.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Book an Inquiry</a>
+          </div>
+        </div>
+        <div class="visual reveal">
+          <img src="assets/cabin-interior.jpg" alt="Refined private jet cabin interior">
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Process</p>
+            <h2>How it works.</h2>
+          </div>
+          <p class="lead">A calm, direct workflow designed for aircraft schedules and professional handover.</p>
+        </div>
+        <div class="grid steps">
+          <article class="step reveal"><h3>Inquiry</h3><p>Send aircraft details, location and preferred timing.</p></article>
+          <article class="step reveal"><h3>Assessment</h3><p>Scope is reviewed by material, cabin condition and turnaround needs.</p></article>
+          <article class="step reveal"><h3>Scheduling</h3><p>Availability is coordinated around BER or German locations on request.</p></article>
+          <article class="step reveal"><h3>Interior Care</h3><p>Focused detailing is carried out with discreet working standards.</p></article>
+          <article class="step reveal"><h3>Final Presentation</h3><p>The cabin is finished for owner, passenger or crew inspection.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container area">
+        <div class="area-panel reveal">
+          <p class="eyebrow">Service Area</p>
+          <h2>Berlin, BER and Germany on request.</h2>
+          <ul class="area-list">
+            <li>Berlin Brandenburg Airport (BER)</li>
+            <li>Berlin / Germany</li>
+            <li>Available across Germany on request</li>
+          </ul>
+        </div>
+        <div class="visual reveal">
+          <img src="assets/service-area.jpg" alt="Premium aircraft service area around Berlin">
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Booking</p>
+            <h2>Request aircraft interior care.</h2>
+          </div>
+          <p class="lead">Use the form for a structured inquiry. Until a backend is connected, it opens a prepared email to Premium Jet Detailing.</p>
+        </div>
+        <div class="booking">
+          <aside class="contact-card reveal">
+            <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+            <h3>Adnan Ahmad</h3>
+            <p>Founder | Premium Jet Detailing</p>
+            <div class="contact-lines">
+              <span><small>Phone</small><a href="tel:+491792020680">+49 179 2020680</a></span>
+              <span><small>Email</small><a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a></span>
+              <span><small>Location</small>Berlin Brandenburg Airport (BER)</span>
+            </div>
+            <div class="quick-contact">
+              <a href="mailto:info@premiumjetdetailing.de">Email</a>
+              <a href="https://wa.me/491792020680">WhatsApp</a>
+            </div>
+          </aside>
+
+          <form class="form-card reveal" id="bookingForm">
+            <div class="form-grid">
+              <div class="field"><label for="name">Name</label><input id="name" name="Name" autocomplete="name" required></div>
+              <div class="field"><label for="company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
+              <div class="field"><label for="email">Email</label><input id="email" type="email" name="Email" autocomplete="email" required></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="Phone" autocomplete="tel"></div>
+              <div class="field"><label for="aircraft">Aircraft type</label><input id="aircraft" name="Aircraft type" placeholder="e.g. Global 6000"></div>
+              <div class="field"><label for="location">Location / Airport</label><input id="location" name="Location / Airport" placeholder="BER, FBO or hangar"></div>
+              <div class="field"><label for="date">Preferred date</label><input id="date" type="date" name="Preferred date"></div>
+              <div class="field">
+                <label for="service">Service needed</label>
+                <select id="service" name="Service needed">
+                  <option>Cabin presentation</option>
+                  <option>Leather care</option>
+                  <option>Wood & surface care</option>
+                  <option>Lavatory detailing</option>
+                  <option>Carpet & upholstery cleaning</option>
+                  <option>Turnaround interior refresh</option>
+                  <option>Custom aircraft interior care</option>
+                </select>
+              </div>
+              <div class="field full"><label for="message">Message</label><textarea id="message" name="Message" placeholder="Aircraft, timing, access details or special requirements"></textarea></div>
+            </div>
+            <div class="form-actions">
+              <button class="button" type="submit">Request Service</button>
+              <a class="button secondary" href="mailto:info@premiumjetdetailing.de">Book an Inquiry</a>
+            </div>
+            <p class="form-note">Backend-ready form structure for Formspree, Resend or a Vercel serverless API route.</p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    Premium Jet Detailing · Berlin · Business Aviation Interior Care
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing logo">
+          <p class="eyebrow">Executive Aircraft Interior Care | BER</p>
+          <h2>Whenever you land in Berlin, we take care of the details.</h2>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a>
+          <a href="tel:+491792020680">+49 179 2020680</a>
+          <span>BER / Berlin</span>
+          <a href="#" aria-label="LinkedIn placeholder">LinkedIn</a>
+        </div>
+      </div>
+      <p class="fineprint">Premium Jet Detailing. Discreet aircraft interior care for private and business aviation.</p>
+    </div>
   </footer>
+
+  <script>
+    const body = document.body;
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = body.classList.toggle("menu-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        body.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const slides = document.querySelector(".slides");
+    const slideItems = Array.from(document.querySelectorAll(".slide"));
+    const dotsWrap = document.querySelector(".dots");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+    let currentSlide = 0;
+    let carouselTimer;
+
+    slideItems.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = "dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+      dot.addEventListener("click", () => showSlide(index, true));
+      dotsWrap.appendChild(dot);
+    });
+
+    const dots = Array.from(document.querySelectorAll(".dot"));
+
+    function showSlide(index, userAction = false) {
+      currentSlide = (index + slideItems.length) % slideItems.length;
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === currentSlide));
+      if (userAction) restartCarousel();
+    }
+
+    function restartCarousel() {
+      clearInterval(carouselTimer);
+      carouselTimer = setInterval(() => showSlide(currentSlide + 1), 6500);
+    }
+
+    prev.addEventListener("click", () => showSlide(currentSlide - 1, true));
+    next.addEventListener("click", () => showSlide(currentSlide + 1, true));
+    showSlide(0);
+    restartCarousel();
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+
+    document.getElementById("bookingForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const lines = Array.from(data.entries())
+        .map(([key, value]) => `${key}: ${value || "-"}`)
+        .join("\n");
+      const subject = encodeURIComponent("Premium Jet Detailing Service Request");
+      const bodyText = encodeURIComponent(`Hello Premium Jet Detailing,\n\nI would like to request aircraft interior care.\n\n${lines}`);
+      window.location.href = `mailto:info@premiumjetdetailing.de?subject=${subject}&body=${bodyText}`;
+    });
+  </script>
 </body>
 </html>
