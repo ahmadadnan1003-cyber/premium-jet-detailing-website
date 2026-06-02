@@ -192,9 +192,17 @@
     }
 
     h1 {
-      max-width: 680px;
-      font-size: clamp(3rem, 6.6vw, 5.9rem);
-      line-height: 1;
+      max-width: 760px;
+      font-size: clamp(2.95rem, 5.8vw, 5.25rem);
+      line-height: 1.03;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    h1 .headline-lock {
+      white-space: nowrap;
     }
 
     h2 {
@@ -649,8 +657,12 @@
       }
 
       h1 {
-        font-size: clamp(2.7rem, 12.5vw, 4.25rem);
-        line-height: 1.02;
+        font-size: clamp(2.55rem, 10.8vw, 3.95rem);
+        line-height: 1.04;
+      }
+
+      h1 .headline-lock {
+        white-space: normal;
       }
 
       .services,
@@ -715,7 +727,7 @@
     <section class="hero">
       <div class="container hero-inner reveal">
         <p class="eyebrow">Business Aviation | BER</p>
-        <h1>Executive Aircraft Interior Care</h1>
+        <h1><span>Executive</span><span class="headline-lock">Aircraft Interior Care</span></h1>
         <p>Discreet interior detailing for private and business aircraft around BER and across Germany on request.</p>
         <div class="hero-actions">
           <a class="button" href="#contact">Request Service</a>
