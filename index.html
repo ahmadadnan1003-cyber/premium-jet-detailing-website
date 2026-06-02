@@ -608,20 +608,22 @@
       }
 
       .nav {
-        min-height: 66px;
+        min-height: 62px;
       }
 
       .logo img {
-        width: 112px;
+        width: 100px;
       }
 
       .menu-toggle {
         display: block;
+        width: 40px;
+        height: 40px;
       }
 
       .nav-links {
         position: fixed;
-        inset: 66px 0 auto;
+        inset: 62px 0 auto;
         display: grid;
         gap: 0;
         padding: 16px 20px 22px;
@@ -646,23 +648,43 @@
       }
 
       .hero {
-        min-height: 76svh;
-        padding: 102px 0 50px;
+        min-height: 74svh;
+        padding: 90px 0 42px;
       }
 
       .hero::before {
         background:
-          linear-gradient(180deg, rgba(0,0,0,0.54), rgba(0,0,0,0.12) 42%, rgba(0,0,0,0.76)),
-          url("assets/hero-ber.jpg") 58% center / cover no-repeat;
+          linear-gradient(180deg, rgba(0,0,0,0.42), rgba(0,0,0,0.08) 38%, rgba(0,0,0,0.74)),
+          linear-gradient(90deg, rgba(0,0,0,0.38), rgba(0,0,0,0.06) 62%),
+          url("assets/hero-ber.jpg") 62% center / cover no-repeat;
+      }
+
+      .hero-inner {
+        max-width: 350px;
+        padding-bottom: 0;
+      }
+
+      .hero .eyebrow {
+        margin-bottom: 10px;
+        font-size: 0.6rem;
+        letter-spacing: 0.16em;
       }
 
       h1 {
-        font-size: clamp(2.55rem, 10.8vw, 3.95rem);
-        line-height: 1.04;
+        max-width: 350px;
+        font-size: clamp(2.25rem, 9.1vw, 3.25rem);
+        line-height: 1.06;
       }
 
       h1 .headline-lock {
         white-space: normal;
+      }
+
+      .hero p {
+        max-width: 340px;
+        margin-top: 14px;
+        font-size: 0.94rem;
+        line-height: 1.45;
       }
 
       .services,
@@ -671,13 +693,24 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-actions,
       .form-actions {
         display: grid;
       }
 
+      .hero-actions {
+        display: flex;
+        margin-top: 22px;
+      }
+
       .button {
         width: 100%;
+      }
+
+      .hero-actions .button {
+        width: auto;
+        min-width: 218px;
+        min-height: 46px;
+        padding: 12px 18px;
       }
 
       .slide {
