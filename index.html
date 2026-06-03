@@ -122,6 +122,38 @@
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
     }
 
+    .header-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 34px;
+      border: 1px solid var(--line);
+      background: rgba(200, 154, 61, 0.055);
+      color: var(--ivory);
+      cursor: pointer;
+      transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    .lang-toggle:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 210, 141, 0.58);
+      background: rgba(200, 154, 61, 0.11);
+    }
+
+    .flag {
+      display: block;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
     .menu-toggle {
       display: none;
       width: 44px;
@@ -658,6 +690,15 @@
         height: 40px;
       }
 
+      .header-actions {
+        gap: 9px;
+      }
+
+      .lang-toggle {
+        width: 38px;
+        height: 36px;
+      }
+
       .nav-links {
         position: fixed;
         inset: 62px 0 auto;
@@ -790,39 +831,44 @@
         <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#before-after">Before & After</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#contact">Request Service</a>
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#before-after" data-i18n="nav.beforeAfter">Before & After</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="nav-cta" href="#contact" data-i18n="nav.request">Request Service</a>
       </nav>
-      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" aria-label="Deutsch anzeigen" title="Deutsch anzeigen">
+          <span class="flag" aria-hidden="true">🇩🇪</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="home">
     <section class="hero">
       <div class="container hero-inner reveal">
-        <h1><span>Executive</span><span class="headline-lock">Aircraft Interior Care</span></h1>
-        <p>Discreet interior detailing for private and business aircraft around BER and across Germany on request.</p>
+        <h1><span data-i18n="hero.line1">Executive</span><span class="headline-lock" data-i18n="hero.line2">Aircraft Interior Care</span></h1>
+        <p data-i18n="hero.copy">Discreet interior detailing for private and business aircraft around BER and across Germany on request.</p>
         <div class="hero-actions">
-          <a class="button" href="#contact">Request Service</a>
+          <a class="button" href="#contact" data-i18n="hero.cta">Request Service</a>
         </div>
-        <p class="eyebrow">Business Aviation | BER</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Business Aviation | BER</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container statement">
         <div class="statement-card reveal">
-          <p class="eyebrow">Premium Jet Detailing</p>
-          <h2>Refined cabin care, without the noise.</h2>
-          <p>Business aviation support with clean presentation, careful material care and reliable on-demand service.</p>
+          <p class="eyebrow" data-i18n="statement.eyebrow">Premium Jet Detailing</p>
+          <h2 data-i18n="statement.heading">Refined cabin care, without the noise.</h2>
+          <p data-i18n="statement.copy">Business aviation support with clean presentation, careful material care and reliable on-demand service.</p>
         </div>
         <div class="statement-image reveal">
-          <img src="assets/cabin-interior.jpg" alt="Clean private jet cabin interior">
+          <img src="assets/cabin-interior.jpg" alt="Clean private jet cabin interior" data-i18n-alt="statement.imageAlt">
         </div>
       </div>
     </section>
@@ -831,18 +877,18 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Services</p>
-            <h2>Focused interior detailing.</h2>
+            <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+            <h2 data-i18n="services.heading">Focused interior detailing.</h2>
           </div>
-          <p>Short, precise support for executive aircraft cabins.</p>
+          <p data-i18n="services.copy">Short, precise support for executive aircraft cabins.</p>
         </div>
         <div class="services">
-          <article class="service reveal"><span>01</span><h3>Cabin Presentation</h3><p>Ready, calm and passenger-facing.</p></article>
-          <article class="service reveal"><span>02</span><h3>Leather Care</h3><p>Gentle care for premium seating.</p></article>
-          <article class="service reveal"><span>03</span><h3>Surface Care</h3><p>Polished tables, trim and touchpoints.</p></article>
-          <article class="service reveal"><span>04</span><h3>Lavatory Detailing</h3><p>Fresh, precise and discreet.</p></article>
-          <article class="service reveal"><span>05</span><h3>Carpet & Upholstery</h3><p>Focused soft-material refresh.</p></article>
-          <article class="service reveal"><span>06</span><h3>High-Touch Areas</h3><p>Clean switches, handles and controls.</p></article>
+          <article class="service reveal"><span>01</span><h3 data-i18n="services.cabin.title">Cabin Presentation</h3><p data-i18n="services.cabin.copy">Ready, calm and passenger-facing.</p></article>
+          <article class="service reveal"><span>02</span><h3 data-i18n="services.leather.title">Leather Care</h3><p data-i18n="services.leather.copy">Gentle care for premium seating.</p></article>
+          <article class="service reveal"><span>03</span><h3 data-i18n="services.surface.title">Surface Care</h3><p data-i18n="services.surface.copy">Polished tables, trim and touchpoints.</p></article>
+          <article class="service reveal"><span>04</span><h3 data-i18n="services.lavatory.title">Lavatory Detailing</h3><p data-i18n="services.lavatory.copy">Fresh, precise and discreet.</p></article>
+          <article class="service reveal"><span>05</span><h3 data-i18n="services.carpet.title">Carpet & Upholstery</h3><p data-i18n="services.carpet.copy">Focused soft-material refresh.</p></article>
+          <article class="service reveal"><span>06</span><h3 data-i18n="services.touch.title">High-Touch Areas</h3><p data-i18n="services.touch.copy">Clean switches, handles and controls.</p></article>
         </div>
       </div>
     </section>
@@ -851,19 +897,19 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Before & After</p>
-            <h2>Clean transformations.</h2>
+            <p class="eyebrow" data-i18n="showcase.eyebrow">Before & After</p>
+            <h2 data-i18n="showcase.heading">Clean transformations.</h2>
           </div>
-          <p>Real cabin details, shown simply.</p>
+          <p data-i18n="showcase.copy">Real cabin details, shown simply.</p>
         </div>
         <div class="carousel-shell reveal">
           <div class="carousel" aria-label="Before and after image carousel">
             <div class="slides">
-              <article class="slide"><img src="assets/before-after-leather.jpg" alt="Before and after leather seat detailing"></article>
-              <article class="slide"><img src="assets/before-after-surface.jpg" alt="Before and after cabin table detailing"></article>
-              <article class="slide"><img src="assets/before-after-entry.jpg" alt="Before and after aircraft entry carpet detailing"></article>
-              <article class="slide"><img src="assets/before-after-side-panel.jpg" alt="Before and after side panel detailing"></article>
-              <article class="slide"><img src="assets/before-after-wood.jpg" alt="Before and after wood veneer detailing"></article>
+              <article class="slide"><img src="assets/before-after-leather.jpg" alt="Before and after leather seat detailing" data-i18n-alt="showcase.leatherAlt"></article>
+              <article class="slide"><img src="assets/before-after-surface.jpg" alt="Before and after cabin table detailing" data-i18n-alt="showcase.surfaceAlt"></article>
+              <article class="slide"><img src="assets/before-after-entry.jpg" alt="Before and after aircraft entry carpet detailing" data-i18n-alt="showcase.entryAlt"></article>
+              <article class="slide"><img src="assets/before-after-side-panel.jpg" alt="Before and after side panel detailing" data-i18n-alt="showcase.panelAlt"></article>
+              <article class="slide"><img src="assets/before-after-wood.jpg" alt="Before and after wood veneer detailing" data-i18n-alt="showcase.woodAlt"></article>
             </div>
             <div class="carousel-controls">
               <button class="arrow prev" type="button" aria-label="Previous slide">‹</button>
@@ -879,15 +925,15 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Why Premium Jet Detailing</p>
-            <h2>Quiet, reliable, precise.</h2>
+            <p class="eyebrow" data-i18n="why.eyebrow">Why Premium Jet Detailing</p>
+            <h2 data-i18n="why.heading">Quiet, reliable, precise.</h2>
           </div>
         </div>
         <div class="why-grid">
-          <article class="why-item reveal"><h3>Discreet Service</h3><p>Professional presence around aircraft and crew.</p></article>
-          <article class="why-item reveal"><h3>Premium Standards</h3><p>Cabin care aligned with business aviation.</p></article>
-          <article class="why-item reveal"><h3>Detail-Oriented Work</h3><p>Every passenger touchpoint matters.</p></article>
-          <article class="why-item reveal"><h3>Flexible Availability</h3><p>Local BER support and Germany on request.</p></article>
+          <article class="why-item reveal"><h3 data-i18n="why.discreet.title">Discreet Service</h3><p data-i18n="why.discreet.copy">Professional presence around aircraft and crew.</p></article>
+          <article class="why-item reveal"><h3 data-i18n="why.standards.title">Premium Standards</h3><p data-i18n="why.standards.copy">Cabin care aligned with business aviation.</p></article>
+          <article class="why-item reveal"><h3 data-i18n="why.detail.title">Detail-Oriented Work</h3><p data-i18n="why.detail.copy">Every passenger touchpoint matters.</p></article>
+          <article class="why-item reveal"><h3 data-i18n="why.flex.title">Flexible Availability</h3><p data-i18n="why.flex.copy">Local BER support and Germany on request.</p></article>
         </div>
       </div>
     </section>
@@ -896,34 +942,34 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Send an inquiry.</h2>
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+            <h2 data-i18n="contact.heading">Send an inquiry.</h2>
           </div>
-          <p>Simple mail fallback, ready to connect to a backend later.</p>
+          <p data-i18n="contact.copy">Simple mail fallback, ready to connect to a backend later.</p>
         </div>
         <div class="contact">
           <aside class="contact-card reveal">
             <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
             <h3>Adnan Ahmad</h3>
-            <p>Founder | Premium Jet Detailing</p>
+            <p data-i18n="contact.role">Founder | Premium Jet Detailing</p>
             <div class="contact-lines">
-              <span><small>Phone</small><a href="tel:+491792020680">+49 179 2020680</a></span>
-              <span><small>Email</small><a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a></span>
-              <span><small>Location</small>Berlin Brandenburg Airport (BER)</span>
+              <span><small data-i18n="contact.phone">Phone</small><a href="tel:+491792020680">+49 179 2020680</a></span>
+              <span><small data-i18n="contact.email">Email</small><a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a></span>
+              <span><small data-i18n="contact.locationLabel">Location</small><span data-i18n="contact.location">Berlin Brandenburg Airport (BER)</span></span>
             </div>
           </aside>
           <form class="form-card reveal" id="bookingForm">
             <div class="form-grid">
-              <div class="field"><label for="name">Name</label><input id="name" name="Name" autocomplete="name" required></div>
-              <div class="field"><label for="company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
-              <div class="field"><label for="email">Email</label><input id="email" type="email" name="Email" autocomplete="email" required></div>
-              <div class="field"><label for="phone">Phone</label><input id="phone" name="Phone" autocomplete="tel"></div>
-              <div class="field full"><label for="aircraft">Aircraft / Location</label><input id="aircraft" name="Aircraft / Location" placeholder="Aircraft type, BER, FBO or hangar"></div>
-              <div class="field full"><label for="message">Message</label><textarea id="message" name="Message" placeholder="Preferred timing and service details"></textarea></div>
+              <div class="field"><label for="name" data-i18n="form.name">Name</label><input id="name" name="Name" autocomplete="name" required></div>
+              <div class="field"><label for="company" data-i18n="form.company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
+              <div class="field"><label for="email" data-i18n="form.email">Email</label><input id="email" type="email" name="Email" autocomplete="email" required></div>
+              <div class="field"><label for="phone" data-i18n="form.phone">Phone</label><input id="phone" name="Phone" autocomplete="tel"></div>
+              <div class="field full"><label for="aircraft" data-i18n="form.aircraft">Aircraft / Location</label><input id="aircraft" name="Aircraft / Location" placeholder="Aircraft type, BER, FBO or hangar" data-i18n-placeholder="form.aircraftPlaceholder"></div>
+              <div class="field full"><label for="message" data-i18n="form.message">Message</label><textarea id="message" name="Message" placeholder="Preferred timing and service details" data-i18n-placeholder="form.messagePlaceholder"></textarea></div>
             </div>
             <div class="form-actions">
-              <button class="button" type="submit">Send Inquiry</button>
-              <a class="button ghost" href="mailto:info@premiumjetdetailing.de">Email Directly</a>
+              <button class="button" type="submit" data-i18n="form.submit">Send Inquiry</button>
+              <a class="button ghost" href="mailto:info@premiumjetdetailing.de" data-i18n="form.emailDirect">Email Directly</a>
             </div>
           </form>
         </div>
@@ -935,7 +981,7 @@
     <div class="container footer-inner">
       <div>
         <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
-        <p>Whenever you land in Berlin, we take care of the details.</p>
+        <p data-i18n="footer.tagline">Whenever you land in Berlin, we take care of the details.</p>
       </div>
       <div class="footer-links">
         <a href="tel:+491792020680">+49 179 2020680</a>
@@ -948,6 +994,197 @@
     const body = document.body;
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelectorAll(".nav-links a");
+    const langToggle = document.querySelector(".lang-toggle");
+    const translations = {
+      en: {
+        "meta.title": "Premium Jet Detailing | Executive Aircraft Interior Care at BER",
+        "meta.description": "Premium Jet Detailing provides discreet aircraft interior detailing for private and business aircraft around Berlin Brandenburg Airport and across Germany on request.",
+        "nav.home": "Home",
+        "nav.services": "Services",
+        "nav.beforeAfter": "Before & After",
+        "nav.contact": "Contact",
+        "nav.request": "Request Service",
+        "hero.line1": "Executive",
+        "hero.line2": "Aircraft Interior Care",
+        "hero.copy": "Discreet interior detailing for private and business aircraft around BER and across Germany on request.",
+        "hero.cta": "Request Service",
+        "hero.eyebrow": "Business Aviation | BER",
+        "statement.eyebrow": "Premium Jet Detailing",
+        "statement.heading": "Refined cabin care, without the noise.",
+        "statement.copy": "Business aviation support with clean presentation, careful material care and reliable on-demand service.",
+        "statement.imageAlt": "Clean private jet cabin interior",
+        "services.eyebrow": "Services",
+        "services.heading": "Focused interior detailing.",
+        "services.copy": "Short, precise support for executive aircraft cabins.",
+        "services.cabin.title": "Cabin Presentation",
+        "services.cabin.copy": "Ready, calm and passenger-facing.",
+        "services.leather.title": "Leather Care",
+        "services.leather.copy": "Gentle care for premium seating.",
+        "services.surface.title": "Surface Care",
+        "services.surface.copy": "Polished tables, trim and touchpoints.",
+        "services.lavatory.title": "Lavatory Detailing",
+        "services.lavatory.copy": "Fresh, precise and discreet.",
+        "services.carpet.title": "Carpet & Upholstery",
+        "services.carpet.copy": "Focused soft-material refresh.",
+        "services.touch.title": "High-Touch Areas",
+        "services.touch.copy": "Clean switches, handles and controls.",
+        "showcase.eyebrow": "Before & After",
+        "showcase.heading": "Clean transformations.",
+        "showcase.copy": "Real cabin details, shown simply.",
+        "showcase.leatherAlt": "Before and after leather seat detailing",
+        "showcase.surfaceAlt": "Before and after cabin table detailing",
+        "showcase.entryAlt": "Before and after aircraft entry carpet detailing",
+        "showcase.panelAlt": "Before and after side panel detailing",
+        "showcase.woodAlt": "Before and after wood veneer detailing",
+        "why.eyebrow": "Why Premium Jet Detailing",
+        "why.heading": "Quiet, reliable, precise.",
+        "why.discreet.title": "Discreet Service",
+        "why.discreet.copy": "Professional presence around aircraft and crew.",
+        "why.standards.title": "Premium Standards",
+        "why.standards.copy": "Cabin care aligned with business aviation.",
+        "why.detail.title": "Detail-Oriented Work",
+        "why.detail.copy": "Every passenger touchpoint matters.",
+        "why.flex.title": "Flexible Availability",
+        "why.flex.copy": "Local BER support and Germany on request.",
+        "contact.eyebrow": "Contact",
+        "contact.heading": "Send an inquiry.",
+        "contact.copy": "Simple mail fallback, ready to connect to a backend later.",
+        "contact.role": "Founder | Premium Jet Detailing",
+        "contact.phone": "Phone",
+        "contact.email": "Email",
+        "contact.locationLabel": "Location",
+        "contact.location": "Berlin Brandenburg Airport (BER)",
+        "form.name": "Name",
+        "form.company": "Company",
+        "form.email": "Email",
+        "form.phone": "Phone",
+        "form.aircraft": "Aircraft / Location",
+        "form.aircraftPlaceholder": "Aircraft type, BER, FBO or hangar",
+        "form.message": "Message",
+        "form.messagePlaceholder": "Preferred timing and service details",
+        "form.submit": "Send Inquiry",
+        "form.emailDirect": "Email Directly",
+        "footer.tagline": "Whenever you land in Berlin, we take care of the details.",
+        "carousel.prev": "Previous slide",
+        "carousel.next": "Next slide",
+        "carousel.dot": "Go to slide",
+        "lang.label": "Deutsch anzeigen",
+        "mail.subject": "Premium Jet Detailing Inquiry",
+        "mail.intro": "Hello Premium Jet Detailing,\n\nI would like to request aircraft interior care."
+      },
+      de: {
+        "meta.title": "Premium Jet Detailing | Exklusive Flugzeug-Innenraumpflege am BER",
+        "meta.description": "Premium Jet Detailing bietet diskrete Flugzeug-Innenraumpflege für Privat- und Businessjets rund um den Flughafen Berlin Brandenburg und deutschlandweit auf Anfrage.",
+        "nav.home": "Start",
+        "nav.services": "Leistungen",
+        "nav.beforeAfter": "Vorher & Nachher",
+        "nav.contact": "Kontakt",
+        "nav.request": "Service anfragen",
+        "hero.line1": "Exklusive",
+        "hero.line2": "Flugzeug-Innenraumpflege",
+        "hero.copy": "Diskrete Innenraumaufbereitung für Privat- und Businessjets rund um BER und deutschlandweit auf Anfrage.",
+        "hero.cta": "Service anfragen",
+        "hero.eyebrow": "Business Aviation | BER",
+        "statement.eyebrow": "Premium Jet Detailing",
+        "statement.heading": "Edle Kabinenpflege, klar und diskret.",
+        "statement.copy": "Support für die Business Aviation mit gepflegter Kabinenpräsentation, sorgfältiger Materialpflege und verlässlichem Service auf Anfrage.",
+        "statement.imageAlt": "Saubere Privatjet-Kabine",
+        "services.eyebrow": "Leistungen",
+        "services.heading": "Fokussierte Innenraumpflege.",
+        "services.copy": "Kurze, präzise Unterstützung für Executive-Aircraft-Kabinen.",
+        "services.cabin.title": "Kabinenpräsentation",
+        "services.cabin.copy": "Ruhig, sauber und bereit für Passagiere.",
+        "services.leather.title": "Lederpflege",
+        "services.leather.copy": "Schonende Pflege für Premium-Sitze.",
+        "services.surface.title": "Oberflächenpflege",
+        "services.surface.copy": "Polierte Tische, Verkleidungen und Kontaktflächen.",
+        "services.lavatory.title": "Lavatory Detailing",
+        "services.lavatory.copy": "Frisch, präzise und diskret.",
+        "services.carpet.title": "Teppich & Polster",
+        "services.carpet.copy": "Gezielte Auffrischung weicher Materialien.",
+        "services.touch.title": "High-Touch Bereiche",
+        "services.touch.copy": "Saubere Schalter, Griffe und Bedienelemente.",
+        "showcase.eyebrow": "Vorher & Nachher",
+        "showcase.heading": "Saubere Transformationen.",
+        "showcase.copy": "Echte Kabinendetails, schlicht gezeigt.",
+        "showcase.leatherAlt": "Vorher und nachher Lederpflege am Sitz",
+        "showcase.surfaceAlt": "Vorher und nachher Tisch-Detailing in der Kabine",
+        "showcase.entryAlt": "Vorher und nachher Teppichpflege am Einstieg",
+        "showcase.panelAlt": "Vorher und nachher Seitenpanel-Detailing",
+        "showcase.woodAlt": "Vorher und nachher Holzfurnier-Detailing",
+        "why.eyebrow": "Warum Premium Jet Detailing",
+        "why.heading": "Ruhig, verlässlich, präzise.",
+        "why.discreet.title": "Diskreter Service",
+        "why.discreet.copy": "Professionelles Auftreten rund um Aircraft und Crew.",
+        "why.standards.title": "Premium-Standards",
+        "why.standards.copy": "Kabinenpflege passend zur Business Aviation.",
+        "why.detail.title": "Detailorientierte Arbeit",
+        "why.detail.copy": "Jeder Passagier-Touchpoint zählt.",
+        "why.flex.title": "Flexible Verfügbarkeit",
+        "why.flex.copy": "Lokaler BER-Support und deutschlandweit auf Anfrage.",
+        "contact.eyebrow": "Kontakt",
+        "contact.heading": "Anfrage senden.",
+        "contact.copy": "Einfacher Mail-Fallback, bereit für eine spätere Backend-Anbindung.",
+        "contact.role": "Founder | Premium Jet Detailing",
+        "contact.phone": "Telefon",
+        "contact.email": "E-Mail",
+        "contact.locationLabel": "Standort",
+        "contact.location": "Flughafen Berlin Brandenburg (BER)",
+        "form.name": "Name",
+        "form.company": "Unternehmen",
+        "form.email": "E-Mail",
+        "form.phone": "Telefon",
+        "form.aircraft": "Aircraft / Standort",
+        "form.aircraftPlaceholder": "Aircraft-Typ, BER, FBO oder Hangar",
+        "form.message": "Nachricht",
+        "form.messagePlaceholder": "Gewünschter Zeitpunkt und Service-Details",
+        "form.submit": "Anfrage senden",
+        "form.emailDirect": "Direkt mailen",
+        "footer.tagline": "Wann immer Sie in Berlin landen, wir kümmern uns um die Details.",
+        "carousel.prev": "Vorherige Folie",
+        "carousel.next": "Nächste Folie",
+        "carousel.dot": "Zu Folie",
+        "lang.label": "English anzeigen",
+        "mail.subject": "Premium Jet Detailing Anfrage",
+        "mail.intro": "Hallo Premium Jet Detailing,\n\nich möchte eine Flugzeug-Innenraumpflege anfragen."
+      }
+    };
+    let currentLanguage = "en";
+
+    function translate(key) {
+      return translations[currentLanguage][key] || translations.en[key] || key;
+    }
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+      document.title = translate("meta.title");
+      document.querySelector('meta[name="description"]').setAttribute("content", translate("meta.description"));
+      document.querySelector('meta[property="og:title"]').setAttribute("content", translate("meta.title"));
+      document.querySelector('meta[property="og:description"]').setAttribute("content", translate("meta.description"));
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        element.textContent = translate(element.dataset.i18n);
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        element.setAttribute("placeholder", translate(element.dataset.i18nPlaceholder));
+      });
+      document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+        element.setAttribute("alt", translate(element.dataset.i18nAlt));
+      });
+
+      prev.setAttribute("aria-label", translate("carousel.prev"));
+      next.setAttribute("aria-label", translate("carousel.next"));
+      dots.forEach((dot, index) => {
+        dot.setAttribute("aria-label", `${translate("carousel.dot")} ${index + 1}`);
+      });
+
+      const nextLanguage = language === "en" ? "de" : "en";
+      langToggle.querySelector(".flag").textContent = language === "en" ? "🇩🇪" : "🇬🇧";
+      langToggle.setAttribute("aria-label", translate("lang.label"));
+      langToggle.setAttribute("title", translate("lang.label"));
+      langToggle.dataset.nextLang = nextLanguage;
+    }
 
     menuToggle.addEventListener("click", () => {
       const open = body.classList.toggle("menu-open");
@@ -959,6 +1196,10 @@
         body.classList.remove("menu-open");
         menuToggle.setAttribute("aria-expanded", "false");
       });
+    });
+
+    langToggle.addEventListener("click", () => {
+      setLanguage(langToggle.dataset.nextLang || "de");
     });
 
     const slides = document.querySelector(".slides");
@@ -979,6 +1220,7 @@
     });
 
     const dots = Array.from(document.querySelectorAll(".dot"));
+    setLanguage("en");
 
     function showSlide(index, userAction = false) {
       currentSlide = (index + slideItems.length) % slideItems.length;
@@ -1014,8 +1256,8 @@
       const lines = Array.from(data.entries())
         .map(([key, value]) => `${key}: ${value || "-"}`)
         .join("\n");
-      const subject = encodeURIComponent("Premium Jet Detailing Inquiry");
-      const bodyText = encodeURIComponent(`Hello Premium Jet Detailing,\n\nI would like to request aircraft interior care.\n\n${lines}`);
+      const subject = encodeURIComponent(translate("mail.subject"));
+      const bodyText = encodeURIComponent(`${translate("mail.intro")}\n\n${lines}`);
       window.location.href = `mailto:info@premiumjetdetailing.de?subject=${subject}&body=${bodyText}`;
     });
   </script>
