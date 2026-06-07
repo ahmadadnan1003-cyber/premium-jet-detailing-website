@@ -391,41 +391,89 @@
     }
 
     .services {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .service,
-    .why-item {
-      min-height: 145px;
-      padding: 22px;
-      border: 1px solid var(--line-soft);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01)),
-        var(--panel);
-      transition: transform 180ms ease, border-color 180ms ease;
+        linear-gradient(90deg, transparent, rgba(239, 210, 141, 0.28), transparent),
+        var(--line-soft);
+      box-shadow: var(--shadow);
     }
 
-    .service:hover,
-    .why-item:hover {
-      transform: translateY(-3px);
-      border-color: rgba(239, 210, 141, 0.48);
+    .services::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent 0 18%, rgba(239, 210, 141, 0.3) 50%, transparent 82%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent 42%);
+      opacity: 0.45;
+    }
+
+    .service {
+      position: relative;
+      min-height: 196px;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(200, 154, 61, 0.12), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.048), rgba(255,255,255,0.012)),
+        #0b0a08;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .service::after {
+      content: "";
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      width: 42px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(239, 210, 141, 0.72));
+      opacity: 0.82;
+    }
+
+    .service:hover {
+      z-index: 1;
+      transform: translateY(-4px);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(200, 154, 61, 0.18), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.016)),
+        #0e0c09;
     }
 
     .service span {
-      display: block;
-      margin-bottom: 18px;
-      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 34px;
+      color: var(--gold-soft);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.25rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
     }
 
-    .service p,
-    .why-item p {
-      margin-top: 8px;
+    .service span::after {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(239, 210, 141, 0.8), transparent);
+    }
+
+    .service h3 {
+      max-width: 220px;
+      font-size: clamp(1.05rem, 1.7vw, 1.34rem);
+      line-height: 1.12;
+    }
+
+    .service p {
+      max-width: 260px;
+      margin-top: 13px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.94rem;
+      line-height: 1.48;
     }
 
     .carousel-shell {
@@ -507,10 +555,101 @@
       opacity: 1;
     }
 
+    .why-story {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.08fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .why-panel,
+    .why-grid {
+      background:
+        radial-gradient(circle at top left, rgba(200, 154, 61, 0.14), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.052), rgba(255,255,255,0.014)),
+        #0b0a08;
+    }
+
+    .why-panel {
+      position: relative;
+      display: grid;
+      align-content: end;
+      min-height: 390px;
+      padding: clamp(28px, 4.6vw, 52px);
+      overflow: hidden;
+    }
+
+    .why-panel::before {
+      content: "BER";
+      position: absolute;
+      right: -0.1em;
+      top: -0.28em;
+      color: rgba(239, 210, 141, 0.055);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(8rem, 18vw, 16rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .why-panel .eyebrow {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .why-panel h2 {
+      position: relative;
+      max-width: 560px;
+      font-size: clamp(2.35rem, 5.3vw, 5rem);
+    }
+
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: 1fr;
+      gap: 1px;
+    }
+
+    .why-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(150px, 0.7fr) 1fr;
+      gap: 24px;
+      align-items: center;
+      min-height: 96px;
+      padding: 24px 30px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012)),
+        #0b0a08;
+      transition: background 180ms ease;
+    }
+
+    .why-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(239, 210, 141, 0.7), transparent);
+      opacity: 0;
+      transition: opacity 180ms ease;
+    }
+
+    .why-item:hover {
+      background:
+        linear-gradient(90deg, rgba(200, 154, 61, 0.08), rgba(255,255,255,0.016)),
+        #0d0b09;
+    }
+
+    .why-item:hover::before {
+      opacity: 1;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.48;
     }
 
     .contact {
@@ -649,15 +788,10 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    @media (max-width: 1080px) {
-      .services {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
     @media (max-width: 900px) {
       .statement,
-      .contact {
+      .contact,
+      .why-story {
         grid-template-columns: 1fr;
       }
 
@@ -666,8 +800,12 @@
         align-items: start;
       }
 
-      .why-grid {
+      .services {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-panel {
+        min-height: auto;
       }
     }
 
@@ -774,9 +912,23 @@
       }
 
       .services,
-      .why-grid,
       .form-grid {
         grid-template-columns: 1fr;
+      }
+
+      .service {
+        min-height: 166px;
+        padding: 24px;
+      }
+
+      .service span {
+        margin-bottom: 22px;
+      }
+
+      .why-item {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 23px;
       }
 
       .form-actions {
@@ -923,17 +1075,17 @@
 
     <section class="section alt">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
+        <div class="why-story reveal">
+          <div class="why-panel">
             <p class="eyebrow" data-i18n="why.eyebrow">Why Premium Jet Detailing</p>
             <h2 data-i18n="why.heading">Quiet, reliable, precise.</h2>
           </div>
-        </div>
-        <div class="why-grid">
-          <article class="why-item reveal"><h3 data-i18n="why.discreet.title">Discreet Service</h3><p data-i18n="why.discreet.copy">Professional presence around aircraft and crew.</p></article>
-          <article class="why-item reveal"><h3 data-i18n="why.standards.title">Premium Standards</h3><p data-i18n="why.standards.copy">Cabin care aligned with business aviation.</p></article>
-          <article class="why-item reveal"><h3 data-i18n="why.detail.title">Detail-Oriented Work</h3><p data-i18n="why.detail.copy">Every passenger touchpoint matters.</p></article>
-          <article class="why-item reveal"><h3 data-i18n="why.flex.title">Flexible Availability</h3><p data-i18n="why.flex.copy">Local BER support and Germany on request.</p></article>
+          <div class="why-grid">
+            <article class="why-item"><h3 data-i18n="why.discreet.title">Discreet Service</h3><p data-i18n="why.discreet.copy">Professional presence around aircraft and crew.</p></article>
+            <article class="why-item"><h3 data-i18n="why.standards.title">Premium Standards</h3><p data-i18n="why.standards.copy">Cabin care aligned with business aviation.</p></article>
+            <article class="why-item"><h3 data-i18n="why.detail.title">Detail-Oriented Work</h3><p data-i18n="why.detail.copy">Every passenger touchpoint matters.</p></article>
+            <article class="why-item"><h3 data-i18n="why.flex.title">Flexible Availability</h3><p data-i18n="why.flex.copy">Local BER support and Germany on request.</p></article>
+          </div>
         </div>
       </div>
     </section>
