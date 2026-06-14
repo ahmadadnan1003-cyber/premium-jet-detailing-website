@@ -13,4 +13,4 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-Sitemap: https://premiumjetdetailing.de/sitemap.xml
+Sitemap: https://www.premiumjetdetailing.de/sitemap.xml
