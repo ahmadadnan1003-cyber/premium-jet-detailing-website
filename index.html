@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Jet Detailing | Aircraft Interior Care Berlin / BER</title>
-  <meta name="description" content="Premium Jet Detailing provides aircraft interior care and private jet detailing for business aviation in Berlin, BER and surrounding areas.">
-  <meta name="keywords" content="Premium Jet Detailing, aircraft interior care Berlin, aircraft interior care Berlin / BER, private jet detailing Berlin, private jet cleaning Berlin, privatjet reinigung Berlin, privatjet detailing Berlin, business jet cleaning Berlin, business jet detailing Berlin, executive aircraft interior care, business aviation cleaning, aircraft interior cleaning BER, private jet leather care, aircraft carpet cleaning">
+  <meta name="description" content="Premium Jet Detailing provides aircraft interior cleaning and detailing for private jets and business aviation in Berlin/BER, including cabin cleaning, leather care, carpet and upholstery care and on-demand interior support.">
+  <meta name="keywords" content="Premium Jet Detailing, Privatjet Reinigung Berlin, Privatjet Innenreinigung, Privatjet Detailing, Business Jet Reinigung, Business Jet Detailing, Flugzeug Innenreinigung Berlin, Flugzeugreinigung Berlin / BER, Aircraft Interior Care Berlin / BER, Private Jet Cleaning Berlin, Private Jet Detailing Berlin, aircraft interior care Berlin, private jet detailing Berlin, private jet cleaning Berlin, business aviation cleaning, aircraft interior cleaning BER, private jet leather care, aircraft carpet cleaning">
   <meta name="author" content="Premium Jet Detailing">
   <link rel="canonical" href="https://www.premiumjetdetailing.de/">
   <meta property="og:title" content="Premium Jet Detailing | Aircraft Interior Care Berlin / BER">
-  <meta property="og:description" content="Premium Jet Detailing provides aircraft interior care and private jet detailing for business aviation in Berlin, BER and surrounding areas.">
+  <meta property="og:description" content="Premium Jet Detailing provides aircraft interior cleaning and detailing for private jets and business aviation in Berlin/BER, including cabin cleaning, leather care, carpet and upholstery care and on-demand interior support.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.premiumjetdetailing.de/">
   <meta property="og:image" content="assets/hero-headline-jet-sunset-final.png">
@@ -39,7 +39,7 @@
         "areaServed": ["Berlin", "BER", "Brandenburg", "Germany on request"],
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "c/o Adnan Ahmad, Usedomer Straße 6",
+          "streetAddress": "Usedomer Str. 6",
           "postalCode": "13355",
           "addressLocality": "Berlin",
           "addressCountry": "DE"
@@ -243,8 +243,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.22) 42%, rgba(0, 0, 0, 0.04) 72%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 46%, rgba(0, 0, 0, 0.52)),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.18) 42%, rgba(0, 0, 0, 0.03) 72%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.16), transparent 46%, rgba(0, 0, 0, 0.46)),
         url("assets/hero-headline-jet-sunset-final.png") center / cover no-repeat;
       animation: softReveal 700ms ease-out both;
     }
@@ -345,6 +345,28 @@
       margin-right: auto;
       margin-top: 18px;
       font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      max-width: 720px;
+      margin: 22px auto 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      border: 1px solid var(--line-soft);
+      padding: 8px 10px;
+      color: var(--gold-soft);
+      background: rgba(0, 0, 0, 0.24);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
     }
 
     .button {
@@ -525,6 +547,15 @@
       color: var(--muted);
       font-size: 0.94rem;
       line-height: 1.48;
+    }
+
+    .service-note {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--line-soft);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.025);
+      font-size: 0.92rem;
     }
 
     .carousel-shell {
@@ -741,6 +772,38 @@
       background: rgba(200, 154, 61, 0.075);
     }
 
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .process-step {
+      min-height: 230px;
+      padding: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.048), rgba(255,255,255,0.012)),
+        #0b0a08;
+    }
+
+    .process-step span {
+      display: inline-block;
+      margin-bottom: 28px;
+      color: var(--gold-soft);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .process-step p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
     .contact {
       display: grid;
       grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
@@ -785,6 +848,13 @@
 
     .contact-lines a {
       overflow-wrap: anywhere;
+    }
+
+    .contact-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
     }
 
     .form-card {
@@ -861,6 +931,17 @@
       text-align: right;
     }
 
+    .text-link {
+      color: var(--gold-soft);
+      border-bottom: 1px solid rgba(239, 210, 141, 0.38);
+      transition: color 180ms ease, border-color 180ms ease;
+    }
+
+    .text-link:hover {
+      color: var(--ivory);
+      border-color: var(--gold);
+    }
+
     .reveal {
       opacity: 0;
       transform: translateY(14px);
@@ -891,6 +972,10 @@
 
       .services {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
       }
 
       .why-panel {
@@ -1031,6 +1116,11 @@
         margin-top: 22px;
       }
 
+      .hero-points {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
       .button {
         width: 100%;
       }
@@ -1053,6 +1143,7 @@
       .footer-links {
         text-align: left;
       }
+
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1093,10 +1184,17 @@
   <main id="home">
     <section class="hero">
       <div class="container hero-inner reveal">
-        <h1><span data-i18n="hero.line1">Executive</span><span class="headline-lock" data-i18n="hero.line2">Aircraft Interior Care</span></h1>
-        <p data-i18n="hero.copy">Discreet interior detailing for private and business aircraft around BER and across Germany on request.</p>
+        <h1><span data-i18n="hero.line1">Executive Aircraft Interior Care</span><span class="headline-lock" data-i18n="hero.line2">for Private Jets</span></h1>
+        <p data-i18n="hero.copy">Premium Jet Detailing provides discreet aircraft interior cleaning and detailing for private jets and business aviation in Berlin/BER and the surrounding region.</p>
+        <ul class="hero-points" aria-label="Service highlights">
+          <li data-i18n="hero.point1">Material-safe interior care</li>
+          <li data-i18n="hero.point2">Discreet service for business aviation</li>
+          <li data-i18n="hero.point3">Short-notice support on request</li>
+          <li data-i18n="hero.point4">BER access coordination subject to official assignment</li>
+        </ul>
         <div class="hero-actions">
-          <a class="button" href="#contact" data-i18n="hero.cta">Request Service</a>
+          <a class="button" href="#contact" data-i18n="hero.cta">Request Availability</a>
+          <a class="button ghost" href="#services" data-i18n="hero.secondaryCta">View Services</a>
         </div>
         <p class="eyebrow" data-i18n="hero.eyebrow">Business Aviation | BER</p>
       </div>
@@ -1107,7 +1205,7 @@
         <div class="statement-card reveal">
           <p class="eyebrow" data-i18n="statement.eyebrow">Premium Jet Detailing</p>
           <h2 data-i18n="statement.heading">Refined cabin care, without the noise.</h2>
-          <p data-i18n="statement.copy">Business aviation support with clean presentation, careful material care and reliable on-demand service.</p>
+          <p data-i18n="statement.copy">Premium aircraft interior care for private jet owners, operators, charter companies and handling partners in Berlin / BER.</p>
         </div>
         <div class="statement-image reveal">
           <img src="assets/cabin-interior.jpg" alt="Clean private jet cabin interior" data-i18n-alt="statement.imageAlt">
@@ -1120,18 +1218,21 @@
         <div class="section-head reveal">
           <div>
             <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
-            <h2 data-i18n="services.heading">Focused interior detailing.</h2>
+            <h2 data-i18n="services.heading">Aircraft cabin cleaning, handled with care.</h2>
           </div>
-          <p data-i18n="services.copy">Short, precise support for executive aircraft cabins.</p>
+          <p data-i18n="services.copy">Specific support for private jets, business aviation and executive aircraft interiors.</p>
         </div>
         <div class="services">
-          <article class="service reveal"><span>01</span><h3 data-i18n="services.cabin.title">Cabin Presentation</h3><p data-i18n="services.cabin.copy">Ready, calm and passenger-facing.</p></article>
-          <article class="service reveal"><span>02</span><h3 data-i18n="services.leather.title">Leather Care</h3><p data-i18n="services.leather.copy">Gentle care for premium seating.</p></article>
-          <article class="service reveal"><span>03</span><h3 data-i18n="services.surface.title">Surface Care</h3><p data-i18n="services.surface.copy">Polished tables, trim and touchpoints.</p></article>
-          <article class="service reveal"><span>04</span><h3 data-i18n="services.lavatory.title">Lavatory Detailing</h3><p data-i18n="services.lavatory.copy">Fresh, precise and discreet.</p></article>
-          <article class="service reveal"><span>05</span><h3 data-i18n="services.carpet.title">Carpet & Upholstery</h3><p data-i18n="services.carpet.copy">Focused soft-material refresh.</p></article>
-          <article class="service reveal"><span>06</span><h3 data-i18n="services.touch.title">High-Touch Areas</h3><p data-i18n="services.touch.copy">Clean switches, handles and controls.</p></article>
+          <article class="service reveal"><span>01</span><h3 data-i18n="services.cabin.title">Cabin Interior Cleaning</h3><p data-i18n="services.cabin.copy">Careful cleaning of visible cabin areas, tables, side panels, contact surfaces and seating zones for private and business aircraft.</p></article>
+          <article class="service reveal"><span>02</span><h3 data-i18n="services.leather.title">Leather Seat Care</h3><p data-i18n="services.leather.copy">Material-conscious cleaning and care for leather seats, armrests and premium cabin surfaces.</p></article>
+          <article class="service reveal"><span>03</span><h3 data-i18n="services.carpet.title">Carpet & Upholstery Care</h3><p data-i18n="services.carpet.copy">Vacuuming, spot treatment and controlled cleaning of carpets, textiles and upholstery depending on material condition.</p></article>
+          <article class="service reveal"><span>04</span><h3 data-i18n="services.galley.title">Galley Cleaning</h3><p data-i18n="services.galley.copy">Cleaning of galley surfaces, contact areas and visible cabin service zones with separate hygiene handling.</p></article>
+          <article class="service reveal"><span>05</span><h3 data-i18n="services.lavatory.title">Lavatory Cleaning</h3><p data-i18n="services.lavatory.copy">Controlled lavatory surface cleaning with separate cloths, gloves and tools to maintain hygiene separation.</p></article>
+          <article class="service reveal"><span>06</span><h3 data-i18n="services.touch.title">High-Touch Surface Cleaning</h3><p data-i18n="services.touch.copy">Careful cleaning of tables, handles, armrests, side panels and frequently touched surfaces.</p></article>
+          <article class="service reveal"><span>07</span><h3 data-i18n="services.glass.title">Glass & Mirror Cleaning</h3><p data-i18n="services.glass.copy">Streak-free cleaning of interior glass, mirrors and selected cabin window surfaces where suitable.</p></article>
+          <article class="service reveal"><span>08</span><h3 data-i18n="services.turnaround.title">On-Demand Turnaround Interior Support</h3><p data-i18n="services.turnaround.copy">Short-notice interior support for operators, owners, charter companies and handling partners, subject to availability and access coordination.</p></article>
         </div>
+        <p class="service-note reveal" data-i18n="services.note">Cockpit, avionics, seat mechanisms, belts, switches and other safety-sensitive areas are only handled with explicit approval and according to operator requirements.</p>
       </div>
     </section>
 
@@ -1142,7 +1243,7 @@
             <p class="eyebrow" data-i18n="showcase.eyebrow">Before & After</p>
             <h2 data-i18n="showcase.heading">Clean transformations.</h2>
           </div>
-          <p data-i18n="showcase.copy">Real cabin details, shown simply.</p>
+          <p data-i18n="showcase.copy">Interior care examples, shown simply.</p>
         </div>
         <div class="carousel-shell reveal">
           <div class="carousel" aria-label="Before and after image carousel">
@@ -1189,6 +1290,33 @@
           </div>
           <p data-i18n="brand.copy">Premium Jet Detailing is focused on aircraft interior care for private jets, business jets and executive aircraft in Berlin / BER. The service approach is material-safe, discreet and aviation-focused, covering cabin refresh, leather care, carpet and textile care, galley care, lavatory care, display care and high-touch surface care. Service requests at BER are coordinated through the aircraft's handling partner, FBO or another authorized airport-based party. Requests across Germany can be reviewed individually depending on aircraft location, access requirements, timing and scope of work.</p>
         </div>
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow" data-i18n="seo.eyebrow">Berlin / BER</p>
+            <h2>Privatjet Reinigung &amp; Aircraft Interior Care in Berlin / BER</h2>
+          </div>
+          <div>
+            <p>Premium Jet Detailing UG (haftungsbeschränkt) bietet hochwertige <a class="text-link" href="privatjet-reinigung-berlin.html">Privatjet Reinigung</a>, Privatjet Innenreinigung und <a class="text-link" href="business-jet-detailing-berlin.html">Business Jet Detailing</a> für private Jets, Business Jets und gewerbliche Luftfahrzeuge in Berlin, am BER und im umliegenden Raum. Der Fokus liegt auf materialschonender <a class="text-link" href="aircraft-interior-care-berlin-ber.html">Aircraft Interior Care</a> für Business Aviation und Executive Aircraft - darunter Lederpflege, Teppich- und Polsterreinigung, Kabinenpflege, Galley-, Lavatory-, Display- und High-Touch-Surface-Care. Ergänzend können <a class="text-link" href="privatjet-detailing-berlin.html">Privatjet Detailing</a>, <a class="text-link" href="business-jet-reinigung-berlin.html">Business Jet Reinigung</a>, <a class="text-link" href="private-jet-cleaning-berlin.html">Private Jet Cleaning</a> und <a class="text-link" href="private-jet-detailing-berlin.html">Private Jet Detailing</a> je nach Standort, Zugang, Zeitfenster und Leistungsumfang angefragt werden. Serviceanfragen am BER werden über den jeweiligen Handling-Partner, FBO oder eine autorisierte Stelle am Flughafen koordiniert.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow" data-i18n="process.eyebrow">Berlin / BER</p>
+            <h2 data-i18n="process.heading">BER Access & Coordination</h2>
+          </div>
+          <p data-i18n="process.copy">For airside work at BER, an official request or assignment from the aircraft owner, operator, charter company or handling partner may be required. This allows airport access and job coordination to be arranged properly for the specific aircraft and time window.</p>
+        </div>
+        <div class="process-grid reveal">
+          <article class="process-step"><span>01</span><h3 data-i18n="process.step1.title">Request</h3><p data-i18n="process.step1.copy">The client provides aircraft type, location, preferred time window and requested service scope.</p></article>
+          <article class="process-step"><span>02</span><h3 data-i18n="process.step2.title">Access coordination</h3><p data-i18n="process.step2.copy">Airport access is coordinated based on the official assignment and operational requirements.</p></article>
+          <article class="process-step"><span>03</span><h3 data-i18n="process.step3.title">Interior service</h3><p data-i18n="process.step3.copy">The aircraft interior care is carried out according to the agreed scope, material condition and available turnaround time.</p></article>
+        </div>
+        <p class="service-note reveal" data-i18n="process.note">Ideally, BER requests should be made 24–48 hours in advance. Short-notice requests can be reviewed individually.</p>
       </div>
     </section>
 
@@ -1199,30 +1327,35 @@
             <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
             <h2 data-i18n="contact.heading">Send an inquiry.</h2>
           </div>
-          <p data-i18n="contact.copy">Simple mail fallback, ready to connect to a backend later.</p>
+          <p data-i18n="contact.copy">Send us your aircraft type, location, preferred time window and requested service scope. We will review availability and respond as soon as possible.</p>
         </div>
         <div class="contact">
           <aside class="contact-card reveal">
             <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
             <h3>Adnan Ahmad</h3>
-            <p data-i18n="contact.role">Founder | Premium Jet Detailing</p>
+            <p data-i18n="contact.role">Managing Director | Premium Jet Detailing</p>
             <div class="contact-lines">
               <span><small data-i18n="contact.email">Email</small><a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a></span>
-              <span><small data-i18n="contact.locationLabel">Location</small><span data-i18n="contact.location">Berlin Brandenburg Airport (BER)</span></span>
+              <span><small data-i18n="contact.locationLabel">Location</small><span data-i18n="contact.location">Berlin / BER</span></span>
+              <span><small data-i18n="contact.availabilityLabel">Availability</small><span data-i18n="contact.availability">By request / subject to airport access and assignment confirmation</span></span>
             </div>
+            <p class="contact-note" data-i18n="contact.note">For BER operations, an official request or assignment from the aircraft owner, operator, charter company or handling partner may be required so airport access can be coordinated properly.</p>
           </aside>
           <form class="form-card reveal" id="bookingForm">
             <div class="form-grid">
               <div class="field"><label for="name" data-i18n="form.name">Name</label><input id="name" name="Name" autocomplete="name" required></div>
               <div class="field"><label for="company" data-i18n="form.company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
               <div class="field"><label for="email" data-i18n="form.email">Email</label><input id="email" type="email" name="Email" autocomplete="email" required></div>
-              <div class="field"><label for="phone" data-i18n="form.phone">Phone</label><input id="phone" name="Phone" autocomplete="tel"></div>
-              <div class="field full"><label for="aircraft" data-i18n="form.aircraft">Aircraft / Location</label><input id="aircraft" name="Aircraft / Location" placeholder="Aircraft type, BER, FBO or hangar" data-i18n-placeholder="form.aircraftPlaceholder"></div>
+              <div class="field"><label for="phone" data-i18n="form.phone">Phone / WhatsApp optional</label><input id="phone" name="Phone / WhatsApp" autocomplete="tel"></div>
+              <div class="field"><label for="aircraft" data-i18n="form.aircraft">Aircraft type</label><input id="aircraft" name="Aircraft type" placeholder="Aircraft type" data-i18n-placeholder="form.aircraftPlaceholder"></div>
+              <div class="field"><label for="location" data-i18n="form.location">Location / airport</label><input id="location" name="Location / airport" placeholder="BER, FBO, hangar or airport" data-i18n-placeholder="form.locationPlaceholder"></div>
+              <div class="field"><label for="time" data-i18n="form.time">Preferred time window</label><input id="time" name="Preferred time window" placeholder="Date and time window" data-i18n-placeholder="form.timePlaceholder"></div>
+              <div class="field"><label for="service" data-i18n="form.service">Requested service</label><input id="service" name="Requested service" placeholder="Cabin, leather, carpet, turnaround..." data-i18n-placeholder="form.servicePlaceholder"></div>
               <div class="field full"><label for="message" data-i18n="form.message">Message</label><textarea id="message" name="Message" placeholder="Preferred timing and service details" data-i18n-placeholder="form.messagePlaceholder"></textarea></div>
             </div>
             <div class="form-actions">
               <button class="button" type="submit" data-i18n="form.submit">Send Inquiry</button>
-              <a class="button ghost" href="mailto:info@premiumjetdetailing.de" data-i18n="form.emailDirect">Email Directly</a>
+              <a class="button ghost" href="mailto:info@premiumjetdetailing.de?subject=Aircraft%20Interior%20Care%20Request%20-%20Berlin%2FBER&body=Name%3A%0ACompany%3A%0AEmail%3A%0APhone%20%2F%20WhatsApp%3A%0AAircraft%20type%3A%0ALocation%20%2F%20airport%3A%0APreferred%20time%20window%3A%0ARequested%20service%3A%0AMessage%3A" data-i18n="form.emailDirect">Request Availability</a>
             </div>
           </form>
         </div>
@@ -1234,17 +1367,18 @@
     <div class="container footer-inner">
       <div>
         <img src="assets/premium-jet-logo.png" alt="Premium Jet Detailing">
-        <p data-i18n="footer.tagline">Whenever you land in Berlin, we take care of the details.</p>
+        <p>Premium Jet Detailing</p>
+        <p>Executive Aircraft Interior Care</p>
+        <p>Berlin / BER</p>
+        <p><a href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a></p>
         <p>© Premium Jet Detailing UG (haftungsbeschränkt). Aircraft Interior Care Berlin / BER.</p>
       </div>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="#services">Services</a>
         <a href="faq.html">FAQ</a>
-        <a href="#contact">Contact</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        <a href="#" aria-label="LinkedIn placeholder">LinkedIn</a>
       </div>
     </div>
   </footer>
@@ -1257,39 +1391,49 @@
     const translations = {
       en: {
         "meta.title": "Premium Jet Detailing | Aircraft Interior Care Berlin / BER",
-        "meta.description": "Premium Jet Detailing provides aircraft interior care and private jet detailing for business aviation in Berlin, BER and surrounding areas.",
+        "meta.description": "Premium Jet Detailing provides aircraft interior cleaning and detailing for private jets and business aviation in Berlin/BER, including cabin cleaning, leather care, carpet and upholstery care and on-demand interior support.",
         "nav.home": "Home",
         "nav.services": "Services",
         "nav.beforeAfter": "Before & After",
         "nav.contact": "Contact",
-        "nav.request": "Request Service",
-        "hero.line1": "Executive",
-        "hero.line2": "Aircraft Interior Care",
-        "hero.copy": "Discreet interior detailing for private and business aircraft around BER and across Germany on request.",
-        "hero.cta": "Request Service",
+        "nav.request": "Request Availability",
+        "hero.line1": "Executive Aircraft Interior Care",
+        "hero.line2": "for Private Jets",
+        "hero.copy": "Premium Jet Detailing provides discreet aircraft interior cleaning and detailing for private jets and business aviation in Berlin/BER and the surrounding region.",
+        "hero.point1": "Material-safe interior care",
+        "hero.point2": "Discreet service for business aviation",
+        "hero.point3": "Short-notice support on request",
+        "hero.point4": "BER access coordination subject to official assignment",
+        "hero.cta": "Request Availability",
+        "hero.secondaryCta": "View Services",
         "hero.eyebrow": "Business Aviation | BER",
         "statement.eyebrow": "Premium Jet Detailing",
         "statement.heading": "Refined cabin care, without the noise.",
-        "statement.copy": "Business aviation support with clean presentation, careful material care and reliable on-demand service.",
+        "statement.copy": "Premium aircraft interior care for private jet owners, operators, charter companies and handling partners in Berlin / BER.",
         "statement.imageAlt": "Clean private jet cabin interior",
         "services.eyebrow": "Services",
-        "services.heading": "Focused interior detailing.",
-        "services.copy": "Short, precise support for executive aircraft cabins.",
-        "services.cabin.title": "Cabin Presentation",
-        "services.cabin.copy": "Ready, calm and passenger-facing.",
-        "services.leather.title": "Leather Care",
-        "services.leather.copy": "Gentle care for premium seating.",
-        "services.surface.title": "Surface Care",
-        "services.surface.copy": "Polished tables, trim and touchpoints.",
-        "services.lavatory.title": "Lavatory Detailing",
-        "services.lavatory.copy": "Fresh, precise and discreet.",
-        "services.carpet.title": "Carpet & Upholstery",
-        "services.carpet.copy": "Focused soft-material refresh.",
-        "services.touch.title": "High-Touch Areas",
-        "services.touch.copy": "Clean switches, handles and controls.",
+        "services.heading": "Aircraft cabin cleaning, handled with care.",
+        "services.copy": "Specific support for private jets, business aviation and executive aircraft interiors.",
+        "services.cabin.title": "Cabin Interior Cleaning",
+        "services.cabin.copy": "Careful cleaning of visible cabin areas, tables, side panels, contact surfaces and seating zones for private and business aircraft.",
+        "services.leather.title": "Leather Seat Care",
+        "services.leather.copy": "Material-conscious cleaning and care for leather seats, armrests and premium cabin surfaces.",
+        "services.carpet.title": "Carpet & Upholstery Care",
+        "services.carpet.copy": "Vacuuming, spot treatment and controlled cleaning of carpets, textiles and upholstery depending on material condition.",
+        "services.galley.title": "Galley Cleaning",
+        "services.galley.copy": "Cleaning of galley surfaces, contact areas and visible cabin service zones with separate hygiene handling.",
+        "services.lavatory.title": "Lavatory Cleaning",
+        "services.lavatory.copy": "Controlled lavatory surface cleaning with separate cloths, gloves and tools to maintain hygiene separation.",
+        "services.touch.title": "High-Touch Surface Cleaning",
+        "services.touch.copy": "Careful cleaning of tables, handles, armrests, side panels and frequently touched surfaces.",
+        "services.glass.title": "Glass & Mirror Cleaning",
+        "services.glass.copy": "Streak-free cleaning of interior glass, mirrors and selected cabin window surfaces where suitable.",
+        "services.turnaround.title": "On-Demand Turnaround Interior Support",
+        "services.turnaround.copy": "Short-notice interior support for operators, owners, charter companies and handling partners, subject to availability and access coordination.",
+        "services.note": "Cockpit, avionics, seat mechanisms, belts, switches and other safety-sensitive areas are only handled with explicit approval and according to operator requirements.",
         "showcase.eyebrow": "Before & After",
         "showcase.heading": "Clean transformations.",
-        "showcase.copy": "Real cabin details, shown simply.",
+        "showcase.copy": "Interior care examples, shown simply.",
         "showcase.leatherAlt": "Before and after leather seat detailing",
         "showcase.surfaceAlt": "Before and after cabin table detailing",
         "showcase.entryAlt": "Before and after aircraft entry carpet detailing",
@@ -1308,67 +1452,98 @@
         "brand.eyebrow": "Why Premium Jet Detailing",
         "brand.heading": "Aircraft interior care, clearly focused.",
         "brand.copy": "Premium Jet Detailing is focused on aircraft interior care for private jets, business jets and executive aircraft in Berlin / BER. The service approach is material-safe, discreet and aviation-focused, covering cabin refresh, leather care, carpet and textile care, galley care, lavatory care, display care and high-touch surface care. Service requests at BER are coordinated through the aircraft's handling partner, FBO or another authorized airport-based party. Requests across Germany can be reviewed individually depending on aircraft location, access requirements, timing and scope of work.",
+        "process.eyebrow": "Berlin / BER",
+        "process.heading": "BER Access & Coordination",
+        "process.copy": "For airside work at BER, an official request or assignment from the aircraft owner, operator, charter company or handling partner may be required. This allows airport access and job coordination to be arranged properly for the specific aircraft and time window.",
+        "process.step1.title": "Request",
+        "process.step1.copy": "The client provides aircraft type, location, preferred time window and requested service scope.",
+        "process.step2.title": "Access coordination",
+        "process.step2.copy": "Airport access is coordinated based on the official assignment and operational requirements.",
+        "process.step3.title": "Interior service",
+        "process.step3.copy": "The aircraft interior care is carried out according to the agreed scope, material condition and available turnaround time.",
+        "process.note": "Ideally, BER requests should be made 24–48 hours in advance. Short-notice requests can be reviewed individually.",
+        "seo.eyebrow": "Berlin / BER",
+        "seo.heading": "Privatjet Reinigung and detailing in Berlin.",
+        "seo.copy": "Premium Jet Detailing UG (haftungsbeschränkt) provides premium Privatjet Reinigung Berlin, Privatjet Innenreinigung, Privatjet Detailing, Business Jet Reinigung and Business Jet Detailing for private and commercial aircraft in Berlin, at BER and the surrounding area. The focus is material-safe interior care for Business Aviation, Executive Aircraft and private jets - including leather care, carpet and upholstery cleaning, cabin care, galley, lavatory, display and high-touch surface care. Service requests at BER are coordinated through the aircraft's handling partner, FBO or an authorized airport-based party. Requests outside Berlin are possible on request depending on aircraft location, access, timing and scope.",
         "contact.eyebrow": "Contact",
         "contact.heading": "Send an inquiry.",
-        "contact.copy": "Simple mail fallback, ready to connect to a backend later.",
-        "contact.role": "Founder | Premium Jet Detailing",
-        "contact.phone": "Phone",
+        "contact.copy": "Send us your aircraft type, location, preferred time window and requested service scope. We will review availability and respond as soon as possible.",
+        "contact.role": "Managing Director | Premium Jet Detailing",
         "contact.email": "Email",
         "contact.locationLabel": "Location",
-        "contact.location": "Berlin Brandenburg Airport (BER)",
+        "contact.location": "Berlin / BER",
+        "contact.availabilityLabel": "Availability",
+        "contact.availability": "By request / subject to airport access and assignment confirmation",
+        "contact.note": "For BER operations, an official request or assignment from the aircraft owner, operator, charter company or handling partner may be required so airport access can be coordinated properly.",
         "form.name": "Name",
         "form.company": "Company",
         "form.email": "Email",
-        "form.phone": "Phone",
-        "form.aircraft": "Aircraft / Location",
-        "form.aircraftPlaceholder": "Aircraft type, BER, FBO or hangar",
+        "form.phone": "Phone / WhatsApp optional",
+        "form.aircraft": "Aircraft type",
+        "form.aircraftPlaceholder": "Aircraft type",
+        "form.location": "Location / airport",
+        "form.locationPlaceholder": "BER, FBO, hangar or airport",
+        "form.time": "Preferred time window",
+        "form.timePlaceholder": "Date and time window",
+        "form.service": "Requested service",
+        "form.servicePlaceholder": "Cabin, leather, carpet, turnaround...",
         "form.message": "Message",
         "form.messagePlaceholder": "Preferred timing and service details",
         "form.submit": "Send Inquiry",
-        "form.emailDirect": "Email Directly",
+        "form.emailDirect": "Request Availability",
         "footer.tagline": "Whenever you land in Berlin, we take care of the details.",
         "carousel.prev": "Previous slide",
         "carousel.next": "Next slide",
         "carousel.dot": "Go to slide",
         "lang.label": "Deutsch anzeigen",
-        "mail.subject": "Premium Jet Detailing Inquiry",
+        "mail.subject": "Aircraft Interior Care Request - Berlin/BER",
         "mail.intro": "Hello Premium Jet Detailing,\n\nI would like to request aircraft interior care."
       },
       de: {
-        "meta.title": "Premium Jet Detailing | Exklusive Flugzeug-Innenraumpflege am BER",
-        "meta.description": "Premium Jet Detailing bietet diskrete Flugzeug-Innenraumpflege für Privat- und Businessjets rund um den Flughafen Berlin Brandenburg und deutschlandweit auf Anfrage.",
+        "meta.title": "Premium Jet Detailing | Aircraft Interior Care Berlin / BER",
+        "meta.description": "Premium Jet Detailing provides aircraft interior cleaning and detailing for private jets and business aviation in Berlin/BER, including cabin cleaning, leather care, carpet and upholstery care and on-demand interior support.",
         "nav.home": "Start",
         "nav.services": "Leistungen",
         "nav.beforeAfter": "Vorher & Nachher",
         "nav.contact": "Kontakt",
-        "nav.request": "Service anfragen",
-        "hero.line1": "Exklusive",
-        "hero.line2": "Flugzeug-Innenraumpflege",
-        "hero.copy": "Diskrete Innenraumaufbereitung für Privat- und Businessjets rund um BER und deutschlandweit auf Anfrage.",
-        "hero.cta": "Service anfragen",
+        "nav.request": "Verfügbarkeit anfragen",
+        "hero.line1": "Executive Aircraft Interior Care",
+        "hero.line2": "for Private Jets",
+        "hero.copy": "Premium Jet Detailing bietet diskrete Flugzeug-Innenreinigung und Detailing für private Jets und Business Aviation in Berlin/BER und der umliegenden Region.",
+        "hero.point1": "Materialschonende Innenraumpflege",
+        "hero.point2": "Diskreter Service für Business Aviation",
+        "hero.point3": "Kurzfristige Unterstützung auf Anfrage",
+        "hero.point4": "BER-Zugang nach offizieller Beauftragung",
+        "hero.cta": "Verfügbarkeit anfragen",
+        "hero.secondaryCta": "Leistungen ansehen",
         "hero.eyebrow": "Business Aviation | BER",
         "statement.eyebrow": "Premium Jet Detailing",
         "statement.heading": "Edle Kabinenpflege, klar und diskret.",
-        "statement.copy": "Support für die Business Aviation mit gepflegter Kabinenpräsentation, sorgfältiger Materialpflege und verlässlichem Service auf Anfrage.",
+        "statement.copy": "Premium-Flugzeug-Innenraumpflege für Eigentümer, Operator, Charterunternehmen und Handling-Partner in Berlin / BER.",
         "statement.imageAlt": "Saubere Privatjet-Kabine",
         "services.eyebrow": "Leistungen",
-        "services.heading": "Fokussierte Innenraumpflege.",
-        "services.copy": "Kurze, präzise Unterstützung für Executive-Aircraft-Kabinen.",
-        "services.cabin.title": "Kabinenpräsentation",
-        "services.cabin.copy": "Ruhig, sauber und bereit für Passagiere.",
-        "services.leather.title": "Lederpflege",
-        "services.leather.copy": "Schonende Pflege für Premium-Sitze.",
-        "services.surface.title": "Oberflächenpflege",
-        "services.surface.copy": "Polierte Tische, Verkleidungen und Kontaktflächen.",
-        "services.lavatory.title": "Lavatory Detailing",
-        "services.lavatory.copy": "Frisch, präzise und diskret.",
-        "services.carpet.title": "Teppich & Polster",
-        "services.carpet.copy": "Gezielte Auffrischung weicher Materialien.",
-        "services.touch.title": "High-Touch Bereiche",
-        "services.touch.copy": "Saubere Schalter, Griffe und Bedienelemente.",
+        "services.heading": "Aircraft cabin cleaning, handled with care.",
+        "services.copy": "Spezifische Unterstützung für Privatjets, Business Aviation und Executive-Aircraft-Innenräume.",
+        "services.cabin.title": "Cabin Interior Cleaning",
+        "services.cabin.copy": "Sorgfältige Reinigung sichtbarer Kabinenbereiche, Tische, Seitenverkleidungen, Kontaktflächen und Sitzbereiche für private und geschäftliche Luftfahrzeuge.",
+        "services.leather.title": "Leather Seat Care",
+        "services.leather.copy": "Materialbewusste Reinigung und Pflege von Ledersitzen, Armlehnen und hochwertigen Kabinenoberflächen.",
+        "services.carpet.title": "Carpet & Upholstery Care",
+        "services.carpet.copy": "Staubsaugen, Fleckenbehandlung und kontrollierte Reinigung von Teppichen, Textilien und Polstern abhängig vom Materialzustand.",
+        "services.galley.title": "Galley Cleaning",
+        "services.galley.copy": "Reinigung von Galley-Oberflächen, Kontaktbereichen und sichtbaren Servicezonen mit getrennter Hygienebehandlung.",
+        "services.lavatory.title": "Lavatory Cleaning",
+        "services.lavatory.copy": "Kontrollierte Lavatory-Oberflächenreinigung mit separaten Tüchern, Handschuhen und Werkzeugen zur hygienischen Trennung.",
+        "services.touch.title": "High-Touch Surface Cleaning",
+        "services.touch.copy": "Sorgfältige Reinigung von Tischen, Griffen, Armlehnen, Seitenverkleidungen und häufig berührten Oberflächen.",
+        "services.glass.title": "Glass & Mirror Cleaning",
+        "services.glass.copy": "Streifenfreie Reinigung von Innenraumglas, Spiegeln und ausgewählten Kabinenfensterflächen, sofern geeignet.",
+        "services.turnaround.title": "On-Demand Turnaround Interior Support",
+        "services.turnaround.copy": "Kurzfristige Innenraumunterstützung für Operator, Eigentümer, Charterunternehmen und Handling-Partner, abhängig von Verfügbarkeit und Zugang.",
+        "services.note": "Cockpit, Avionik, Sitzmechanismen, Gurte, Schalter und andere sicherheitsrelevante Bereiche werden nur mit ausdrücklicher Freigabe und nach Operator-Vorgaben behandelt.",
         "showcase.eyebrow": "Vorher & Nachher",
         "showcase.heading": "Saubere Transformationen.",
-        "showcase.copy": "Echte Kabinendetails, schlicht gezeigt.",
+        "showcase.copy": "Interior care examples, shown simply.",
         "showcase.leatherAlt": "Vorher und nachher Lederpflege am Sitz",
         "showcase.surfaceAlt": "Vorher und nachher Tisch-Detailing in der Kabine",
         "showcase.entryAlt": "Vorher und nachher Teppichpflege am Einstieg",
@@ -1387,30 +1562,51 @@
         "brand.eyebrow": "Warum Premium Jet Detailing",
         "brand.heading": "Flugzeug-Innenraumpflege mit klarem Fokus.",
         "brand.copy": "Premium Jet Detailing ist auf Aircraft Interior Care für Privatjets, Businessjets und Executive Aircraft in Berlin / BER spezialisiert. Der Serviceansatz ist materialschonend, diskret und aviation-fokussiert und umfasst Cabin Refresh, Lederpflege, Teppich- und Textilpflege, Galley Care, Lavatory Care, Display Care und High-Touch Surface Care. Serviceanfragen am BER werden über den Handling-Partner des Flugzeugs, ein FBO oder eine andere autorisierte airport-basierte Partei koordiniert. Anfragen deutschlandweit können individuell geprüft werden, abhängig von Flugzeugstandort, Zugangsvoraussetzungen, Timing und Leistungsumfang.",
+        "process.eyebrow": "Berlin / BER",
+        "process.heading": "BER Access & Coordination",
+        "process.copy": "Für Arbeiten im Sicherheitsbereich am BER kann eine offizielle Anfrage oder Beauftragung durch Eigentümer, Operator, Charterunternehmen oder Handling-Partner erforderlich sein. So können Flughafenzugang und Einsatzkoordination für das konkrete Luftfahrzeug und Zeitfenster korrekt abgestimmt werden.",
+        "process.step1.title": "Request",
+        "process.step1.copy": "Der Kunde übermittelt Flugzeugtyp, Standort, gewünschtes Zeitfenster und den benötigten Leistungsumfang.",
+        "process.step2.title": "Access coordination",
+        "process.step2.copy": "Der Flughafenzugang wird auf Basis der offiziellen Beauftragung und der operativen Anforderungen koordiniert.",
+        "process.step3.title": "Interior service",
+        "process.step3.copy": "Die Innenraumpflege wird nach vereinbartem Umfang, Materialzustand und verfügbarer Turnaround-Zeit durchgeführt.",
+        "process.note": "BER-Anfragen sollten idealerweise 24–48 Stunden im Voraus erfolgen. Kurzfristige Anfragen können individuell geprüft werden.",
+        "seo.eyebrow": "Berlin / BER",
+        "seo.heading": "Privatjet Reinigung und Detailing in Berlin.",
+        "seo.copy": "Premium Jet Detailing UG (haftungsbeschränkt) bietet hochwertige Privatjet Reinigung, Privatjet Innenreinigung und Business Jet Detailing für private und gewerbliche Luftfahrzeuge in Berlin, am BER und im umliegenden Raum. Der Fokus liegt auf materialschonender Innenraumpflege für Business Aviation, Executive Aircraft und private Jets - darunter Lederpflege, Teppich- und Polsterreinigung, Kabinenpflege, Galley-, Lavatory-, Display- und High-Touch-Surface-Care. Serviceanfragen am BER werden über den jeweiligen Handling-Partner, FBO oder eine autorisierte Stelle am Flughafen koordiniert. Einsätze außerhalb Berlins sind je nach Flugzeugstandort, Zugang, Zeitfenster und Leistungsumfang auf Anfrage möglich.",
         "contact.eyebrow": "Kontakt",
         "contact.heading": "Anfrage senden.",
-        "contact.copy": "Einfacher Mail-Fallback, bereit für eine spätere Backend-Anbindung.",
-        "contact.role": "Founder | Premium Jet Detailing",
-        "contact.phone": "Telefon",
+        "contact.copy": "Senden Sie uns Flugzeugtyp, Standort, gewünschtes Zeitfenster und Leistungsumfang. Wir prüfen die Verfügbarkeit und antworten so schnell wie möglich.",
+        "contact.role": "Geschäftsführer | Premium Jet Detailing",
         "contact.email": "E-Mail",
         "contact.locationLabel": "Standort",
-        "contact.location": "Flughafen Berlin Brandenburg (BER)",
+        "contact.location": "Berlin / BER",
+        "contact.availabilityLabel": "Verfügbarkeit",
+        "contact.availability": "Auf Anfrage / abhängig von Flughafenzugang und bestätigter Beauftragung",
+        "contact.note": "Für BER-Operationen kann eine offizielle Anfrage oder Beauftragung durch Eigentümer, Operator, Charterunternehmen oder Handling-Partner erforderlich sein, damit der Flughafenzugang korrekt koordiniert werden kann.",
         "form.name": "Name",
         "form.company": "Unternehmen",
         "form.email": "E-Mail",
-        "form.phone": "Telefon",
-        "form.aircraft": "Aircraft / Standort",
-        "form.aircraftPlaceholder": "Aircraft-Typ, BER, FBO oder Hangar",
+        "form.phone": "Telefon / WhatsApp optional",
+        "form.aircraft": "Flugzeugtyp",
+        "form.aircraftPlaceholder": "Flugzeugtyp",
+        "form.location": "Standort / Flughafen",
+        "form.locationPlaceholder": "BER, FBO, Hangar oder Flughafen",
+        "form.time": "Gewünschtes Zeitfenster",
+        "form.timePlaceholder": "Datum und Zeitfenster",
+        "form.service": "Gewünschter Service",
+        "form.servicePlaceholder": "Kabine, Leder, Teppich, Turnaround...",
         "form.message": "Nachricht",
         "form.messagePlaceholder": "Gewünschter Zeitpunkt und Service-Details",
         "form.submit": "Anfrage senden",
-        "form.emailDirect": "Direkt mailen",
+        "form.emailDirect": "Verfügbarkeit anfragen",
         "footer.tagline": "Wann immer Sie in Berlin landen, wir kümmern uns um die Details.",
         "carousel.prev": "Vorherige Folie",
         "carousel.next": "Nächste Folie",
         "carousel.dot": "Zu Folie",
         "lang.label": "English anzeigen",
-        "mail.subject": "Premium Jet Detailing Anfrage",
+        "mail.subject": "Aircraft Interior Care Request - Berlin/BER",
         "mail.intro": "Hallo Premium Jet Detailing,\n\nich möchte eine Flugzeug-Innenraumpflege anfragen."
       }
     };
