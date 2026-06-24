@@ -1,4 +1,10 @@
 {
   "cleanUrls": false,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/private-jet-cleaning-berlin",
+      "destination": "/private-jet-cleaning-berlin.html"
+    }
+  ]
 }
