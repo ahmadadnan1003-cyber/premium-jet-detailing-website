@@ -547,6 +547,7 @@
     .service-preview {
       margin-top: 1px;
       display: grid;
+      grid-column: 1 / -1;
       grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
       gap: 1px;
       border: 1px solid var(--line);
@@ -1886,7 +1887,19 @@
     const servicePreviewImage = servicePreview?.querySelector("img");
     const servicePreviewTitle = servicePreview?.querySelector("h3");
     const servicePreviewCopy = servicePreview?.querySelector(".service-preview-copy p:not(.eyebrow)");
+    const servicesGrid = document.querySelector(".services");
+    const serviceMobileQuery = window.matchMedia("(max-width: 760px)");
     const serviceCards = document.querySelectorAll(".service");
+
+    function placeServicePreview(activeCard) {
+      if (!servicePreview || !servicesGrid) return;
+      if (serviceMobileQuery.matches && activeCard) {
+        activeCard.insertAdjacentElement("afterend", servicePreview);
+      } else {
+        servicesGrid.insertAdjacentElement("afterend", servicePreview);
+      }
+    }
+
     serviceCards.forEach((card) => {
       const trigger = card.querySelector(".service-trigger");
       if (!trigger) return;
@@ -1907,6 +1920,7 @@
           card.classList.add("active");
           trigger.setAttribute("aria-expanded", "true");
           if (servicePreview && servicePreviewImage && servicePreviewTitle && servicePreviewCopy && image && title && copy) {
+            placeServicePreview(card);
             servicePreviewImage.src = image.getAttribute("src") || "";
             servicePreviewImage.alt = image.getAttribute("alt") || "";
             servicePreviewTitle.textContent = title.textContent || "";
@@ -1921,6 +1935,10 @@
           }, 320);
         }
       });
+    });
+
+    serviceMobileQuery.addEventListener("change", () => {
+      placeServicePreview(document.querySelector(".service.active"));
     });
 
     document.getElementById("bookingForm").addEventListener("submit", (event) => {
