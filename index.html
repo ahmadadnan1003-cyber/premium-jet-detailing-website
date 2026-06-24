@@ -598,6 +598,10 @@
       min-height: 340px;
     }
 
+    .service-preview-copy .eyebrow {
+      display: none;
+    }
+
     .service-preview-copy h3 {
       margin: 0;
       font-family: "Cormorant Garamond", serif;
@@ -1159,6 +1163,21 @@
         margin-top: 14px;
         font-size: 0.94rem;
         line-height: 1.45;
+      }
+
+      .statement-card,
+      .section-head,
+      .section-head p,
+      .contact .section-head,
+      .service-preview-copy {
+        text-align: center;
+      }
+
+      .statement-card p,
+      .section-head p,
+      .service-preview-copy p:not(.eyebrow) {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .services,
