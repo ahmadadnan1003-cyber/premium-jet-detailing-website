@@ -1,10 +1,80 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/aircraft-interior-cleaning-berlin.html",
+      "destination": "/aircraft-interior-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/private-jet-cleaning-berlin.html",
+      "destination": "/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/aircraft-detailing-ber.html",
+      "destination": "/aircraft-detailing-ber",
+      "permanent": true
+    },
+    {
+      "source": "/business-jet-cleaning-germany.html",
+      "destination": "/business-jet-cleaning-germany",
+      "permanent": true
+    },
+    {
+      "source": "/aircraft-leather-cleaning.html",
+      "destination": "/aircraft-leather-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/aircraft-carpet-upholstery-cleaning.html",
+      "destination": "/aircraft-carpet-upholstery-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/safety-compliance.html",
+      "destination": "/safety-compliance",
+      "permanent": true
+    },
+    {
+      "source": "/request-quote.html",
+      "destination": "/request-quote",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/aircraft-interior-cleaning-berlin",
+      "destination": "/aircraft-interior-cleaning-berlin.html"
+    },
     {
       "source": "/private-jet-cleaning-berlin",
       "destination": "/private-jet-cleaning-berlin.html"
+    },
+    {
+      "source": "/aircraft-detailing-ber",
+      "destination": "/aircraft-detailing-ber.html"
+    },
+    {
+      "source": "/business-jet-cleaning-germany",
+      "destination": "/business-jet-cleaning-germany.html"
+    },
+    {
+      "source": "/aircraft-leather-cleaning",
+      "destination": "/aircraft-leather-cleaning.html"
+    },
+    {
+      "source": "/aircraft-carpet-upholstery-cleaning",
+      "destination": "/aircraft-carpet-upholstery-cleaning.html"
+    },
+    {
+      "source": "/safety-compliance",
+      "destination": "/safety-compliance.html"
+    },
+    {
+      "source": "/request-quote",
+      "destination": "/request-quote.html"
     }
   ]
 }

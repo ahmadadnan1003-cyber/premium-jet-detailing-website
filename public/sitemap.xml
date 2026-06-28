@@ -5,8 +5,68 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.premiumjetdetailing.de/faq.html</loc>
+    <loc>https://www.premiumjetdetailing.de/aircraft-interior-cleaning-berlin</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/private-jet-cleaning-berlin</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/aircraft-detailing-ber</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/business-jet-cleaning-germany</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/aircraft-leather-cleaning</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/aircraft-carpet-upholstery-cleaning</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/safety-compliance</loc>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/request-quote</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/faq.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/privatjet-reinigung-berlin.html</loc>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/privatjet-detailing-berlin.html</loc>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/business-jet-reinigung-berlin.html</loc>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/business-jet-detailing-berlin.html</loc>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/private-jet-detailing-berlin.html</loc>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/business-jet-cleaning-berlin.html</loc>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/aircraft-interior-care-berlin-ber.html</loc>
+    <priority>0.55</priority>
   </url>
   <url>
     <loc>https://www.premiumjetdetailing.de/impressum.html</loc>
@@ -15,37 +75,5 @@
   <url>
     <loc>https://www.premiumjetdetailing.de/datenschutz.html</loc>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/privatjet-reinigung-berlin.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/privatjet-detailing-berlin.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/business-jet-reinigung-berlin.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/business-jet-detailing-berlin.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/private-jet-cleaning-berlin</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/private-jet-detailing-berlin.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/business-jet-cleaning-berlin.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.premiumjetdetailing.de/aircraft-interior-care-berlin-ber.html</loc>
-    <priority>0.6</priority>
   </url>
 </urlset>
