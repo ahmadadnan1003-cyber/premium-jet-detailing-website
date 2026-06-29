@@ -1,6 +1,4 @@
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
-const DEFAULT_TO_EMAIL = "info@premiumjetdetailing.de";
-const DEFAULT_FROM_EMAIL = "website@premiumjetdetailing.de";
 const MAX_FIELD_LENGTH = 2000;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
@@ -39,6 +37,35 @@ function sanitize(value) {
 
 function isEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function getEmailConfig() {
+  const config = {
+    apiKey: process.env.RESEND_API_KEY,
+    toEmail: process.env.INQUIRY_TO_EMAIL,
+    fromEmail: process.env.INQUIRY_FROM_EMAIL
+  };
+
+  const missing = [];
+  if (!config.apiKey) missing.push("RESEND_API_KEY");
+  if (!config.toEmail) missing.push("INQUIRY_TO_EMAIL");
+  if (!config.fromEmail) missing.push("INQUIRY_FROM_EMAIL");
+
+  if (missing.length) {
+    console.error("Inquiry API missing required environment variables:", missing.join(", "));
+    return { ok: false };
+  }
+
+  const invalid = [];
+  if (!isEmail(config.toEmail)) invalid.push("INQUIRY_TO_EMAIL");
+  if (!isEmail(config.fromEmail)) invalid.push("INQUIRY_FROM_EMAIL");
+
+  if (invalid.length) {
+    console.error("Inquiry API has invalid email environment variables:", invalid.join(", "));
+    return { ok: false };
+  }
+
+  return { ok: true, ...config };
 }
 
 function buildPayload(body) {
@@ -145,11 +172,9 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.INQUIRY_TO_EMAIL || DEFAULT_TO_EMAIL;
-    const fromEmail = process.env.INQUIRY_FROM_EMAIL || DEFAULT_FROM_EMAIL;
+    const emailConfig = getEmailConfig();
 
-    if (!apiKey) {
+    if (!emailConfig.ok) {
       return json(res, 500, { ok: false, error: "Email service is not configured." });
     }
 
@@ -164,12 +189,12 @@ module.exports = async function handler(req, res) {
     const resendResponse = await fetch(RESEND_ENDPOINT, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: `Bearer ${emailConfig.apiKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: `Premium Jet Detailing <${fromEmail}>`,
-        to: [toEmail],
+        from: `Premium Jet Detailing <${emailConfig.fromEmail}>`,
+        to: [emailConfig.toEmail],
         reply_to: data.email,
         subject: "New Aircraft Detailing Inquiry – Premium Jet Detailing",
         text: formatEmail(data),
