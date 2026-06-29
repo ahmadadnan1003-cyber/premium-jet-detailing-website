@@ -1637,9 +1637,9 @@
               <div class="field"><label for="company" data-i18n="form.company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
               <div class="field"><label for="email" data-i18n="form.email">Email</label><input id="email" type="email" name="Email" autocomplete="email" required></div>
               <div class="field"><label for="phone" data-i18n="form.phone">Phone / WhatsApp optional</label><input id="phone" name="Phone / WhatsApp" autocomplete="tel"></div>
-              <div class="field"><label for="aircraft" data-i18n="form.aircraft">Aircraft type</label><input id="aircraft" name="Aircraft type" placeholder="Aircraft type" data-i18n-placeholder="form.aircraftPlaceholder"></div>
-              <div class="field"><label for="location" data-i18n="form.location">Location / airport</label><input id="location" name="Location / airport" placeholder="BER, FBO, hangar or airport" data-i18n-placeholder="form.locationPlaceholder"></div>
-              <div class="field"><label for="time" data-i18n="form.time">Preferred time window</label><input id="time" name="Preferred time window" placeholder="Date and time window" data-i18n-placeholder="form.timePlaceholder"></div>
+              <div class="field"><label for="aircraft" data-i18n="form.aircraft">Aircraft type</label><input id="aircraft" name="Aircraft type" placeholder="Aircraft type" data-i18n-placeholder="form.aircraftPlaceholder" required></div>
+              <div class="field"><label for="location" data-i18n="form.location">Location / airport</label><input id="location" name="Location / airport" placeholder="BER, FBO, hangar or airport" data-i18n-placeholder="form.locationPlaceholder" required></div>
+              <div class="field"><label for="time" data-i18n="form.time">Preferred time window</label><input id="time" name="Preferred time window" placeholder="Date and time window" data-i18n-placeholder="form.timePlaceholder" required></div>
               <div class="field full"><label for="message" data-i18n="form.message">Message</label><textarea id="message" name="Message" placeholder="Preferred timing and service details" data-i18n-placeholder="form.messagePlaceholder"></textarea></div>
             </div>
             <div class="form-actions">
@@ -2055,17 +2055,8 @@
       placeServicePreview(document.querySelector(".service.active"));
     });
 
-    document.getElementById("bookingForm").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const lines = Array.from(data.entries())
-        .map(([key, value]) => `${key}: ${value || "-"}`)
-        .join("\n");
-      const subject = encodeURIComponent(translate("mail.subject"));
-      const bodyText = encodeURIComponent(`${translate("mail.intro")}\n\n${lines}`);
-      window.location.href = `mailto:info@premiumjetdetailing.de?subject=${subject}&body=${bodyText}`;
-    });
   </script>
+  <script src="/assets/inquiry-form.js" defer></script>
   <script src="/assets/lead-tracking.js" defer></script>
 </body>
 </html>

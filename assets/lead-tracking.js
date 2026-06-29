@@ -50,6 +50,8 @@
     }, params || {}));
   }
 
+  window.pjdTrackLeadEvent = sendEvent;
+
   document.addEventListener("click", function (event) {
     if (!(event.target instanceof Element)) return;
 
@@ -83,18 +85,9 @@
     }
   }, true);
 
-  document.addEventListener("submit", function (event) {
-    var form = event.target;
-    if (!(form instanceof HTMLFormElement)) return;
-    if (!form.matches("#bookingForm, #quoteForm")) return;
-
-    var serviceField = form.querySelector('[name="service"]');
-
-    sendEvent("request_quote_submit", {
-      form_id: form.id || "",
-      requested_service: serviceField ? serviceField.value : ""
-    });
-  }, true);
+  document.addEventListener("pjd:request_quote_submit_success", function (event) {
+    sendEvent("request_quote_submit", event.detail || {});
+  });
 
   ready(function () {
     var normalizedPath = pagePath().replace(/\/$/, "");
