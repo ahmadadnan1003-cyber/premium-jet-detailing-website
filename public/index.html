@@ -281,15 +281,17 @@
       content: "";
       position: absolute;
       left: 50%;
-      top: -58px;
+      top: -72px;
       z-index: 0;
-      width: min(920px, calc(100% + 210px));
-      height: clamp(270px, 28vw, 380px);
+      width: min(1040px, calc(100% + 300px));
+      height: clamp(320px, 34vw, 460px);
       transform: translateX(-50%);
       pointer-events: none;
-      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.36) 62%, rgba(0, 0, 0, 0) 82%);
-      filter: blur(22px);
-      opacity: 0.92;
+      background:
+        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.84) 34%, rgba(0, 0, 0, 0.62) 58%, rgba(0, 0, 0, 0.24) 76%, rgba(0, 0, 0, 0) 90%),
+        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.44) 54%, rgba(0, 0, 0, 0) 82%);
+      filter: blur(24px);
+      opacity: 1;
     }
 
     .hero-inner > * {
@@ -1219,11 +1221,11 @@
       }
 
       .hero-inner::before {
-        top: -38px;
-        width: calc(100% + 106px);
-        height: 286px;
-        filter: blur(18px);
-        opacity: 0.94;
+        top: -52px;
+        width: calc(100% + 150px);
+        height: 330px;
+        filter: blur(20px);
+        opacity: 1;
       }
 
       .hero .eyebrow {
