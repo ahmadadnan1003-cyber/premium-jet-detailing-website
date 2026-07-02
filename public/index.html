@@ -281,15 +281,20 @@
       content: "";
       position: absolute;
       left: 50%;
-      top: -38px;
-      z-index: -1;
-      width: min(860px, calc(100% + 160px));
-      height: clamp(230px, 24vw, 320px);
+      top: -58px;
+      z-index: 0;
+      width: min(920px, calc(100% + 210px));
+      height: clamp(270px, 28vw, 380px);
       transform: translateX(-50%);
       pointer-events: none;
-      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.38) 38%, rgba(0, 0, 0, 0.14) 64%, rgba(0, 0, 0, 0) 78%);
-      filter: blur(18px);
-      opacity: 0.82;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.58) 35%, rgba(0, 0, 0, 0.28) 62%, rgba(0, 0, 0, 0) 82%);
+      filter: blur(22px);
+      opacity: 0.92;
+    }
+
+    .hero-inner > * {
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
@@ -347,6 +352,10 @@
       line-height: 1.03;
     }
 
+    .hero h1 {
+      text-shadow: 0 8px 36px rgba(0, 0, 0, 0.92), 0 2px 12px rgba(0, 0, 0, 0.72);
+    }
+
     h1 span {
       display: block;
     }
@@ -378,6 +387,7 @@
       margin-right: auto;
       margin-top: 18px;
       font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.86), 0 1px 8px rgba(0, 0, 0, 0.72);
     }
 
     .button {
@@ -1209,11 +1219,11 @@
       }
 
       .hero-inner::before {
-        top: -28px;
-        width: calc(100% + 76px);
-        height: 250px;
-        filter: blur(16px);
-        opacity: 0.88;
+        top: -38px;
+        width: calc(100% + 106px);
+        height: 286px;
+        filter: blur(18px);
+        opacity: 0.94;
       }
 
       .hero .eyebrow {
