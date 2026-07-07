@@ -3,43 +3,154 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "https://www.premiumjetdetailing.de/",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz.html",
+      "destination": "https://www.premiumjetdetailing.de/datenschutz",
+      "permanent": true
+    },
+    {
+      "source": "/impressum.html",
+      "destination": "https://www.premiumjetdetailing.de/impressum",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "https://www.premiumjetdetailing.de/faq",
+      "permanent": true
+    },
+    {
       "source": "/aircraft-interior-cleaning-berlin.html",
-      "destination": "/aircraft-interior-cleaning-berlin",
+      "destination": "https://www.premiumjetdetailing.de/aircraft-interior-cleaning-berlin",
       "permanent": true
     },
     {
       "source": "/private-jet-cleaning-berlin.html",
-      "destination": "/private-jet-cleaning-berlin",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
       "permanent": true
     },
     {
       "source": "/aircraft-detailing-ber.html",
-      "destination": "/aircraft-detailing-ber",
+      "destination": "https://www.premiumjetdetailing.de/aircraft-detailing-ber",
       "permanent": true
     },
     {
       "source": "/business-jet-cleaning-germany.html",
-      "destination": "/business-jet-cleaning-germany",
+      "destination": "https://www.premiumjetdetailing.de/business-jet-cleaning-germany",
       "permanent": true
     },
     {
       "source": "/aircraft-leather-cleaning.html",
-      "destination": "/aircraft-leather-cleaning",
+      "destination": "https://www.premiumjetdetailing.de/aircraft-leather-cleaning",
       "permanent": true
     },
     {
       "source": "/aircraft-carpet-upholstery-cleaning.html",
-      "destination": "/aircraft-carpet-upholstery-cleaning",
+      "destination": "https://www.premiumjetdetailing.de/aircraft-carpet-upholstery-cleaning",
       "permanent": true
     },
     {
       "source": "/safety-compliance.html",
-      "destination": "/safety-compliance",
+      "destination": "https://www.premiumjetdetailing.de/safety-compliance",
       "permanent": true
     },
     {
       "source": "/request-quote.html",
-      "destination": "/request-quote",
+      "destination": "https://www.premiumjetdetailing.de/request-quote",
+      "permanent": true
+    },
+    {
+      "source": "/private-jet-reinigung-berlin.html",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/privatjet-reinigung-berlin.html",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/privatjet-detailing-berlin.html",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/private-jet-detailing-berlin.html",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/business-jet-reinigung-berlin.html",
+      "destination": "https://www.premiumjetdetailing.de/business-jet-cleaning-germany",
+      "permanent": true
+    },
+    {
+      "source": "/business-jet-cleaning-berlin.html",
+      "destination": "https://www.premiumjetdetailing.de/business-jet-cleaning-germany",
+      "permanent": true
+    },
+    {
+      "source": "/business-jet-detailing-berlin.html",
+      "destination": "https://www.premiumjetdetailing.de/business-jet-cleaning-germany",
+      "permanent": true
+    },
+    {
+      "source": "/aircraft-interior-care-berlin-ber.html",
+      "destination": "https://www.premiumjetdetailing.de/aircraft-interior-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/private-jet-reinigung-berlin",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/privatjet-reinigung-berlin",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/privatjet-detailing-berlin",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/private-jet-detailing-berlin",
+      "destination": "https://www.premiumjetdetailing.de/private-jet-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/business-jet-reinigung-berlin",
+      "destination": "https://www.premiumjetdetailing.de/business-jet-cleaning-germany",
+      "permanent": true
+    },
+    {
+      "source": "/business-jet-cleaning-berlin",
+      "destination": "https://www.premiumjetdetailing.de/business-jet-cleaning-germany",
+      "permanent": true
+    },
+    {
+      "source": "/business-jet-detailing-berlin",
+      "destination": "https://www.premiumjetdetailing.de/business-jet-cleaning-germany",
+      "permanent": true
+    },
+    {
+      "source": "/aircraft-interior-care-berlin-ber",
+      "destination": "https://www.premiumjetdetailing.de/aircraft-interior-cleaning-berlin",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "premiumjetdetailing.de"
+        }
+      ],
+      "destination": "https://www.premiumjetdetailing.de/:path*",
       "permanent": true
     }
   ],
@@ -75,6 +186,18 @@
     {
       "source": "/request-quote",
       "destination": "/request-quote.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/impressum",
+      "destination": "/impressum.html"
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/datenschutz.html"
     }
   ]
 }
