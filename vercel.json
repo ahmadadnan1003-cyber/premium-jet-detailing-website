@@ -18,6 +18,16 @@
       "permanent": true
     },
     {
+      "source": "/agb.html",
+      "destination": "https://www.premiumjetdetailing.de/agb",
+      "permanent": true
+    },
+    {
+      "source": "/widerruf.html",
+      "destination": "https://www.premiumjetdetailing.de/widerruf",
+      "permanent": true
+    },
+    {
       "source": "/faq.html",
       "destination": "https://www.premiumjetdetailing.de/faq",
       "permanent": true
@@ -198,6 +208,14 @@
     {
       "source": "/datenschutz",
       "destination": "/datenschutz.html"
+    },
+    {
+      "source": "/agb",
+      "destination": "/agb.html"
+    },
+    {
+      "source": "/widerruf",
+      "destination": "/widerruf.html"
     }
   ]
 }
