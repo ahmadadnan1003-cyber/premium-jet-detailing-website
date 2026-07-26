@@ -36,4 +36,20 @@
     <loc>https://www.premiumjetdetailing.de/request-quote</loc>
     <priority>0.75</priority>
   </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/agb</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/widerruf</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/impressum</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.premiumjetdetailing.de/datenschutz</loc>
+    <priority>0.3</priority>
+  </url>
 </urlset>
