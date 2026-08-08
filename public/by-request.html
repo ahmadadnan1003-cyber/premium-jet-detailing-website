@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <title>By Request | Premium Jet Detailing</title>
+  <meta name="description" content="Request professional aircraft interior detailing from Premium Jet Detailing in Berlin and across Germany.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Premium Jet Detailing">
+  <link rel="canonical" href="https://www.premiumjetdetailing.de/by-request">
+  <meta property="og:title" content="By Request | Premium Jet Detailing">
+  <meta property="og:description" content="Request professional aircraft interior detailing from Premium Jet Detailing in Berlin and across Germany.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.premiumjetdetailing.de/by-request">
+  <meta property="og:image" content="https://www.premiumjetdetailing.de/assets/premium-jet-logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="By Request | Premium Jet Detailing">
+  <meta name="twitter:description" content="Request professional aircraft interior detailing from Premium Jet Detailing in Berlin and across Germany.">
+  <link rel="preload" as="image" href="/assets/premium-jet-logo.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Aircraft Interior Detailing — By Request",
+    "url": "https://www.premiumjetdetailing.de/by-request",
+    "description": "Professional aircraft interior detailing in Berlin and across Germany.",
+    "serviceType": "Aircraft Interior Detailing",
+    "areaServed": ["Berlin", "Germany"],
+    "provider": {
+      "@type": "Organization",
+      "name": "Premium Jet Detailing UG",
+      "url": "https://www.premiumjetdetailing.de/",
+      "email": "info@premiumjetdetailing.de"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --black: #050505;
+      --ink: #0b0907;
+      --gold: #c89a3d;
+      --gold-deep: #9b6c22;
+      --gold-soft: #efd28d;
+      --ivory: #f6efe3;
+      --text: #d9d0c2;
+      --muted: #a99f91;
+      --line: rgba(200, 154, 61, 0.34);
+      --line-soft: rgba(200, 154, 61, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--black);
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ivory);
+      background:
+        radial-gradient(circle at 50% 15%, rgba(200, 154, 61, 0.105), transparent 31rem),
+        radial-gradient(circle at 88% 88%, rgba(155, 108, 34, 0.07), transparent 28rem),
+        linear-gradient(145deg, #050505 0%, #090806 52%, #030303 100%);
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      position: fixed;
+      z-index: 0;
+      inset: -30%;
+      content: "";
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at center, rgba(239, 210, 141, 0.055), transparent 36%),
+        conic-gradient(from 205deg at 50% 50%, transparent 0 39%, rgba(200, 154, 61, 0.035) 47%, transparent 55% 100%);
+      filter: blur(2px);
+      animation: ambient-light 16s ease-in-out infinite alternate;
+      will-change: transform, opacity;
+    }
+
+    body::after {
+      position: fixed;
+      z-index: 0;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      opacity: 0.23;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 100% 5px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 72%, transparent);
+      mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 72%, transparent);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+      padding:
+        max(20px, env(safe-area-inset-top))
+        max(20px, env(safe-area-inset-right))
+        max(20px, env(safe-area-inset-bottom))
+        max(20px, env(safe-area-inset-left));
+      isolation: isolate;
+    }
+
+    .page-shell::before,
+    .page-shell::after {
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      content: "";
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+
+    .page-shell::before {
+      top: 10%;
+      width: min(760px, 82vw);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(239, 210, 141, 0.22), transparent);
+    }
+
+    .page-shell::after {
+      bottom: 9%;
+      width: min(560px, 68vw);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200, 154, 61, 0.13), transparent);
+    }
+
+    .concierge-card {
+      width: min(100%, 610px);
+      margin: auto;
+      text-align: center;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: reveal-logo 900ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards;
+    }
+
+    .brand-logo {
+      display: block;
+      width: clamp(150px, 45vw, 205px);
+      height: auto;
+      filter: drop-shadow(0 12px 24px rgba(200, 154, 61, 0.12));
+    }
+
+    .gold-rule {
+      width: 0;
+      height: 1px;
+      margin: 17px auto 20px;
+      background: linear-gradient(90deg, transparent, var(--gold-soft) 22%, var(--gold) 50%, var(--gold-soft) 78%, transparent);
+      box-shadow: 0 0 15px rgba(200, 154, 61, 0.24);
+      animation: draw-rule 1.05s cubic-bezier(0.22, 1, 0.36, 1) 450ms forwards;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(13px);
+      animation: reveal-up 780ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 15vw, 5.4rem);
+      font-weight: 400;
+      line-height: 0.94;
+      letter-spacing: 0.075em;
+      text-indent: 0.075em;
+      text-wrap: balance;
+      text-shadow: 0 16px 46px rgba(0, 0, 0, 0.58);
+      animation-delay: 560ms;
+    }
+
+    .service-line {
+      margin: 15px 0 0;
+      color: var(--gold-soft);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.05rem, 5.2vw, 1.5rem);
+      font-weight: 400;
+      letter-spacing: 0.035em;
+      animation-delay: 680ms;
+    }
+
+    .location {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.67rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation-delay: 790ms;
+    }
+
+    .description {
+      max-width: 450px;
+      margin: 13px auto 0;
+      color: var(--text);
+      font-size: 0.89rem;
+      line-height: 1.55;
+      letter-spacing: 0.015em;
+      animation-delay: 880ms;
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+      width: min(100%, 440px);
+      margin: 27px auto 0;
+    }
+
+    .action-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 62px;
+      padding: 12px 24px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      font-size: 0.75rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease, background 240ms ease;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    .action-button:focus-visible,
+    .contact-link:focus-visible,
+    .brand-link:focus-visible,
+    .utility-link:focus-visible {
+      outline: 2px solid var(--gold-soft);
+      outline-offset: 4px;
+    }
+
+    .action-button--primary {
+      border-color: rgba(239, 210, 141, 0.68);
+      color: #100d08;
+      background: linear-gradient(115deg, #b98630 0%, #e0b965 45%, #c49338 100%);
+      box-shadow: 0 12px 38px rgba(200, 154, 61, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      animation: reveal-up 780ms cubic-bezier(0.22, 1, 0.36, 1) 980ms forwards, gold-breathe 4.8s ease-in-out 2s infinite;
+    }
+
+    .action-button--primary::after {
+      position: absolute;
+      inset: -70% auto -70% -36%;
+      width: 28%;
+      content: "";
+      opacity: 0.5;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+      transform: rotate(14deg) translateX(-300%);
+      animation: button-light 7s ease-in-out 2.8s infinite;
+    }
+
+    .action-button--secondary {
+      color: var(--ivory);
+      background: rgba(255, 255, 255, 0.012);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      animation-delay: 1.09s;
+    }
+
+    .button-copy {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 4px;
+    }
+
+    .button-note {
+      font-size: 0.56rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      opacity: 0.66;
+    }
+
+    .direct-contact {
+      margin-top: 23px;
+      animation-delay: 1.2s;
+    }
+
+    .contact-label {
+      margin: 0 0 7px;
+      color: var(--gold-soft);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px 17px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.65;
+      letter-spacing: 0.035em;
+    }
+
+    .contact-link,
+    .utility-link {
+      transition: color 180ms ease;
+    }
+
+    .utility-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px 15px;
+      margin-top: 17px;
+      color: rgba(169, 159, 145, 0.66);
+      font-size: 0.59rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      animation-delay: 1.3s;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .action-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .action-button--primary:hover {
+        border-color: var(--gold-soft);
+        box-shadow: 0 17px 48px rgba(200, 154, 61, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      }
+
+      .action-button--secondary:hover {
+        border-color: rgba(239, 210, 141, 0.62);
+        background: rgba(200, 154, 61, 0.06);
+      }
+
+      .contact-link:hover,
+      .utility-link:hover {
+        color: var(--gold-soft);
+      }
+    }
+
+    @media (min-width: 720px) {
+      .page-shell {
+        padding: 42px;
+      }
+
+      .gold-rule {
+        margin-top: 22px;
+        margin-bottom: 26px;
+      }
+
+      .description {
+        font-size: 0.95rem;
+      }
+
+      .actions {
+        margin-top: 32px;
+      }
+    }
+
+    @media (max-height: 720px) and (max-width: 719px) {
+      .page-shell {
+        align-items: start;
+      }
+
+      .brand-logo {
+        width: 142px;
+      }
+
+      .gold-rule {
+        margin-top: 10px;
+        margin-bottom: 13px;
+      }
+
+      .title {
+        font-size: clamp(2.65rem, 13vw, 3.6rem);
+      }
+
+      .service-line {
+        margin-top: 10px;
+      }
+
+      .description {
+        margin-top: 9px;
+      }
+
+      .actions {
+        margin-top: 19px;
+      }
+
+      .action-button {
+        min-height: 56px;
+      }
+
+      .direct-contact {
+        margin-top: 16px;
+      }
+
+      .utility-links {
+        margin-top: 10px;
+      }
+    }
+
+    @keyframes reveal-logo {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes draw-rule {
+      from { width: 0; opacity: 0; }
+      to { width: min(280px, 68vw); opacity: 1; }
+    }
+
+    @keyframes reveal-up {
+      from { opacity: 0; transform: translateY(13px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ambient-light {
+      from { opacity: 0.58; transform: translate3d(-1.3%, -0.6%, 0) scale(1); }
+      to { opacity: 0.96; transform: translate3d(1.3%, 0.9%, 0) scale(1.025); }
+    }
+
+    @keyframes gold-breathe {
+      0%, 100% { box-shadow: 0 12px 38px rgba(200, 154, 61, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22); }
+      50% { box-shadow: 0 15px 44px rgba(200, 154, 61, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.26); }
+    }
+
+    @keyframes button-light {
+      0%, 62% { transform: rotate(14deg) translateX(-300%); }
+      82%, 100% { transform: rotate(14deg) translateX(760%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 1ms !important;
+        animation-delay: 0ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 1ms !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/consent.css">
+  <script src="/assets/consent.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="concierge-card" aria-labelledby="page-title">
+      <a class="brand-link" href="/" aria-label="Premium Jet Detailing home">
+        <img class="brand-logo" src="/assets/premium-jet-logo.png" width="718" height="408" alt="Premium Jet Detailing">
+      </a>
+
+      <div class="gold-rule" aria-hidden="true"></div>
+
+      <h1 class="title reveal" id="page-title">BY REQUEST</h1>
+      <p class="service-line reveal">Executive Aircraft Interior Care</p>
+      <p class="location reveal">Berlin · Germany · By Request</p>
+      <p class="description reveal">Professional interior detailing for private &amp; business aircraft.</p>
+
+      <div class="actions">
+        <a class="action-button action-button--primary reveal" id="sms-request" href="sms:+491792020680" aria-label="Request aircraft detailing via SMS">
+          <span class="button-copy">Request Service <span class="button-note">via SMS</span></span>
+        </a>
+        <a class="action-button action-button--secondary reveal" id="website-link" href="https://www.premiumjetdetailing.de/">
+          <span class="button-copy">Go to Website</span>
+        </a>
+      </div>
+
+      <div class="direct-contact reveal">
+        <p class="contact-label">Direct Contact</p>
+        <div class="contact-links">
+          <a class="contact-link" href="tel:+491792020680">+49 179 2020680</a>
+          <a class="contact-link" href="mailto:info@premiumjetdetailing.de">info@premiumjetdetailing.de</a>
+        </div>
+      </div>
+
+      <div class="utility-links reveal" aria-label="Legal information">
+        <a class="utility-link" href="/impressum">Imprint</a>
+        <a class="utility-link" href="/datenschutz">Privacy</a>
+        <a class="utility-link" href="#" data-cookie-settings>Cookie Settings</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var smsNumber = "+491792020680";
+      var smsMessage = [
+        "Hello Premium Jet Detailing,",
+        "",
+        "I would like to request aircraft detailing.",
+        "",
+        "Aircraft Type:",
+        "Tail Number / Registration:",
+        "Airport / Location:",
+        "Requested Date:",
+        "Requested Time:",
+        "Service Required:",
+        "Required Turnaround / Urgency:",
+        "Company / Operator:",
+        "Contact Name:",
+        "Additional Notes:",
+        "",
+        "Thank you."
+      ].join("\n");
+
+      var smsLink = document.getElementById("sms-request");
+      var websiteLink = document.getElementById("website-link");
+      var userAgent = navigator.userAgent || "";
+      var isIOS = /iPad|iPhone|iPod/i.test(userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      var smsSeparator = isIOS ? "&" : "?";
+      smsLink.href = "sms:" + smsNumber + smsSeparator + "body=" + encodeURIComponent(smsMessage);
+
+      var pageViewTracked = false;
+
+      function track(eventName, parameters) {
+        if (typeof window.gtag !== "function") return false;
+        window.gtag("event", eventName, Object.assign({
+          page_path: "/by-request",
+          transport_type: "beacon"
+        }, parameters || {}));
+        return true;
+      }
+
+      function trackPageView() {
+        if (pageViewTracked) return;
+        pageViewTracked = track("by_request_page_view", {
+          page_location: window.location.href
+        });
+      }
+
+      smsLink.addEventListener("click", function () {
+        track("sms_request_click", {
+          contact_method: "sms",
+          destination_country: "DE"
+        });
+      });
+
+      websiteLink.addEventListener("click", function () {
+        track("website_click", {
+          link_url: websiteLink.href
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!(event.target instanceof Element)) return;
+        var consentButton = event.target.closest('[data-consent-action="accept"], [data-consent-action="save"]');
+        if (consentButton) window.setTimeout(trackPageView, 0);
+      }, true);
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          window.setTimeout(trackPageView, 0);
+        }, { once: true });
+      } else {
+        window.setTimeout(trackPageView, 0);
+      }
+    }());
+  </script>
+</body>
+</html>

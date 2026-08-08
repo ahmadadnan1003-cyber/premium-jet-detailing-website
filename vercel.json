@@ -28,6 +28,11 @@
       "permanent": true
     },
     {
+      "source": "/by-request.html",
+      "destination": "https://www.premiumjetdetailing.de/by-request",
+      "permanent": true
+    },
+    {
       "source": "/faq.html",
       "destination": "https://www.premiumjetdetailing.de/faq",
       "permanent": true
@@ -216,6 +221,10 @@
     {
       "source": "/widerruf",
       "destination": "/widerruf.html"
+    },
+    {
+      "source": "/by-request",
+      "destination": "/by-request.html"
     }
   ]
 }
