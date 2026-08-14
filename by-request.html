@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="/favicon.png">
   <title>By Request | Premium Jet Detailing</title>
   <meta name="description" content="Request professional aircraft interior detailing from Premium Jet Detailing in Berlin and across Germany.">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
   <meta name="author" content="Premium Jet Detailing">
   <link rel="canonical" href="https://www.premiumjetdetailing.de/by-request">
   <meta property="og:title" content="By Request | Premium Jet Detailing">
@@ -492,7 +492,7 @@
 <body>
   <main class="page-shell">
     <section class="concierge-card" aria-labelledby="page-title">
-      <a class="brand-link" href="/" aria-label="Premium Jet Detailing home">
+      <a class="brand-link" href="/by-request" aria-label="Premium Jet Detailing by request">
         <img class="brand-logo" src="/assets/by-request-logo.png" width="1701" height="558" alt="Premium Jet Detailing">
       </a>
 
@@ -506,9 +506,6 @@
       <div class="actions">
         <a class="action-button action-button--primary reveal" id="sms-request" href="sms:+491792020680" aria-label="Request aircraft detailing via SMS">
           <span class="button-copy">Request Service <span class="button-note">via SMS</span></span>
-        </a>
-        <a class="action-button action-button--secondary reveal" id="website-link" href="https://www.premiumjetdetailing.de/">
-          <span class="button-copy">Go to Website</span>
         </a>
       </div>
 
@@ -553,7 +550,6 @@
       ].join("\n");
 
       var smsLink = document.getElementById("sms-request");
-      var websiteLink = document.getElementById("website-link");
       var userAgent = navigator.userAgent || "";
       var isIOS = /iPad|iPhone|iPod/i.test(userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
       var smsSeparator = isIOS ? "&" : "?";
@@ -581,12 +577,6 @@
         track("sms_request_click", {
           contact_method: "sms",
           destination_country: "DE"
-        });
-      });
-
-      websiteLink.addEventListener("click", function () {
-        track("website_click", {
-          link_url: websiteLink.href
         });
       });
 
