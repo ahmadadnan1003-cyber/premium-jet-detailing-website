@@ -3,6 +3,101 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/offline.html",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/faq",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/request-quote",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/safety-compliance",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/aircraft-detailing-ber",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/aircraft-interior-cleaning-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/aircraft-interior-care-berlin-ber",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/aircraft-leather-cleaning",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/aircraft-carpet-upholstery-cleaning",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/private-jet-cleaning-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/private-jet-detailing-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/private-jet-reinigung-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/privatjet-reinigung-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/privatjet-detailing-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/business-jet-cleaning-germany",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/business-jet-cleaning-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/business-jet-detailing-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
+      "source": "/business-jet-reinigung-berlin",
+      "destination": "https://www.premiumjetdetailing.de/offline",
+      "permanent": false
+    },
+    {
       "source": "/index.html",
       "destination": "https://www.premiumjetdetailing.de/",
       "permanent": true
@@ -225,6 +320,21 @@
     {
       "source": "/by-request",
       "destination": "/by-request.html"
+    },
+    {
+      "source": "/offline",
+      "destination": "/offline.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, nosnippet, noimageindex"
+        }
+      ]
     }
   ]
 }
