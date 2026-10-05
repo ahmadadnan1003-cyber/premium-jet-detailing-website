@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Private Fleet Portal Demo | Premium Jet Detailing</title>
+  <meta name="description" content="Private concept preview for the Premium Jet Detailing fleet care portal.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preload" as="image" href="/assets/premium-jet-logo.png">
+  <link rel="stylesheet" href="/assets/portal-demo.css">
+</head>
+<body class="is-locked">
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <section class="login-view" id="login-view" aria-labelledby="login-title">
+    <div class="login-card">
+      <div class="prototype-label"><span></span> Private concept preview</div>
+      <img class="login-logo" src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+      <div class="login-rule" aria-hidden="true"></div>
+      <p class="eyebrow">Client portal</p>
+      <h1 id="login-title">Your fleet.<br><em>Exceptionally cared for.</em></h1>
+      <p class="login-copy">A private command center for aircraft care, service history and intelligent planning.</p>
+
+      <form class="login-form" id="login-form">
+        <label>
+          <span>Email address</span>
+          <input type="email" value="adnan@premiumjetdetailing.de" autocomplete="off" required>
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" value="Premium2026" autocomplete="off" required>
+        </label>
+        <div class="login-meta">
+          <label class="remember"><input type="checkbox" checked> <span>Remember this device</span></label>
+          <button class="text-button" type="button">Forgot password?</button>
+        </div>
+        <button class="gold-button login-button" type="submit">
+          <span>Enter Private Portal</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"/></svg>
+        </button>
+      </form>
+      <p class="security-note"><span class="lock-dot"></span> Protected prototype · No live customer data</p>
+    </div>
+  </section>
+
+  <div class="portal-shell" id="portal-shell" hidden>
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="#overview" aria-label="Premium Jet Detailing dashboard">
+        <img src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+      </a>
+
+      <nav class="sidebar-nav" aria-label="Portal navigation">
+        <button class="nav-item is-active" data-section="overview">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg>
+          <span>Overview</span>
+        </button>
+        <button class="nav-item" data-section="fleet">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 14 7-2.5V5.8c0-1.1.9-2.3 2-2.8 1.1.5 2 1.7 2 2.8v5.7l7 2.5v2l-7-1.2v3.7l2.5 1.5v1.5L12 20l-4.5 1.5V20l2.5-1.5v-3.7L3 16v-2Z"/></svg>
+          <span>My Fleet</span>
+          <span class="nav-count" id="nav-fleet-count">3</span>
+        </button>
+        <button class="nav-item" data-section="requests">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5V4Zm3 4h8M8 12h8M8 16h5"/></svg>
+          <span>Requests</span>
+          <span class="nav-dot"></span>
+        </button>
+        <button class="nav-item" data-section="history">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M5.1 7A8 8 0 1 1 4 12H1l4-4 4 4H6"/></svg>
+          <span>Service History</span>
+        </button>
+        <button class="nav-item" data-section="documents">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7V3Zm7 0v5h5M10 12h5M10 16h5"/></svg>
+          <span>Documents</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-lower">
+        <button class="nav-item" data-section="settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm8 3-.9-1.5.1-1.8-1.6-.9-1.5.9-1.7-.7-.6-1.7-1.8-.2-.9 1.6.9 1.5-.1 1.8 1.6.9 1.5-.9 1.7.7.6 1.7 1.8.2.9-1.6Z"/></svg>
+          <span>Settings</span>
+        </button>
+        <div class="concierge-mini">
+          <span class="concierge-mark">PJD</span>
+          <div><strong>Your concierge</strong><small>Available on request</small></div>
+          <span class="online-dot"></span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-brand" aria-label="Open menu">
+          <img src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+        </button>
+        <div class="topbar-actions">
+          <button class="icon-button" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 8h18c0-1-3-1-3-8ZM10 21h4"/></svg>
+            <span class="notification-dot"></span>
+          </button>
+          <button class="profile-button" id="profile-button">
+            <span class="profile-avatar">AA</span>
+            <span class="profile-copy"><strong>Adnan Ahmad</strong><small>Fleet owner</small></span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="dashboard" id="overview-section">
+        <div class="welcome-row">
+          <div>
+            <p class="eyebrow" id="today-label">Sunday · 5 October</p>
+            <h2>Good evening, Adnan.</h2>
+            <p>Your fleet is ready. Here is today’s care overview.</p>
+          </div>
+          <button class="gold-button" id="open-request" type="button">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+            <span>Request Service</span>
+          </button>
+        </div>
+
+        <div class="overview-grid">
+          <article class="metric-card readiness-card">
+            <div class="metric-head"><span>Fleet readiness</span><span class="live-pill"><i></i> Live</span></div>
+            <div class="readiness-body">
+              <div class="score-ring" style="--score: 91"><span><strong id="readiness-score">91</strong><small>%</small></span></div>
+              <div><strong>Excellent condition</strong><p>All aircraft are service-ready.</p></div>
+            </div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 14 7-2.5V5.8c0-1.1.9-2.3 2-2.8 1.1.5 2 1.7 2 2.8v5.7l7 2.5v2l-7-1.2v3.7l2.5 1.5v1.5L12 20l-4.5 1.5V20l2.5-1.5v-3.7L3 16v-2Z"/></svg>
+            </div>
+            <strong class="metric-value" id="fleet-count">3</strong>
+            <span class="metric-label">Registered aircraft</span>
+            <small><b>+1</b> added this quarter</small>
+          </article>
+          <article class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3M18 3v3M4 9h16M5 5h14v16H5V5Zm4 8h2v2H9v-2Z"/></svg>
+            </div>
+            <strong class="metric-value" id="next-service-days">8</strong>
+            <span class="metric-label">Days until next service</span>
+            <small id="next-service-name">Global 7500 · D-APJD</small>
+          </article>
+          <article class="metric-card">
+            <div class="metric-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5V4Zm3 4h8M8 12h8M8 16h5"/></svg>
+            </div>
+            <strong class="metric-value" id="request-count">1</strong>
+            <span class="metric-label">Open service request</span>
+            <small><b>Confirmed</b> · BER, 14 Oct</small>
+          </article>
+        </div>
+
+        <div class="section-heading">
+          <div><p class="eyebrow">Your aircraft</p><h3>Fleet overview</h3></div>
+          <button class="outline-button" id="open-register" type="button">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+            Register Aircraft
+          </button>
+        </div>
+
+        <div class="fleet-grid" id="fleet-grid" aria-live="polite"></div>
+
+        <div class="insights-grid">
+          <article class="ai-panel">
+            <div class="ai-panel-head">
+              <div class="ai-orb" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div><span>Fleet Intelligence</span><h3>AI care assistant</h3></div>
+              <span class="ai-active"><i></i> Monitoring</span>
+            </div>
+            <div class="ai-summary" id="ai-summary"></div>
+            <div class="ai-feed" id="ai-feed"></div>
+            <button class="ai-action" id="refresh-intelligence" type="button">
+              Refresh fleet analysis
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10a6 6 0 0 1 10-4l2 2M16 10a6 6 0 0 1-10 4l-2-2M16 4v4h-4M4 16v-4h4"/></svg>
+            </button>
+          </article>
+
+          <article class="timeline-panel">
+            <div class="panel-heading"><div><p class="eyebrow">Activity</p><h3>Recent service history</h3></div><button class="text-button" type="button">View all</button></div>
+            <div class="timeline" id="service-timeline"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile portal navigation">
+      <button class="is-active"><svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg><span>Overview</span></button>
+      <button><svg viewBox="0 0 24 24"><path d="m3 14 7-2.5V5.8c0-1.1.9-2.3 2-2.8 1.1.5 2 1.7 2 2.8v5.7l7 2.5v2l-7-1.2v3.7l2.5 1.5v1.5L12 20l-4.5 1.5V20l2.5-1.5v-3.7L3 16v-2Z"/></svg><span>Fleet</span></button>
+      <button class="mobile-request" id="mobile-request"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg><span>Request</span></button>
+      <button><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5V4Zm3 4h8M8 12h8M8 16h5"/></svg><span>History</span></button>
+      <button><svg viewBox="0 0 24 24"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm8 3-.9-1.5.1-1.8-1.6-.9-1.5.9-1.7-.7-.6-1.7-1.8-.2-.9 1.6.9 1.5-.1 1.8 1.6.9 1.5-.9 1.7.7.6 1.7 1.8.2.9-1.6Z"/></svg><span>Settings</span></button>
+    </nav>
+  </div>
+
+  <dialog class="portal-dialog" id="register-dialog">
+    <form method="dialog" id="register-form">
+      <div class="dialog-head">
+        <div><p class="eyebrow">AI-assisted setup</p><h2>Register an aircraft</h2><span>Add the aircraft once. Your intelligent care profile is created automatically.</span></div>
+        <button class="dialog-close" value="cancel" aria-label="Close"><svg viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+      </div>
+      <div class="form-grid">
+        <label><span>Manufacturer</span><select name="manufacturer" required><option>Gulfstream</option><option>Bombardier</option><option>Dassault</option><option>Cessna</option><option>Embraer</option><option>Other</option></select></label>
+        <label><span>Aircraft model</span><input name="model" placeholder="e.g. G650ER" required></label>
+        <label><span>Registration / Tail number</span><input name="registration" placeholder="e.g. D-APJD" required></label>
+        <label><span>Home base / Airport</span><input name="airport" placeholder="e.g. EDDB / BER" required></label>
+        <label><span>Aircraft category</span><select name="category"><option>Ultra long range</option><option>Heavy jet</option><option>Super midsize</option><option>Midsize</option><option>Light jet</option></select></label>
+        <label><span>Last interior service</span><input name="lastService" type="date" required></label>
+        <label><span>Average flight hours / month</span><input name="hours" type="number" min="0" value="28"></label>
+        <label><span>Primary cabin finish</span><select name="finish"><option>Leather & veneer</option><option>Leather & textile</option><option>Textile & carpet</option><option>Mixed premium cabin</option></select></label>
+      </div>
+      <label class="full-label"><span>Notes for the care profile</span><textarea name="notes" rows="3" placeholder="Special materials, preferred products, sensitive surfaces…"></textarea></label>
+      <div class="ai-preview-note"><span class="spark-icon">✦</span><div><strong>Automatic care profile</strong><p>Fleet Intelligence will classify the aircraft, create its animated 3D representation and calculate a recommended service rhythm.</p></div></div>
+      <div class="dialog-actions"><button class="outline-button" value="cancel">Cancel</button><button class="gold-button" id="register-submit" value="default"><span>Register & Analyse</span><svg viewBox="0 0 20 20"><path d="M4 10h11M11 6l4 4-4 4"/></svg></button></div>
+    </form>
+  </dialog>
+
+  <dialog class="portal-dialog" id="request-dialog">
+    <form method="dialog" id="request-form">
+      <div class="dialog-head">
+        <div><p class="eyebrow">Private concierge</p><h2>Request aircraft care</h2><span>Configure the service. We will confirm access and timing personally.</span></div>
+        <button class="dialog-close" value="cancel" aria-label="Close"><svg viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
+      </div>
+      <div class="form-grid">
+        <label class="span-two"><span>Aircraft</span><select name="aircraft" id="request-aircraft" required></select></label>
+        <label><span>Airport / Location</span><input name="airport" value="EDDB / BER" required></label>
+        <label><span>Hangar / FBO</span><input name="fbo" placeholder="Optional"></label>
+        <label><span>Requested date</span><input name="date" type="date" required></label>
+        <label><span>Preferred time</span><input name="time" type="time" value="10:00" required></label>
+        <label><span>Required turnaround</span><select name="urgency"><option>Standard · 24–48 hours</option><option>Priority · Same day</option><option>Immediate · AOG/VIP</option><option>Flexible</option></select></label>
+        <label><span>Contact on site</span><input name="contact" placeholder="Name / mobile"></label>
+      </div>
+      <fieldset class="service-options">
+        <legend>Requested services</legend>
+        <label><input type="checkbox" name="service" value="Cabin Refresh" checked><span><b>Cabin Refresh</b><small>Complete presentation reset</small></span></label>
+        <label><input type="checkbox" name="service" value="Leather Care"><span><b>Leather Care</b><small>Clean, nourish and protect</small></span></label>
+        <label><input type="checkbox" name="service" value="Carpet & Textile"><span><b>Carpet & Textile</b><small>Deep extraction treatment</small></span></label>
+        <label><input type="checkbox" name="service" value="Veneer & Surfaces"><span><b>Veneer & Surfaces</b><small>High-gloss detail work</small></span></label>
+        <label><input type="checkbox" name="service" value="Galley & Lavatory"><span><b>Galley & Lavatory</b><small>Detailed hygiene service</small></span></label>
+        <label><input type="checkbox" name="service" value="Protection"><span><b>Protection</b><small>Textile and surface protection</small></span></label>
+      </fieldset>
+      <label class="full-label"><span>Special instructions</span><textarea name="notes" rows="3" placeholder="Passenger schedule, sensitive areas, access details…"></textarea></label>
+      <div class="dialog-actions"><button class="outline-button" value="cancel">Cancel</button><button class="gold-button" id="request-submit" value="default"><span>Send Service Request</span><svg viewBox="0 0 20 20"><path d="M4 10h11M11 6l4 4-4 4"/></svg></button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span><div><strong id="toast-title">Aircraft registered</strong><p id="toast-copy">The intelligent care profile is ready.</p></div>
+  </div>
+
+  <script src="/assets/portal-demo.js" defer></script>
+</body>
+</html>

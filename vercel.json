@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/portal-demo.html",
+      "destination": "/portal-demo",
+      "permanent": false
+    },
+    {
       "source": "/index.html",
       "destination": "https://www.premiumjetdetailing.de/",
       "permanent": true
@@ -171,6 +176,10 @@
   ],
   "rewrites": [
     {
+      "source": "/portal-demo",
+      "destination": "/portal-demo.html"
+    },
+    {
       "source": "/aircraft-interior-cleaning-berlin",
       "destination": "/aircraft-interior-cleaning-berlin.html"
     },
@@ -225,6 +234,34 @@
     {
       "source": "/by-request",
       "destination": "/by-request.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/portal-demo",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        }
+      ]
+    },
+    {
+      "source": "/portal-demo.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        }
+      ]
     }
   ]
 }
