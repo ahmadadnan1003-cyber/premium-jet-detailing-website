@@ -39,7 +39,7 @@
     <section class="dashboard" id="dashboard" hidden>
       <div class="dash-head"><div><span class="eyebrow">KUNDENPORTAL</span><h2>Willkommen, <span id="customer-name"></span></h2><p id="customer-email"></p></div><button type="button" id="logout">Abmelden</button></div>
       <p class="message" id="portal-message" role="status" aria-live="polite"></p>
-      <div class="grid">
+      <div class="grid" id="portal-grid">
         <section class="card"><h3>Meine Flugzeuge</h3><ul id="aircraft-list" class="records"></ul>
           <form id="aircraft-form"><label>Flugzeugtyp<input name="model" required maxlength="120" placeholder="z. B. Gulfstream G650"></label><label>Kennzeichen<input name="registration" required maxlength="24" placeholder="z. B. D-ABCD"></label><label>Standort / Flughafen<input name="airport" required maxlength="160" placeholder="z. B. BER"></label><button class="primary" type="submit">Flugzeug hinzufügen</button></form>
         </section>

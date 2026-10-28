@@ -58,6 +58,12 @@ async function showDashboard() {
   $("customer-email").textContent = current.email || "";
   $("access").hidden = true;
   $("dashboard").hidden = false;
+  const profiles = await call("/rest/v1/pjd_profiles?select=user_id&user_id=eq." + encodeURIComponent(current.id), "GET", null, await token());
+  $("portal-grid").hidden = !profiles.length;
+  if (!profiles.length) {
+    notice("portal-message", "Ihr Konto ist angelegt. Der Portalzugang ist noch nicht freigeschaltet.");
+    return;
+  }
   try { await reload(); } catch (error) { notice("portal-message", statusError(error), true); }
 }
 function setMode(next) {
