@@ -171,6 +171,10 @@
   ],
   "rewrites": [
     {
+      "source": "/kundenportal",
+      "destination": "/kundenportal.html"
+    },
+    {
       "source": "/aircraft-interior-cleaning-berlin",
       "destination": "/aircraft-interior-cleaning-berlin.html"
     },
@@ -225,6 +229,16 @@
     {
       "source": "/by-request",
       "destination": "/by-request.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/kundenportal(.*)",
+      "headers": [
+        {"key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive"},
+        {"key": "Cache-Control", "value": "private, no-store"},
+        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}
+      ]
     }
   ]
 }
