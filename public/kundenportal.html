@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080808">
+  <title>Kundenportal | Premium Jet Detailing</title>
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/kundenportal.css">
+  <script src="/assets/kundenportal.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <a href="/" aria-label="Premium Jet Detailing – Startseite"><img src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing"></a>
+    <a href="/">Zur Website</a>
+  </header>
+  <main>
+    <section class="intro">
+      <span class="eyebrow">PREMIUM JET DETAILING · CLIENT ACCESS</span>
+      <h1>Ihre Flotte.<br><em>In besten Händen.</em></h1>
+      <p>Verwalten Sie Ihre Flugzeuge und senden Sie Serviceanfragen direkt an Premium Jet Detailing.</p>
+    </section>
+    <section class="card" id="access">
+      <div class="tabs" role="tablist" aria-label="Zugang">
+        <button type="button" class="active" data-tab="login" aria-selected="true">Anmelden</button>
+        <button type="button" data-tab="signup" aria-selected="false">Konto erstellen</button>
+        <button type="button" data-tab="reset" aria-selected="false">Passwort vergessen</button>
+      </div>
+      <form id="auth-form">
+        <label id="name-field" hidden>Name<input name="name" autocomplete="name"></label>
+        <label id="email-field">E-Mail-Adresse<input name="email" type="email" autocomplete="email" required></label>
+        <label id="password-field">Passwort<input name="password" type="password" autocomplete="current-password" minlength="8" required></label>
+        <button class="primary" type="submit" id="auth-submit">Anmelden</button>
+      </form>
+      <p id="auth-message" class="message" role="status" aria-live="polite"></p>
+      <p class="fine">Mit der Registrierung akzeptieren Sie unsere <a href="/datenschutz">Datenschutzhinweise</a>. Nach der Registrierung bestätigen Sie bitte Ihre E-Mail-Adresse.</p>
+    </section>
+    <section class="dashboard" id="dashboard" hidden>
+      <div class="dash-head"><div><span class="eyebrow">KUNDENPORTAL</span><h2>Willkommen, <span id="customer-name"></span></h2><p id="customer-email"></p></div><button type="button" id="logout">Abmelden</button></div>
+      <p class="message" id="portal-message" role="status" aria-live="polite"></p>
+      <div class="grid">
+        <section class="card"><h3>Meine Flugzeuge</h3><ul id="aircraft-list" class="records"></ul>
+          <form id="aircraft-form"><label>Flugzeugtyp<input name="model" required maxlength="120" placeholder="z. B. Gulfstream G650"></label><label>Kennzeichen<input name="registration" required maxlength="24" placeholder="z. B. D-ABCD"></label><label>Standort / Flughafen<input name="airport" required maxlength="160" placeholder="z. B. BER"></label><button class="primary" type="submit">Flugzeug hinzufügen</button></form>
+        </section>
+        <section class="card"><h3>Service anfragen</h3><form id="request-form"><label>Flugzeug<select name="aircraft_id" id="aircraft-select" required></select></label><label>Gewünschte Leistung<select name="service" required><option value="">Bitte wählen</option><option>Innenreinigung</option><option>Cabin Detailing</option><option>Leichte Außenreinigung</option></select></label><label>Wunschtermin<input name="requested_date" type="date" required></label><label>Ort / Flughafen<input name="location" maxlength="120" required placeholder="z. B. BER"></label><label>Details<textarea name="notes" rows="3" maxlength="1000"></textarea></label><button class="primary" type="submit">Anfrage senden</button></form>
+          <h3>Meine Anfragen</h3><ul id="request-list" class="records"></ul>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer>Premium Jet Detailing UG · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></footer>
+</body>
+</html>
