@@ -151,7 +151,7 @@ async function insert(table, data) {
     method: "POST",
     headers: {
       apikey: KEY, Authorization: "Bearer " + await token(),
-      "Content-Type": "application/json", Prefer: "return=minimal"
+      "Content-Type": "application/json", Prefer: "return=representation"
     },
     body: JSON.stringify(data)
   });
@@ -159,6 +159,7 @@ async function insert(table, data) {
     const data = await response.json().catch(() => null);
     throw new Error(statusError(data));
   }
+  return response.json();
 }
 function item(primary, secondary) {
   const li = document.createElement("li");
@@ -209,7 +210,7 @@ $("request-form").addEventListener("submit", async event => {
   button.disabled = true;
   try {
     const current = await user();
-    await insert("pjd_requests", {
+    const created = await insert("pjd_requests", {
       owner_id: current.id, aircraft_id: form.elements.aircraft_id.value,
       idempotency_key: crypto.randomUUID(), airport: form.elements.location.value.trim(),
       requested_date: form.elements.requested_date.value,
@@ -217,7 +218,14 @@ $("request-form").addEventListener("submit", async event => {
     });
     form.reset();
     await reload();
-    notice("portal-message", "Ihre Anfrage wurde im Kundenportal gespeichert.");
+    const notification = await fetch("/api/portal-notify", {
+      method: "POST",
+      headers: {"Content-Type": "application/json", Authorization: "Bearer " + await token()},
+      body: JSON.stringify({request_id: created[0].id})
+    }).catch(() => null);
+    notice("portal-message", notification?.ok
+      ? "Ihre Anfrage wurde gespeichert und an Premium Jet Detailing gemeldet."
+      : "Ihre Anfrage wurde gespeichert. Die E-Mail-Benachrichtigung ist fehlgeschlagen; bitte kontaktieren Sie uns zusätzlich unter info@premiumjetdetailing.de.", !notification?.ok);
   } catch (error) { notice("portal-message", statusError(error), true); }
   finally { button.disabled = false; }
 });
