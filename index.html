@@ -190,6 +190,27 @@
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
     }
 
+    .portal-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: rgba(200, 154, 61, 0.065);
+      color: var(--gold-soft);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+
+    .portal-button:hover, .portal-button:focus-visible {
+      border-color: rgba(239, 210, 141, 0.58);
+      background: rgba(200, 154, 61, 0.11);
+    }
+
     .header-actions {
       display: inline-flex;
       align-items: center;
@@ -1172,6 +1193,12 @@
         gap: 9px;
       }
 
+      .portal-button {
+        padding: 9px 8px;
+        font-size: 0.58rem;
+        letter-spacing: 0;
+      }
+
       .lang-toggle {
         width: 38px;
         height: 36px;
@@ -1428,10 +1455,10 @@
         <a href="#services" data-i18n="nav.services">Services</a>
         <a href="#before-after" data-i18n="nav.beforeAfter">Before & After</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
-        <a href="/kundenportal">Kundenportal</a>
         <a class="nav-cta" href="#contact" data-i18n="nav.request">Request Service</a>
       </nav>
       <div class="header-actions">
+        <a class="portal-button" href="/kundenportal" data-i18n="nav.portal">Sign in / Register</a>
         <button class="lang-toggle" type="button" aria-label="Deutsch anzeigen" title="Deutsch anzeigen">
           <span class="flag" aria-hidden="true">🇩🇪</span>
         </button>
@@ -1719,6 +1746,7 @@
         "nav.beforeAfter": "Before & After",
         "nav.contact": "Contact",
         "nav.request": "Request Availability",
+        "nav.portal": "Sign in / Register",
         "hero.line1": "Executive",
         "hero.line2": "Aircraft Interior Care",
         "hero.copy": "Discreet interior detailing for private and business aircraft around BER and across Germany on request.",
@@ -1827,6 +1855,7 @@
         "nav.beforeAfter": "Vorher & Nachher",
         "nav.contact": "Kontakt",
         "nav.request": "Verfügbarkeit anfragen",
+        "nav.portal": "Anmelden / Registrieren",
         "hero.line1": "Executive",
         "hero.line2": "Aircraft Interior Care",
         "hero.copy": "Diskretes Interior Detailing für private und geschäftliche Luftfahrzeuge rund um BER und deutschlandweit auf Anfrage.",
