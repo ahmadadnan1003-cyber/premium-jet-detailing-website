@@ -55,7 +55,7 @@
         <p class="portal-message" id="portal-message" role="status" aria-live="polite"></p>
         <div id="portal-content">
           <section class="hangar-panel" aria-labelledby="hangar-title">
-            <div class="hangar-stage"><div class="hangar-stage-label"><span>Digitaler Hangar</span><span>3D-Ansicht · mit Maus oder Finger drehen</span></div><canvas id="hangar-canvas" class="aircraft-canvas" aria-label="Drehbares schematisches 3D-Flugzeug"></canvas><div class="hangar-stage-footer">Premium Jet Detailing · Aircraft Care</div></div>
+            <div class="hangar-stage is-apron" id="hangar-stage"><div class="hangar-stage-label"><span>Digitaler Hangar</span><span>3D-Ansicht · mit Maus oder Finger drehen</span></div><canvas id="hangar-canvas" class="aircraft-canvas" aria-label="Drehbares schematisches 3D-Flugzeug"></canvas><div class="hangar-stage-footer"><span>Premium Jet Detailing · Aircraft Care</span><span class="scene-switch" aria-label="Umgebung"><button type="button" data-scene="apron" class="is-active" aria-pressed="true">Vorfeld</button><button type="button" data-scene="hangar" aria-pressed="false">Hangar</button></span></div></div>
             <div class="hangar-info"><p class="eyebrow">Ihre Flotte</p><h3 id="hangar-title">Flugzeug auswählen</h3><p id="hangar-tail">Registrieren Sie Ihr erstes Flugzeug, um es hier zu sehen.</p><label class="hangar-choice">Flugzeug<select id="hangar-select" aria-label="Flugzeug für die 3D-Ansicht auswählen"></select></label><button class="outline-button" id="hangar-register" type="button">+ Flugzeug hinzufügen</button></div>
           </section>
           <div class="overview-grid portal-metrics">

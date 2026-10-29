@@ -209,6 +209,11 @@
     const target={overview:"overview-section",fleet:"fleet-section",requests:"requests-section"}[button.dataset.section];
     $(target)?.scrollIntoView({behavior:reducedMotion?"instant":"smooth"});
   }));
+  document.querySelectorAll("[data-scene]").forEach(button=>button.addEventListener("click",()=>{
+    const apron=button.dataset.scene==="apron";
+    $("hangar-stage").classList.toggle("is-apron",apron);
+    document.querySelectorAll("[data-scene]").forEach(item=>{item.classList.toggle("is-active",item===button);item.setAttribute("aria-pressed",String(item===button));});
+  }));
   $("hangar-select").addEventListener("change",event=>{
     const plane=aircraft.find(row=>row.id===event.target.value); if(!plane)return;
     hangar?.destroy();$("hangar-title").textContent=plane.model_id;$("hangar-tail").textContent=plane.registration+" · "+plane.airport;
