@@ -2,53 +2,88 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#080808">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#050505">
   <title>Kundenportal | Premium Jet Detailing</title>
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/assets/kundenportal.css">
   <script src="/assets/kundenportal.js" defer></script>
 </head>
-<body>
-  <header class="bar">
-    <a href="/" aria-label="Premium Jet Detailing – Startseite"><img src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing"></a>
-    <a href="/">Zur Website</a>
-  </header>
-  <main>
-    <section class="intro">
-      <span class="eyebrow">PREMIUM JET DETAILING · CLIENT ACCESS</span>
-      <h1>Ihre Flotte.<br><em>In besten Händen.</em></h1>
-      <p>Verwalten Sie Ihre Flugzeuge und senden Sie Serviceanfragen direkt an Premium Jet Detailing.</p>
-    </section>
-    <section class="card" id="access">
-      <div class="tabs" role="tablist" aria-label="Zugang">
-        <button type="button" class="active" data-tab="login" aria-selected="true">Anmelden</button>
-        <button type="button" data-tab="signup" aria-selected="false">Konto erstellen</button>
+<body class="is-locked">
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <section class="login-view" id="login-view" aria-labelledby="login-title">
+    <div class="login-card">
+      <a href="/" class="back-link">← Zur Website</a>
+      <img class="login-logo" src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+      <div class="login-rule" aria-hidden="true"></div>
+      <p class="eyebrow">Kundenportal · Digitaler Hangar</p>
+      <h1 id="login-title">Ihre Flotte.<br><em>In besten Händen.</em></h1>
+      <p class="login-copy">Ihre Flugzeuge als drehbare 3D-Ansicht, Serviceanfragen und Termine an einem Ort.</p>
+      <div class="auth-tabs" role="tablist" aria-label="Kundenzugang">
+        <button type="button" data-tab="login" class="is-active" aria-selected="true">Anmelden</button>
+        <button type="button" data-tab="signup" aria-selected="false">Registrieren</button>
         <button type="button" data-tab="reset" aria-selected="false">Passwort vergessen</button>
       </div>
-      <form id="auth-form">
-        <label id="name-field" hidden>Name<input name="name" autocomplete="name"></label>
-        <label id="email-field">E-Mail-Adresse<input name="email" type="email" autocomplete="email" required></label>
-        <label id="password-field">Passwort<input name="password" type="password" autocomplete="current-password" minlength="8" required></label>
-        <button class="primary" type="submit" id="auth-submit">Anmelden</button>
+      <form class="login-form" id="auth-form">
+        <label id="name-field" hidden><span>Name</span><input name="name" autocomplete="name" maxlength="120"></label>
+        <label id="email-field"><span>E-Mail-Adresse</span><input name="email" type="email" autocomplete="email" required></label>
+        <label id="password-field"><span>Passwort</span><input name="password" type="password" autocomplete="current-password" minlength="8" required></label>
+        <button class="gold-button login-button" id="auth-submit" type="submit">Anmelden <span aria-hidden="true">→</span></button>
       </form>
-      <p id="auth-message" class="message" role="status" aria-live="polite"></p>
-      <p class="fine">Mit der Registrierung akzeptieren Sie unsere <a href="/datenschutz">Datenschutzhinweise</a>. Nach der Registrierung bestätigen Sie bitte Ihre E-Mail-Adresse.</p>
-    </section>
-    <section class="dashboard" id="dashboard" hidden>
-      <div class="dash-head"><div><span class="eyebrow">KUNDENPORTAL</span><h2>Willkommen, <span id="customer-name"></span></h2><p id="customer-email"></p></div><button type="button" id="logout">Abmelden</button></div>
-      <p class="message" id="portal-message" role="status" aria-live="polite"></p>
-      <div class="grid" id="portal-grid">
-        <section class="card"><h3>Meine Flugzeuge</h3><ul id="aircraft-list" class="records"></ul>
-          <form id="aircraft-form"><label>Flugzeugtyp<input name="model" required maxlength="120" placeholder="z. B. Gulfstream G650"></label><label>Kennzeichen<input name="registration" required maxlength="24" placeholder="z. B. D-ABCD"></label><label>Standort / Flughafen<input name="airport" required maxlength="160" placeholder="z. B. BER"></label><button class="primary" type="submit">Flugzeug hinzufügen</button></form>
-        </section>
-        <section class="card"><h3>Service anfragen</h3><form id="request-form"><label>Flugzeug<select name="aircraft_id" id="aircraft-select" required></select></label><label>Gewünschte Leistung<select name="service" required><option value="">Bitte wählen</option><option>Innenreinigung</option><option>Cabin Detailing</option><option>Leichte Außenreinigung</option></select></label><label>Wunschtermin<input name="requested_date" type="date" required></label><label>Ort / Flughafen<input name="location" maxlength="120" required placeholder="z. B. BER"></label><label>Details<textarea name="notes" rows="3" maxlength="1000"></textarea></label><button class="primary" type="submit">Anfrage senden</button></form>
-          <h3>Meine Anfragen</h3><ul id="request-list" class="records"></ul>
-        </section>
-      </div>
-    </section>
-  </main>
-  <footer>Premium Jet Detailing UG · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></footer>
+      <p class="portal-message" id="auth-message" role="status" aria-live="polite"></p>
+      <p class="login-legal">Nach der Registrierung bestätigen Sie Ihre E-Mail-Adresse. <a href="/datenschutz">Datenschutzhinweise</a> · <a href="/impressum">Impressum</a></p>
+    </div>
+  </section>
+
+  <div class="portal-shell" id="portal-shell" hidden>
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="/" aria-label="Zur Premium Jet Detailing Website"><img src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing"></a>
+      <nav class="sidebar-nav" aria-label="Portalnavigation">
+        <button class="nav-item is-active" type="button" data-section="overview"><span>◫</span><span>Übersicht</span></button>
+        <button class="nav-item" type="button" data-section="fleet"><span>✈</span><span>Meine Flotte</span><span class="nav-count" id="nav-fleet-count">0</span></button>
+        <button class="nav-item" type="button" data-section="requests"><span>▤</span><span>Anfragen</span></button>
+      </nav>
+      <div class="sidebar-lower"><div class="concierge-mini"><span class="concierge-mark">PJD</span><div><strong>Ihr Ansprechpartner</strong><small>info@premiumjetdetailing.de</small></div></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><a href="/" class="back-link">← Zur Website</a><div class="topbar-actions"><span class="profile-copy"><strong id="profile-name">Kunde</strong><small id="profile-email"></small></span><button class="outline-button" type="button" id="logout">Abmelden</button></div></header>
+      <section class="dashboard" id="overview-section">
+        <div class="welcome-row"><div><p class="eyebrow" id="today-label"></p><h2>Willkommen, <span id="welcome-name">im Kundenportal</span>.</h2><p>Ihre Flotte und Serviceanfragen im Überblick.</p></div><button class="gold-button" id="open-request" type="button">+ Service anfragen</button></div>
+        <p class="portal-message" id="portal-message" role="status" aria-live="polite"></p>
+        <div id="portal-content">
+          <section class="hangar-panel" aria-labelledby="hangar-title">
+            <div class="hangar-stage is-apron" id="hangar-stage"><div class="hangar-stage-label"><span>Digitaler Hangar</span><span>3D-Ansicht · mit Maus oder Finger drehen</span></div><canvas id="hangar-canvas" class="aircraft-canvas" aria-label="Drehbares schematisches 3D-Flugzeug"></canvas><div class="hangar-stage-footer"><span>Premium Jet Detailing · Aircraft Care</span><span class="scene-switch" aria-label="Umgebung"><button type="button" data-scene="apron" class="is-active" aria-pressed="true">Vorfeld</button><button type="button" data-scene="hangar" aria-pressed="false">Hangar</button></span></div></div>
+            <div class="hangar-info"><p class="eyebrow">Ihre Flotte</p><h3 id="hangar-title">Flugzeug auswählen</h3><p id="hangar-tail">Registrieren Sie Ihr erstes Flugzeug, um es hier zu sehen.</p><label class="hangar-choice">Flugzeug<select id="hangar-select" aria-label="Flugzeug für die 3D-Ansicht auswählen"></select></label><button class="outline-button" id="hangar-register" type="button">+ Flugzeug hinzufügen</button></div>
+          </section>
+          <div class="overview-grid portal-metrics">
+            <article class="metric-card"><span class="metric-label">Registrierte Flugzeuge</span><strong class="metric-value" id="fleet-count">0</strong></article>
+            <article class="metric-card"><span class="metric-label">Offene Anfragen</span><strong class="metric-value" id="request-count">0</strong></article>
+            <article class="metric-card"><span class="metric-label">Nächster vorgemerkter Termin</span><strong class="metric-date" id="next-service-date">Noch keiner</strong><small id="next-service-name"></small></article>
+          </div>
+          <section id="fleet-section"><div class="section-heading"><div><p class="eyebrow">Ihre Flugzeuge</p><h3>Flottenübersicht</h3></div><button class="outline-button" id="open-register" type="button">+ Flugzeug hinzufügen</button></div><div class="fleet-grid" id="fleet-grid" aria-live="polite"></div><p class="empty-state" id="fleet-empty" hidden>Noch keine Flugzeuge registriert. Fügen Sie Ihr erstes Flugzeug hinzu.</p></section>
+          <section id="requests-section" class="requests-panel"><div class="section-heading"><div><p class="eyebrow">Service</p><h3>Meine Anfragen</h3></div><button class="outline-button" type="button" id="secondary-request">+ Neue Anfrage</button></div><ul id="request-list" class="request-list"></ul></section>
+        </div>
+      </section>
+    </main>
+    <nav class="mobile-nav" aria-label="Mobile Portalnavigation"><button type="button" data-section="overview">Übersicht</button><button type="button" data-section="fleet">Flotte</button><button type="button" id="mobile-request">+ Anfrage</button></nav>
+  </div>
+
+  <dialog class="portal-dialog" id="register-dialog"><form id="register-form" method="dialog">
+    <div class="dialog-head"><div><p class="eyebrow">Meine Flotte</p><h2>Flugzeug hinzufügen</h2></div><button class="dialog-close" type="button" data-close="register-dialog" aria-label="Schließen">×</button></div>
+    <div class="form-grid"><label><span>Hersteller</span><select name="manufacturer" required><option>Gulfstream</option><option>Bombardier</option><option>Dassault</option><option>Cessna</option><option>Embraer</option><option>Piaggio</option><option>Pilatus</option><option>Andere</option></select></label><label><span>Modell</span><input name="model" placeholder="z. B. G650ER" required maxlength="100"></label><label><span>Kennzeichen</span><input name="registration" placeholder="z. B. D-ABCD" required maxlength="24"></label><label><span>Standort / Flughafen</span><input name="airport" placeholder="z. B. BER" required maxlength="160"></label></div>
+    <p class="dialog-note">Die 3D-Ansicht ist eine schematische Darstellung des Flugzeugtyps, kein Hersteller-CAD-Modell.</p>
+    <div class="dialog-actions"><button class="outline-button" type="button" data-close="register-dialog">Abbrechen</button><button class="gold-button" id="register-submit" type="submit">Flugzeug speichern</button></div>
+  </form></dialog>
+
+  <dialog class="portal-dialog" id="request-dialog"><form id="request-form" method="dialog">
+    <div class="dialog-head"><div><p class="eyebrow">Premium Jet Detailing</p><h2>Service anfragen</h2></div><button class="dialog-close" type="button" data-close="request-dialog" aria-label="Schließen">×</button></div>
+    <div class="form-grid"><label class="span-two"><span>Flugzeug</span><select name="aircraft_id" id="request-aircraft" required></select></label><label><span>Standort / Flughafen</span><input name="location" placeholder="z. B. BER" required maxlength="120"></label><label><span>Wunschtermin</span><input name="requested_date" type="date" required></label></div>
+    <fieldset class="service-options"><legend>Gewünschte Leistungen</legend><label><input name="service" type="checkbox" value="Innenreinigung"><span>Innenreinigung</span></label><label><input name="service" type="checkbox" value="Cabin Detailing"><span>Cabin Detailing</span></label><label><input name="service" type="checkbox" value="Leichte Außenreinigung"><span>Leichte Außenreinigung</span></label></fieldset>
+    <label class="full-label"><span>Details</span><textarea name="notes" rows="3" maxlength="1000" placeholder="Zeitfenster, Zugang, besondere Wünsche …"></textarea></label>
+    <div class="dialog-actions"><button class="outline-button" type="button" data-close="request-dialog">Abbrechen</button><button class="gold-button" id="request-submit" type="submit">Anfrage senden</button></div>
+  </form></dialog>
 </body>
 </html>
