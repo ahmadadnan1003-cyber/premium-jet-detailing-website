@@ -1,0 +1,39 @@
+/* Account entry and production-only states; retain the approved portal design. */
+[hidden]{display:none!important}
+body.is-locked{overflow:auto}
+body.is-locked #portal-shell{display:none!important}
+.login-view{position:relative;z-index:40;display:grid;place-items:center;min-height:100svh;padding:32px 20px;background:linear-gradient(90deg,#050505ed,#050505c9),url('/assets/cabin-interior.jpg') center/cover}
+.login-card{width:min(100%,470px);padding:36px;border:1px solid #d5ab5840;border-radius:20px;background:linear-gradient(140deg,#141411f5,#090b0cf5);box-shadow:0 30px 90px #0008}
+.login-logo{width:170px;margin:22px auto;max-height:110px;object-fit:contain}
+.login-rule{width:50px;height:1px;margin:25px auto;background:#c9aa6b}
+.login-card>.eyebrow{text-align:center;font-size:10px}
+.login-card h1{margin:22px 0;font:400 clamp(36px,7vw,48px)/1.12 Georgia,serif;letter-spacing:-1px;text-align:center}
+.login-card h1 em{color:#d8c18c;font-weight:400}
+.login-copy{font-size:13px;line-height:1.6;color:#a8ada9;text-align:center}
+.back-link{font-size:12px;color:#d8c18c;text-decoration:none}
+.back-link:hover{text-decoration:underline}
+.auth-tabs{display:flex;flex-wrap:wrap;gap:5px;margin:26px 0 18px;border-bottom:1px solid #ffffff12}
+.auth-tabs button{padding:11px 7px;border:0;border-bottom:2px solid transparent;background:none;font-size:11px;color:#a8ada9}
+.auth-tabs button.is-active{border-color:#d8c18c;color:#e9d6a7}
+.login-form{display:grid;gap:16px}
+.login-form label{display:grid;gap:8px}
+.login-form label>span{font-size:12px;color:#c8c9c3}
+.login-form input{width:100%;min-height:46px;padding:12px 14px;border:1px solid #ffffff24;border-radius:9px;background:#ffffff05;color:#f6f3eb;font-size:16px}
+.login-form input:focus-visible{outline:2px solid #d8c18c;outline-offset:2px}
+.login-button{width:100%;margin-top:6px;min-height:48px}
+.portal-message{min-height:21px;color:#d8c18c;font-size:13px;line-height:1.6}
+.portal-message.is-error,.form-error{color:#f4a99b}
+.login-legal{color:#909790;font-size:11px;line-height:1.7}
+.login-legal a,.account-settings-note a{color:#d8c18c}
+.account-logout{padding:10px 14px;min-height:40px;font-size:10px}
+.overview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.form-error{font-size:13px;line-height:1.5;min-height:1.5em}
+.account-settings-note{font-size:13px;line-height:1.7;color:#a8ada9}
+.service-progress{display:none}
+.aircraft-menu{display:none}
+.hangar-empty{max-width:100%;padding:28px;text-align:center}
+.topbar .profile-copy small{max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+button:disabled{cursor:wait;opacity:.6}
+@media(max-width:600px){.login-card{padding:27px 20px}.login-view{padding:20px 14px}.overview-grid{gap:10px}.metric-card{padding:16px 12px}.account-logout{font-size:9px;padding:9px 10px}.login-card h1{font-size:38px}}
+
+body.is-locked .toast{display:none}

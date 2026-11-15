@@ -1,0 +1,1 @@
+window.PJDPoster=function(a){var m=String(a&&a.model||'').toLowerCase().replace(/[^a-z0-9]/g,'');var key=m.includes('global7500')?'global7500':m.includes('global6000')?'global6000':m.includes('avanti')||m.includes('p180')?'avanti':m.includes('g650')?'g650':m.includes('challenger350')?'challenger350':null;return key?'/assets/posters/'+key+'.webp':null;};
