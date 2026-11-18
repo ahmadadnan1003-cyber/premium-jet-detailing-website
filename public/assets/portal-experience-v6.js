@@ -111,7 +111,7 @@
     document.querySelectorAll('.aircraft-card').forEach(observe);
   }
   $('.welcome-row').id = 'pjd-overview-intro';
-  document.querySelectorAll('.welcome-row,.day-brief,.hangar-panel,.metric-card,.section-heading,.requests-panel,.insights-grid,.portal-settings').forEach(observe);
+  document.querySelectorAll('.welcome-row,.day-brief,.hangar-panel,.metric-card,.section-heading,.requests-panel,.insights-grid').forEach(observe);
   cards();
   updateDate();
   selectedAircraft(portal.getFleet().find(a => a.id === selectedId));
@@ -132,7 +132,7 @@
 
   // Section highlighting follows reading position without scroll event handlers.
   if ('IntersectionObserver' in window) {
-    const sections = { 'pjd-overview-intro':'overview','fleet-section':'fleet','requests-section':'requests','history-section':'history','portal-settings':'settings' };
+    const sections = { 'pjd-overview-intro':'overview','fleet-section':'fleet','requests-section':'requests','history-section':'history' };
     const navigation = new IntersectionObserver(entries => {
       const item = entries.filter(e => e.isIntersecting).sort((a,b) => a.boundingClientRect.top-b.boundingClientRect.top)[0];
       if (!item) return;

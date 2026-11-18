@@ -1,0 +1,45 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101415"><meta name="color-scheme" content="dark"><meta name="robots" content="noindex,nofollow,noarchive"><title>Adminportal | Premium Jet Detailing</title><link rel="icon" href="/assets/premium-jet-logo.png"><link rel="stylesheet" href="/assets/portal-v6.css"><link rel="stylesheet" href="/assets/portal-auth-v6.css?v=20261118"><link rel="stylesheet" href="/assets/portal-care.css?v=20261118"><script src="/assets/portal-auth-v6.js?v=20261118" defer></script></head><body class="is-locked">  <section class="login-view" id="login-view" aria-labelledby="login-title">
+    <div class="login-card">
+      <a href="/kundenportal" class="back-link">← Zum Kundenportal</a>
+      <img class="login-logo" src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing">
+      <div class="login-rule" aria-hidden="true"></div>
+      <p class="eyebrow">Administration · Premium Jet Detailing</p>
+      <h1 id="login-title">Ihr Service.<br><em>Alles im Blick.</em></h1>
+      <p class="login-copy">Geschützter Bereich für Aufträge und Flottenpflege.</p>
+      <div class="auth-tabs" role="tablist" aria-label="Kundenzugang">
+        <button type="button" data-tab="login" class="is-active" aria-selected="true">Anmelden</button>
+        
+        <button type="button" data-tab="reset" aria-selected="false">Passwort vergessen</button>
+      </div>
+      <form class="login-form" id="auth-form">
+        <label id="name-field" hidden><span>Name</span><input name="name" autocomplete="name" maxlength="120"></label>
+        <label id="email-field"><span>E-Mail-Adresse</span><input name="email" type="email" autocomplete="email" required></label>
+        <label id="password-field"><span>Passwort</span><input name="password" type="password" autocomplete="current-password" minlength="8" required></label>
+        <button class="gold-button login-button" id="auth-submit" type="submit">Anmelden <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="portal-message" id="auth-message" role="status" aria-live="polite"></p>
+      <p class="login-legal">Zugang ausschließlich für freigeschaltete Administratoren. <a href="/datenschutz">Datenschutzhinweise</a> · <a href="/impressum">Impressum</a></p>
+    </div>
+  </section>
+<main class="admin-shell" id="portal-shell" hidden>
+  <header class="admin-topbar"><a class="admin-brand" href="/"><img src="/assets/premium-jet-logo.png" alt="Premium Jet Detailing"></a><div class="admin-topbar-actions"><a class="outline-button" href="/kundenportal">Kundenansicht</a><button class="outline-button" id="account-logout" type="button">Abmelden</button></div></header>
+  <div class="admin-intro"><div><p class="eyebrow">OPERATIONS · ADMINPORTAL</p><h1>Pflege, die ankommt.</h1><p>Aufträge abschließen. Zustand aktualisieren. Die Flotte im Blick behalten.</p></div><button type="button" class="outline-button" id="admin-refresh">Aktualisieren</button></div>
+  <div hidden><span id="account-name"></span><span id="account-email"></span><span id="account-initials"></span></div>
+  <div class="admin-metrics"><article class="admin-metric"><strong id="admin-open-count">—</strong><span>Offene Aufträge</span></article><article class="admin-metric"><strong id="admin-fleet-count">—</strong><span>Flugzeuge</span></article><article class="admin-metric"><strong id="admin-condition">—</strong><span>Fleet condition</span></article></div>
+  <div class="admin-toolbar"><div class="admin-filters" aria-label="Aufträge filtern"><button data-admin-filter="open" aria-pressed="true">Offen</button><button data-admin-filter="completed" aria-pressed="false">Abgeschlossen</button><button data-admin-filter="all" aria-pressed="false">Alle</button></div><input id="admin-search" type="search" placeholder="Kunde oder Kennzeichen" aria-label="Aufträge durchsuchen"></div>
+  <p class="portal-message" id="admin-message" role="status" aria-live="polite">Aufträge werden geladen …</p><section id="admin-orders" aria-label="Serviceaufträge"></section>
+  <section class="admin-mail-status" aria-label="Versandstatus" id="admin-mail-status"></section>
+</main>
+<dialog class="portal-dialog admin-order-dialog" id="admin-order-dialog" aria-labelledby="admin-order-title">
+  <form id="admin-order-form"><div class="dialog-head"><div><p class="eyebrow" id="admin-dialog-action"></p><h2 id="admin-order-title">Service dokumentieren</h2></div><button type="button" class="dialog-close" id="admin-close" aria-label="Schließen">×</button></div>
+  <p class="admin-dialog-notes" id="admin-order-notes"></p>
+  <div id="admin-completion-fields"><div class="form-grid"><label><span>Service abgeschlossen am</span><input type="date" name="completedOn" required></label><label><span>Nächste Pflege dieser Bereiche</span><input type="date" name="nextDue" required></label></div>
+    <fieldset class="admin-services"><legend>Tatsächlich ausgeführte Leistungen</legend></fieldset>
+    <p class="care-hint" id="admin-care-preview"></p>
+  </div>
+  <div id="admin-appointment-fields" class="form-grid" hidden><label class="span-two"><span>Bestätigter Termin (Ihre lokale Zeit)</span><input type="datetime-local" name="scheduledAt"></label></div>
+  <label class="full-label"><span>Servicebericht (im Kundenkonto gespeichert)</span><textarea name="note" maxlength="2000" rows="3" placeholder="Erledigte Arbeiten, Besonderheiten …"></textarea></label>
+  <p class="portal-message admin-error" id="admin-order-error" role="alert"></p>
+  <div class="dialog-actions"><button class="outline-button" type="button" id="admin-cancel-dialog">Zurück</button><button class="gold-button" type="submit" id="admin-save">Auftrag abschließen</button></div>
+  </form>
+</dialog></body></html>

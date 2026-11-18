@@ -4,6 +4,9 @@
   var account = window.PJDAccount;
   if (!account || !account.initial) throw new Error('Authenticated portal data missing');
   var careRequests = [];
+  var serviceHistory = [];
+  var dataSignature = JSON.stringify(account.initial);
+  var reloading = null;
   var requestCount = 0;
   var renderers = [];
   var toastTimer;
@@ -61,16 +64,25 @@
     var prefix=manufacturer+' ';
     return {id:row.id,manufacturer:manufacturer,model:manufacturer&&full.startsWith(prefix)?full.slice(prefix.length):full,
       registration:row.registration,airport:row.airport,category:profile?.category||'Aircraft',
-      lastService:row.last_cleaned,nextService:row.next_due,finish:'',hours:null,notes:row.notes||''};
+      lastService:row.last_cleaned,nextService:row.next_due,condition:Number(row.condition_percent)||0,components:row.components||[],finish:'',hours:null,notes:row.notes||''};
   }
   function useData(data) {
     fleet=data.planes.map(mapPlane);
-    careRequests=data.requests.map(function(r){return {id:r.id,aircraftId:r.aircraft_id,date:r.requested_date,time:r.requested_time||'',airport:r.airport,services:r.services||[],notes:r.notes||'',status:r.status,createdAt:new Date(r.created_at).getTime()};});
+    serviceHistory=data.services||[];
+    careRequests=data.requests.map(function(r){return {id:r.id,aircraftId:r.aircraft_id,date:r.status==='confirmed'&&r.scheduled_at?new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Berlin'}).format(new Date(r.scheduled_at)):r.requested_date,scheduledAt:r.scheduled_at,time:r.status==='confirmed'&&r.scheduled_at?new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit'}).format(new Date(r.scheduled_at)):r.requested_time||'',airport:r.airport,services:r.services||[],notes:r.notes||'',status:r.status,createdAt:new Date(r.created_at).getTime()};});
     requestCount=careRequests.filter(function(r){return ['requested','confirmed'].includes(r.status);}).length;
   }
   var fleet=[];
   useData(account.initial);
-  async function reloadAccount(){useData(await account.reload());refreshDashboard(false);renderTimeline();}
+  async function reloadAccount(){
+    if(reloading)return reloading;
+    reloading=(async function(){var data=await account.reload(),signature=JSON.stringify(data);if(signature===dataSignature)return;
+      dataSignature=signature;useData(data);refreshDashboard(false);renderTimeline();window.dispatchEvent(new CustomEvent('pjd:account-refreshed'));})();
+    try{await reloading;}finally{reloading=null;}
+  }
+  window.setInterval(function(){if(!document.hidden)reloadAccount().catch(function(){});},30000);
+  window.addEventListener('focus',function(){reloadAccount().catch(function(){});});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)reloadAccount().catch(function(){});});
 
   function escapeHtml(value) {
     return String(value == null ? "" : value)
@@ -151,6 +163,7 @@
     renderRequests();
     var next=fleet.filter(a=>a.nextService).sort((a,b)=>a.nextService.localeCompare(b.nextService))[0];
     document.getElementById('fleet-count').textContent=fleet.length;
+    document.getElementById('fleet-condition').textContent=fleet.length?Math.round(fleet.reduce((sum,a)=>sum+a.condition,0)/fleet.length)+'%':'—';
     document.getElementById('nav-fleet-count').textContent=fleet.length;
     document.getElementById('request-count').textContent=requestCount;
     document.getElementById('next-service-days').textContent=next?Math.max(0,daysFromNow(next.nextService)):'—';
@@ -178,6 +191,7 @@
               '<span>Last service<strong>', formatDate(aircraft.lastService, { day: "numeric", month: "short" }), '</strong></span>',
               '<span>Next service<strong>', dueDays <= 0 ? 'Due now' : formatDate(serviceDate, { day: "numeric", month: "short" }), '</strong></span>',
             '</div>',
+            '<div class="care-condition"><div><span>Condition</span><strong>',aircraft.condition,'%<\/strong><\/div><progress max="100" value="',aircraft.condition,'" aria-label="Pflegezustand"></progress><small>',aircraft.lastService?'Dokumentierter Pflegezustand':'Noch kein abgeschlossener Service','</small></div>',
             '<div class="aircraft-actions"><button type="button" data-action="details" data-id="', escapeHtml(aircraft.id), '">Hangar</button><button type="button" data-action="request" data-id="', escapeHtml(aircraft.id), '">Request</button></div>',
           '</div>',
         '</article>'
@@ -209,11 +223,10 @@
     if(isRefresh)showToast('Overview updated','');
   }
   function renderTimeline() {
-    var completed=careRequests.filter(r=>r.status==='completed');
-    document.getElementById('service-timeline').innerHTML=completed.map(r=>{
-      var a=fleet.find(a=>a.id===r.aircraftId);
-      return '<div class="timeline-item"><span class="timeline-date">'+escapeHtml(formatDate(r.date,{day:'2-digit',month:'short'}))+'</span><div class="timeline-copy"><strong>'+escapeHtml(r.services.join(' · '))+'</strong><span>'+escapeHtml((a?a.model+' · '+a.registration:'Aircraft')+' · '+r.airport)+'</span></div><span class="timeline-status">Completed</span></div>';
-    }).join('') || '<p class="request-empty">No completed service requests yet.</p>';
+    document.getElementById('service-timeline').innerHTML=serviceHistory.slice().sort((a,b)=>b.completed_on.localeCompare(a.completed_on)).map(r=>{
+      var a=fleet.find(a=>a.id===r.aircraft_id);
+      return '<div class="timeline-item"><span class="timeline-date">'+escapeHtml(formatDate(r.completed_on,{day:'2-digit',month:'short'}))+'</span><div class="timeline-copy"><strong>'+escapeHtml(r.services.join(' · '))+'</strong><span>'+escapeHtml((a?a.model+' · '+a.registration:'Aircraft'))+'</span></div><span class="timeline-status">Completed</span></div>';
+    }).join('') || '<p class="request-empty">No completed services yet.</p>';
   }
 
   function populateAircraftSelect(selectedId) {
@@ -272,6 +285,7 @@
       event.preventDefault();if(event.submitter?.value==='cancel'){closeDialog(requestDialog);return;}
       if(!requestForm.reportValidity())return;
       var data=new FormData(requestForm),services=data.getAll('service');
+      if(services.includes('Deep Clean'))services=['Deep Clean'];
       if(!services.length){requestError.textContent='Select at least one service.';return;}
       var button=document.getElementById('request-submit');if(button.disabled)return;button.disabled=true;requestError.textContent='';
       try {
@@ -290,12 +304,14 @@
   }
 
   function setupDemoNavigation() {
+    document.querySelectorAll('.sidebar .nav-item').forEach(b=>b.setAttribute('aria-label',b.textContent.trim()));
     var mobileSections=['overview','fleet','requests','history','settings'];
     document.querySelectorAll('.mobile-nav button').forEach(function(b,i){b.dataset.section=mobileSections[i];});
     function navigate(section){
+      if(section==='settings'){window.dispatchEvent(new CustomEvent('pjd:open-settings'));return;}
       var target={overview:'overview-section',fleet:'fleet-section',requests:'requests-section',history:'history-section',settings:'portal-settings'}[section];
       if(!target)return;
-      var el=document.getElementById(target);if(section==='settings')el.open=true;
+      var el=document.getElementById(target);
       el.scrollIntoView({behavior:reducedMotion?'auto':'smooth',block:'start'});
       document.querySelectorAll('.sidebar .nav-item,.mobile-nav button:not(.mobile-request)').forEach(function(b){var on=b.dataset.section===section;b.classList.toggle('is-active',on);if(on)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current');});
     }
@@ -314,7 +330,7 @@
   setupForms();
   setupFleetControls();
   setupDemoNavigation();
-  window.PJDPortal = { getFleet: function () { return fleet.slice(); }, getRequests: function () { return careRequests.slice(); }, updateAircraft: function (id, changes) { var aircraft = fleet.find(function (item) { return item.id === id; }); if (!aircraft) return null; Object.assign(aircraft, changes); renderFleet(); return Object.assign({}, aircraft); }, openRequest:openRequest, showToast: showToast, stopPreview: function (id) { var index = fleet.findIndex(function (aircraft) { return aircraft.id === id; }); if (renderers[index]) renderers[index].destroy(); } };
+  window.PJDPortal = { reload:reloadAccount, getFleet: function () { return fleet.slice(); }, getRequests: function () { return careRequests.slice(); }, updateAircraft: function (id, changes) { var aircraft = fleet.find(function (item) { return item.id === id; }); if (!aircraft) return null; Object.assign(aircraft, changes); renderFleet(); return Object.assign({}, aircraft); }, openRequest:openRequest, showToast: showToast, stopPreview: function (id) { var index = fleet.findIndex(function (aircraft) { return aircraft.id === id; }); if (renderers[index]) renderers[index].destroy(); } };
 
   window.addEventListener("resize", function () {
     renderers.forEach(function (renderer) { renderer.resize(); });
@@ -464,8 +480,12 @@
   window.addEventListener('pjd:show-aircraft',function(event){bringTo(event.detail);});
   window.addEventListener('pjd:aircraft-registered',function(event){updateBrief();populate(event.detail.id);loadAircraft(event.detail,true);queueFleetPreviews();wireMotion();setTimeout(function(){stage.scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});},700);});
   window.addEventListener('pjd:service-requested',function(){updateBrief();if(activeAircraft)updateInfo(activeAircraft);});
+  window.addEventListener('pjd:account-refreshed',function(){
+    var fresh=portal.getFleet().find(function(a){return a.id===activeAircraft?.id;})||nextAircraft();
+    populate(fresh?.id);updateBrief();
+    if(fresh){activeAircraft=fresh;updateInfo(fresh);}
+  });
 
-  var bulletin=document.getElementById('public-update');
   var manufacturerSelect=document.querySelector('#register-form [name="manufacturer"]');Array.from(new Set(window.PJDScene.catalog.map(function(p){return p.manufacturer;}))).forEach(function(name){if(!Array.from(manufacturerSelect.options).some(function(o){return o.value===name;})){var option=document.createElement('option');option.value=name;option.textContent=name;manufacturerSelect.insertBefore(option,manufacturerSelect.lastElementChild);}});
   var modelInput=document.querySelector('#register-form [name="model"]');
   var modelNames=window.PJDScene.catalog.map(function(item){var prefix=item.manufacturer+' ';return item.name.indexOf(prefix)===0?item.name.slice(prefix.length):item.name;});
@@ -474,7 +494,6 @@
   document.getElementById('aircraft-catalog-count').textContent=window.PJDScene.catalog.length+' aircraft types';
   modelInput.addEventListener('blur',function(event){var profile=window.PJDScene.profileFor({model:event.target.value});if(profile){document.querySelector('#register-form [name="manufacturer"]').value=profile.manufacturer;document.getElementById('aircraft-category').value=profile.category;var prefix=profile.manufacturer+' ';if(profile.name.indexOf(prefix)===0)event.target.value=profile.name.slice(prefix.length);}});
 
-  document.getElementById('copy-public-update').addEventListener('click',async function(){try{await navigator.clipboard.writeText(bulletin.value);portal.showToast('Copied','');}catch(error){bulletin.focus();bulletin.select();portal.showToast('Text selected','Use ⌘C or Ctrl+C to copy.');}});
   function wireMotion(){}
   portal.getFleet().forEach(function(a){var profile=window.PJDScene.profileFor(a);if(!profile)return;var prefix=profile.manufacturer+' ',model=profile.name.indexOf(prefix)===0?profile.name.slice(prefix.length):profile.name;if(a.model!==model||a.manufacturer!==profile.manufacturer||a.category!==profile.category)portal.updateAircraft(a.id,{model:model,manufacturer:profile.manufacturer,category:profile.category});});
   populate();updateBrief();updateInfo(nextAircraft());wireMotion();
