@@ -171,6 +171,10 @@
   ],
   "rewrites": [
     {
+      "source": "/adminportal",
+      "destination": "/adminportal.html"
+    },
+    {
       "source": "/kundenportal",
       "destination": "/kundenportal.html"
     },
@@ -235,10 +239,47 @@
     {
       "source": "/kundenportal(.*)",
       "headers": [
-        {"key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive"},
-        {"key": "Cache-Control", "value": "private, no-store"},
-        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/adminportal(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
-  ]
+  ],
+  "crons": [
+    {
+      "path": "/api/portal-reminders",
+      "schedule": "15 8 * * *"
+    }
+  ],
+  "functions": {
+    "api/portal-reminders.js": {
+      "maxDuration": 300
+    }
+  }
 }

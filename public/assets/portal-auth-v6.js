@@ -6,6 +6,7 @@
   const RETURN_URL = 'https://www.premiumjetdetailing.de/kundenportal';
   const SESSION_KEY = 'pjd_customer_session';
   const $ = id => document.getElementById(id);
+  const adminMode = /^\/adminportal(?:\.html)?$/.test(location.pathname);
   let session = null, mode = 'login', refreshing = null, currentUser = null;
   const form = $('auth-form');
   function notice(message, error = false) {
@@ -40,7 +41,7 @@
     if (!session.expires_at || session.expires_at * 1000 < Date.now() + 60000) {
       if (!refreshing) refreshing = call('/auth/v1/token?grant_type=refresh_token','POST',{refresh_token:session.refresh_token})
         .then(data => { setSession({...data, expires_at:Math.floor(Date.now()/1000)+data.expires_in}); })
-        .catch(error => { setSession(null); location.replace('/kundenportal'); throw error; })
+        .catch(error => { setSession(null); location.replace(adminMode ? '/adminportal' : '/kundenportal'); throw error; })
         .finally(() => { refreshing = null; });
       await refreshing;
     }
@@ -50,11 +51,12 @@
     return call('/rest/v1/'+table+'?select='+encodeURIComponent(columns)+'&owner_id=eq.'+encodeURIComponent(currentUser.id)+'&order=created_at.desc','GET',null,await token());
   }
   async function reloadData() {
-    const [planes, requests] = await Promise.all([
-      records('pjd_aircraft','id,model_id,registration,airport,last_cleaned,next_due,archived,notes,interval_days,created_at'),
-      records('pjd_requests','id,aircraft_id,services,airport,requested_date,requested_time,status,notes,created_at')
+    const [planes, requests, services] = await Promise.all([
+      records('pjd_aircraft_care','id,model_id,registration,airport,last_cleaned,next_due,archived,notes,interval_days,created_at,condition_percent,components'),
+      records('pjd_requests','id,aircraft_id,services,airport,requested_date,requested_time,status,notes,created_at,version,scheduled_at,updated_at'),
+      records('pjd_services','id,request_id,aircraft_id,completed_on,next_due,services,note,created_at')
     ]);
-    return {planes:planes.filter(p => !p.archived),requests};
+    return {planes:planes.filter(p => !p.archived),requests,services};
   }
   async function insert(table, row) {
     const result = await call('/rest/v1/'+table,'POST',{...row,owner_id:currentUser.id},await token(),true);
@@ -80,14 +82,29 @@
       document.body.append(el);
     });
   }
+  async function rpc(name,body={}) { return call('/rest/v1/rpc/'+name,'POST',body,await token()); }
+  async function profile() {
+    const rows=await call('/rest/v1/pjd_profiles?select=full_name,company,email,reminders_enabled,reminder_lead_days&user_id=eq.'+currentUser.id,'GET',null,await token());
+    return rows[0];
+  }
   async function enterPortal() {
     currentUser = await call('/auth/v1/user','GET',null,await token());
     if (!currentUser.email_confirmed_at) throw new Error('Bitte bestätigen Sie zuerst Ihre E-Mail-Adresse.');
     const profiles = await call('/rest/v1/pjd_profiles?select=user_id&user_id=eq.'+encodeURIComponent(currentUser.id),'GET',null,await token());
     if (!profiles?.length) throw new Error('Ihr Zugang ist noch nicht freigeschaltet. Bitte kontaktieren Sie info@premiumjetdetailing.de.');
-    const data = await reloadData();
+    const access=await rpc('pjd_portal_access');
+    if(adminMode&&!access.admin)throw Error('Dieser Bereich ist ausschließlich für Administratoren. Bitte öffnen Sie das Kundenportal.');
+    const data = adminMode ? null : await reloadData();
     window.PJDAccount = {
-      initial:data, reload:reloadData,
+      initial:data, reload:reloadData, isAdmin:access.admin, profile,
+      savePreferences:values=>rpc('pjd_portal_preferences',values),
+      async adminData() {
+        if(!access.admin)throw Error('Kein Adminzugang.');
+        const definitions={planes:'pjd_aircraft_care?select=*&archived=eq.false',requests:'pjd_requests?select=*&order=created_at.desc',profiles:'pjd_profiles?select=user_id,email,full_name,company',services:'pjd_services?select=*&order=completed_on.desc'};
+        const rows=await Promise.all(Object.entries(definitions).map(async([key,path])=>[key,await call('/rest/v1/'+path,'GET',null,await token())]));
+        return {...Object.fromEntries(rows),mail:await rpc('pjd_portal_mail_status')};
+      },
+      adminOrder:(id,version,action,data)=>rpc('pjd_portal_admin_order',{p_id:id,p_version:version,p_action:action,p_data:data}),
       addAircraft:row => insert('pjd_aircraft',row),
       async addRequest(row) {
         try{return await insert('pjd_requests',row);}catch(error){
@@ -101,17 +118,24 @@
         return !!response?.ok;
       }
     };
-    const name = String(currentUser.user_metadata?.full_name || '').trim();
+    const preferences=await profile();
+    const name = String(preferences?.full_name || '').trim();
     $('account-name').textContent = name || 'Kundenkonto';
     $('account-email').textContent = currentUser.email || '';
     $('account-initials').textContent = name ? name.split(/\s+/).slice(0,2).map(s=>s[0]).join('').toUpperCase() : 'PJD';
+    if(adminMode) {
+      await script('/assets/portal-admin.js?v=20261118');
+      $('portal-shell').hidden=false;$('login-view').hidden=true;document.body.classList.remove('is-locked');return;
+    }
+    const adminLink=$('admin-portal-link');if(adminLink)adminLink.hidden=!access.admin;
     notice('Ihr digitaler Hangar wird geladen …');
     await script('/assets/portal-posters-v6.js');
     await script('/assets/portal-engine-v6.js');
-    await script('/assets/portal-ui-v6.js');
+    await script('/assets/portal-ui-v6.js?v=20261118');
+    await script('/assets/portal-care.js?v=20261118');
     if(!window.PJDPortal || !window.PJDModels)throw new Error('Die Portalansicht konnte nicht gestartet werden. Bitte laden Sie die Seite neu.');
     await script('/assets/portal-touch-v6.js');
-    await script('/assets/portal-experience-v6.js');
+    await script('/assets/portal-experience-v6.js?v=20261118');
     delete window.PJDAccount.initial;
     $('portal-shell').hidden = false; $('login-view').hidden = true;
     document.body.classList.remove('is-locked');
@@ -145,7 +169,7 @@
   $('account-logout').addEventListener('click',async()=>{
     $('account-logout').disabled=true;
     try {await call('/auth/v1/logout','POST',null,await token());}catch(_){}
-    setSession(null);location.replace('/kundenportal');
+    setSession(null);location.replace(adminMode ? '/adminportal' : '/kundenportal');
   });
   async function init() {
     $('auth-submit').disabled=true;
